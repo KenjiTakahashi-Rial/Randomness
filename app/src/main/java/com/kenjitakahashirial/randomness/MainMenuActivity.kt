@@ -18,8 +18,7 @@ class MainMenuActivity : AppCompatActivity() {
         recyclerViewManager = LinearLayoutManager(this)
         recyclerViewAdapter = MainMenuAdapter(mainMenuCards)
 
-        // TODO: Change ID
-        recyclerView = findViewById<RecyclerView>(R.id.my_recycler_view).apply {
+        recyclerView = findViewById<RecyclerView>(R.id.main_menu_recycler_view).apply {
             setHasFixedSize(true)
             layoutManager = recyclerViewManager
             adapter = recyclerViewAdapter
