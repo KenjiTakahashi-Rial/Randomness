@@ -1,16 +1,21 @@
 package com.kenjitakahashirial.randomness
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
-class MainMenuAdapter(private val mainMenuCards: Array<MainMenuCard>) : RecyclerView.Adapter<MainMenuAdapter.MainMenuViewHolder>() {
-    class MainMenuViewHolder(cardView: CardView) : RecyclerView.ViewHolder(cardView) {
+class MainMenuAdapter(private val mainMenuCards: Array<MainMenuCard>, val onClick: (Int) -> Unit) :
+    RecyclerView.Adapter<MainMenuAdapter.MainMenuViewHolder>() {
+
+    inner class MainMenuViewHolder(cardView: CardView) : RecyclerView.ViewHolder(cardView) {
         val imageView: ImageView = cardView.findViewById(R.id.card_image)
         val textView: TextView = cardView.findViewById(R.id.card_text)
+
+        init { cardView.setOnClickListener { onClick(adapterPosition) } }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainMenuViewHolder {

@@ -1,11 +1,14 @@
 package com.kenjitakahashirial.randomness
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainMenuActivity : AppCompatActivity() {
+    private val cards = createCards()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
@@ -13,8 +16,13 @@ class MainMenuActivity : AppCompatActivity() {
         findViewById<RecyclerView>(R.id.main_menu_recycler_view).apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this@MainMenuActivity)
-            adapter = MainMenuAdapter(createCards())
+            adapter = MainMenuAdapter(cards) { onCardClick(it) }
         }
+    }
+
+    private fun onCardClick(position: Int) {
+        val intent = Intent(this, cards[position].activity::class.java)
+        startActivity(intent)
     }
 
     private fun createCards(): Array<MainMenuCard> = arrayOf(
