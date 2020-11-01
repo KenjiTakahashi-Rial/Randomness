@@ -2,4 +2,6 @@
     <string name="app_name">Randomness</string>
     <string name="default_main_menu_card_name">$card_name</string>
     <string name="default_main_menu_card_description">$card_description</string>
+    <string name="random_integer_name">Random Integer</string>
+    <string name="generate_button">Go</string>
 </resources>

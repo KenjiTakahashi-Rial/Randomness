@@ -3,6 +3,7 @@ package com.kenjitakahashirial.randomness
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseRandomActivity<T> : AppCompatActivity() {
@@ -11,9 +12,9 @@ abstract class BaseRandomActivity<T> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sharedPreferences = getSharedPreferences(getString(sharedPreferencesId), Context.MODE_PRIVATE)
+        // sharedPreferences = getSharedPreferences(getString(sharedPreferencesId), Context.MODE_PRIVATE)
     }
 
-    protected abstract fun generateNext(from: T, to: T): T
-    protected abstract fun openSettings()
+    abstract fun generateNext(view: View)
+    abstract fun openSettings(view: View)
 }
