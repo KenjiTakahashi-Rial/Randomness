@@ -15,14 +15,14 @@ class MainMenuActivity : AppCompatActivity() {
 
         cards = createCards()
 
-        findViewById<RecyclerView>(R.id.main_menu_recycler_view).apply {
+        val recyclerView: RecyclerView = findViewById<RecyclerView>(R.id.main_menu_recycler_view).apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this@MainMenuActivity)
-            adapter = MainMenuAdapter(cards) { onCardClick(it) }
+            adapter = MainMenuAdapter(cards) { startCardActivity(it) }
         }
     }
 
-    private fun onCardClick(position: Int) {
+    private fun startCardActivity(position: Int) {
         val intent = Intent(this, cards[position].activityClass)
         startActivity(intent)
     }

@@ -1,15 +1,22 @@
 package com.kenjitakahashirial.randomness
 
 import android.content.Intent
+import android.os.Bundle
 import android.view.View
+import android.widget.Button
 
 abstract class BaseRandomActivity : BaseSharedPreferencesActivityActivity() {
-    override val sharedPreferencesId = R.string.random_integer_shared_preferences_id
+    protected abstract val generateButtonId: Int
     protected abstract val settingsActivityClass: Class<out BaseRandomSettingsActivity>
 
-    abstract fun generateNext(view: View)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    fun openSettings(v: View) {
+        val generateButton: Button = findViewById<Button>(generateButtonId).apply {
+            setOnClickListener { generateNext() }
+        }
+
+    protected abstract fun generateNext()
         val intent = Intent(this, settingsActivityClass)
         startActivity(intent)
     }

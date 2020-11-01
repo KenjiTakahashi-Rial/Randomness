@@ -11,6 +11,8 @@ abstract class BaseSharedPreferencesActivityActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sharedPreferences = getSharedPreferences(getString(sharedPreferencesId), Context.MODE_PRIVATE)
+
+        val sharedPreferencesKey = getString(sharedPreferencesId)
+        sharedPreferences = getSharedPreferences(sharedPreferencesKey, Context.MODE_PRIVATE)
     }
 }
