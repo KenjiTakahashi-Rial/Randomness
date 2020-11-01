@@ -1,20 +1,16 @@
 package com.kenjitakahashirial.randomness
 
-import android.content.Context
-import android.content.SharedPreferences
-import android.os.Bundle
+import android.content.Intent
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 
-abstract class BaseRandomActivity<T> : AppCompatActivity() {
-    protected abstract val sharedPreferencesId: Int
-    protected lateinit var sharedPreferences: SharedPreferences
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // sharedPreferences = getSharedPreferences(getString(sharedPreferencesId), Context.MODE_PRIVATE)
-    }
+abstract class BaseRandomActivity : BaseSharedPreferencesActivityActivity() {
+    override val sharedPreferencesId = R.string.random_integer_shared_preferences_id
+    protected abstract val settingsActivityClass: Class<out BaseRandomSettingsActivity>
 
     abstract fun generateNext(view: View)
-    abstract fun openSettings(view: View)
+
+    fun openSettings(v: View) {
+        val intent = Intent(this, settingsActivityClass)
+        startActivity(intent)
+    }
 }
