@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="hawaii_dark_gray">#2E2C2B</color>
+    <color name="hawaii_light_gray">#3B3937</color>
+    <color name="hawaii_orange">#F75431</color>
+    <color name="hawaii_light_blue">#72D4E5</color>
+    <color name="hawaii_yellow">#FF0000</color>
+    <color name="hawaii_faint_blue">#C5E1D5</color>
+    <color name="hawaii_faint_yellow">#C7B593</color>
 </resources>

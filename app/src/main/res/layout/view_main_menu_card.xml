@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
-    android:layout_gravity="center"
+    android:layout_gravity="top"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="4dp">
+    android:layout_height="296dp"
+    android:padding="4dp"
+    app:cardBackgroundColor="@color/hawaii_dark_gray">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,12 +16,24 @@
         <ImageView
             android:id="@+id/card_image"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="200dp"
+            android:background="@color/hawaii_light_gray"
+            android:contentDescription="@string/default_main_menu_card_description"
+            android:padding="6dp"
+            android:src="@drawable/temp_rando" />
 
         <TextView
             android:id="@+id/card_text"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="75dp"
+            android:layout_below="@+id/card_image"
+            android:background="@color/hawaii_light_gray"
+            android:fontFamily="sans-serif-condensed-light"
+            android:gravity="center_horizontal"
+            android:text="@string/default_main_menu_card_name"
+            android:textAlignment="center"
+            android:textColor="@color/hawaii_light_blue"
+            android:textSize="50sp" />
 
     </RelativeLayout>
 
