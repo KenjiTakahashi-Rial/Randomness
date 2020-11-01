@@ -1,5 +1,6 @@
 package com.kenjitakahashirial.randomness
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,11 +8,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainMenuActivity : AppCompatActivity() {
-    private val cards = createCards()
+    private lateinit var cards: Array<MainMenuCard>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
+
+        cards = createCards()
 
         findViewById<RecyclerView>(R.id.main_menu_recycler_view).apply {
             setHasFixedSize(true)
@@ -26,7 +29,7 @@ class MainMenuActivity : AppCompatActivity() {
     }
 
     private fun createCards(): Array<MainMenuCard> = arrayOf(
-        MainMenuCard("temp_name0", R.drawable.temp_rando, AppCompatActivity::class.java),
+        MainMenuCard(getString(R.string.random_integer_name), R.drawable.temp_rando, RandomIntegerActivity::class.java),
         MainMenuCard("temp_name1", R.drawable.temp_rando, AppCompatActivity::class.java),
         MainMenuCard("temp_name2", R.drawable.temp_rando, AppCompatActivity::class.java),
         MainMenuCard("temp_name3", R.drawable.temp_rando, AppCompatActivity::class.java),
