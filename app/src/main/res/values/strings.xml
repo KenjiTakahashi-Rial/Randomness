@@ -5,4 +5,13 @@
     <string name="random_integer_name">Random Integer</string>
     <string name="generate_button">Go</string>
     <string name="random_integer_shared_preferences_id">com.kenjitakahashirial.randomness.RANDOM_INTEGER</string>
+    <string name="random_integer_settings_title">Random Integer Settings</string>
+    <string name="random_integer_from_label">Random Integer From</string>
+    <string name="random_integer_to_label">Random Integer To</string>
+    <string name="random_settings_include_from">Include From</string>
+    <string name="random_settings_include_to">Include To</string>
+    <string name="random_settings_from_hint">Start value</string>
+    <string name="random_settings_to_hint">End value</string>
+    <string name="random_settings_save">Save</string>
+    <string name="random_settings_cancel">Cancel</string>
 </resources>

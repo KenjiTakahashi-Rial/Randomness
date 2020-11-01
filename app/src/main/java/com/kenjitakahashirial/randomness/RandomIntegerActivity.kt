@@ -9,6 +9,7 @@ import kotlin.random.Random
 class RandomIntegerActivity : BaseRandomActivity() {
     override val sharedPreferencesId = R.string.random_integer_shared_preferences_id
     override val generateButtonId = R.id.randomIntegerGenerateButton
+    override val settingsButtonId = R.id.randomIntegerSettingsButton
     override val settingsActivityClass = RandomIntegerSettingsActivity::class.java
 
     override fun onCreate(savedInstanceState: Bundle?) {
