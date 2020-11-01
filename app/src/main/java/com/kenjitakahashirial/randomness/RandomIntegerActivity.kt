@@ -1,13 +1,11 @@
 package com.kenjitakahashirial.randomness
 
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import android.widget.TextView
 import kotlin.random.Random
 
 class RandomIntegerActivity : BaseRandomActivity() {
-    override val sharedPreferencesId = R.string.random_integer_shared_preferences_id
+    override val sharedPreferencesId = R.string.random_integer_shared_preferences_key
     override val generateButtonId = R.id.randomIntegerGenerateButton
     override val settingsButtonId = R.id.randomIntegerSettingsButton
     override val settingsActivityClass = RandomIntegerSettingsActivity::class.java
