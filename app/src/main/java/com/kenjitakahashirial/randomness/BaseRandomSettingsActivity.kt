@@ -1,6 +1,6 @@
 package com.kenjitakahashirial.randomness
 
-abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivityActivity() {
+abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     abstract fun save()
 
     fun cancel() {
