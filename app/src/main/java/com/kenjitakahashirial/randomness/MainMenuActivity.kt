@@ -21,17 +21,17 @@ class MainMenuActivity : AppCompatActivity() {
     }
 
     private fun onCardClick(position: Int) {
-        val intent = Intent(this, cards[position].activity::class.java)
+        val intent = Intent(this, cards[position].activityClass)
         startActivity(intent)
     }
 
     private fun createCards(): Array<MainMenuCard> = arrayOf(
-        MainMenuCard("temp_name0", R.drawable.temp_rando, AppCompatActivity()),
-        MainMenuCard("temp_name1", R.drawable.temp_rando, AppCompatActivity()),
-        MainMenuCard("temp_name2", R.drawable.temp_rando, AppCompatActivity()),
-        MainMenuCard("temp_name3", R.drawable.temp_rando, AppCompatActivity()),
-        MainMenuCard("temp_name4", R.drawable.temp_rando, AppCompatActivity()),
-        MainMenuCard("temp_name5", R.drawable.temp_rando, AppCompatActivity()),
-        MainMenuCard("temp_name6", R.drawable.temp_rando, AppCompatActivity())
+        MainMenuCard("temp_name0", R.drawable.temp_rando, AppCompatActivity::class.java),
+        MainMenuCard("temp_name1", R.drawable.temp_rando, AppCompatActivity::class.java),
+        MainMenuCard("temp_name2", R.drawable.temp_rando, AppCompatActivity::class.java),
+        MainMenuCard("temp_name3", R.drawable.temp_rando, AppCompatActivity::class.java),
+        MainMenuCard("temp_name4", R.drawable.temp_rando, AppCompatActivity::class.java),
+        MainMenuCard("temp_name5", R.drawable.temp_rando, AppCompatActivity::class.java),
+        MainMenuCard("temp_name6", R.drawable.temp_rando, AppCompatActivity::class.java)
     )
 }
