@@ -6,22 +6,27 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainMenuActivity : AppCompatActivity() {
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var recyclerViewAdapter: RecyclerView.Adapter<*>
-    private lateinit var recyclerViewManager: RecyclerView.LayoutManager
     private lateinit var mainMenuCards: Array<MainMenuCard>
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
-        recyclerViewManager = LinearLayoutManager(this)
-        recyclerViewAdapter = MainMenuAdapter(mainMenuCards)
+        mainMenuCards = arrayOf(
+            MainMenuCard("temp_name0", R.drawable.temp_rando, AppCompatActivity()),
+            MainMenuCard("temp_name1", R.drawable.temp_rando, AppCompatActivity()),
+            MainMenuCard("temp_name2", R.drawable.temp_rando, AppCompatActivity()),
+            MainMenuCard("temp_name3", R.drawable.temp_rando, AppCompatActivity()),
+            MainMenuCard("temp_name4", R.drawable.temp_rando, AppCompatActivity()),
+            MainMenuCard("temp_name5", R.drawable.temp_rando, AppCompatActivity()),
+            MainMenuCard("temp_name6", R.drawable.temp_rando, AppCompatActivity())
+        )
 
         recyclerView = findViewById<RecyclerView>(R.id.main_menu_recycler_view).apply {
             setHasFixedSize(true)
-            layoutManager = recyclerViewManager
-            adapter = recyclerViewAdapter
+            layoutManager = LinearLayoutManager(this@MainMenuActivity)
+            adapter = MainMenuAdapter(mainMenuCards)
         }
     }
 
