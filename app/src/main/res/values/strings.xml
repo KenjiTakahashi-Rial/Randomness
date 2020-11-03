@@ -18,4 +18,7 @@
     <string name="error">Error</string>
     <string name="valid_range_prompt">Please enter a valid range.</string>
     <string name="okay">Okay</string>
+    <string name="flip_coin_settings_title">Flip Coin Settings</string>
+    <string name="flip_coin_name">Flip Coin</string>
+    <string name="flip_coin_settings_key">com.kenjitakahashirial.randomness.FLIP_COIN_SETTINGS</string>
 </resources>
