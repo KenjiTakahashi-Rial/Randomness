@@ -4,8 +4,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class RandomIntegerSettings(
-    val from: Int = 0,
-    val to: Int = 10,
-    val includeFrom: Boolean = true,
-    val includeTo: Boolean = false
+    var from: Int = 0,
+    var to: Int = 10,
+    var includeFrom: Boolean = true,
+    var includeTo: Boolean = false
 )

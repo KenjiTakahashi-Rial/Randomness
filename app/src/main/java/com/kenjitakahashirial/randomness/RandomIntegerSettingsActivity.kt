@@ -33,22 +33,27 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
     }
 
     override fun save() {
-        // TODO: Add an alert for integer underflow/overflow
-        val settings = RandomIntegerSettings(
-            from = try { fromText.text.toString().toInt() } catch (e: NumberFormatException) { 0 },
-            to = try { toText.text.toString().toInt() } catch (e: NumberFormatException) { 0 },
-            includeFrom = includeFromSwitch.isChecked,
-            includeTo = includeToSwitch.isChecked
-        )
+        var isValid = true
+        val settings = RandomIntegerSettings()
 
-        val invalidRange = with(settings) {
-            from > to ||
-            from == to && (!includeFrom || !includeTo) ||
-            from == to - 1 && !includeFrom && !includeTo
+        try {
+            settings.apply {
+                from = fromText.text.toString().toInt()
+                to = toText.text.toString().toInt()
+                includeFrom = includeFromSwitch.isChecked
+                includeTo = includeToSwitch.isChecked
+            }
+        } catch (e: NumberFormatException) {
+            isValid = false
         }
 
-        if (invalidRange) {
-            TODO("Add an alert for invalid range")
+        isValid = isValid && with(settings) {
+            from < to && (to - from > 1 || includeFrom || includeTo) ||
+            (from == to && includeFrom && includeTo)
+        }
+
+        if (!isValid) {
+            errorAlertDialog.show()
         } else with (sharedPreferences.edit()) {
             putClass(settingsKey, settings)
             apply()
