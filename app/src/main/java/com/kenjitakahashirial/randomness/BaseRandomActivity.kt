@@ -15,10 +15,10 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val generateButton: Button = findViewById<Button>(generateButtonId).apply {
+        val generateButton = findViewById<Button>(generateButtonId).apply {
             setOnClickListener { generateNext() }
         }
-        val settingsButton: Button = findViewById<Button>(settingsButtonId).apply {
+        val settingsButton = findViewById<Button>(settingsButtonId).apply {
             setOnClickListener { openSettings() }
         }
 

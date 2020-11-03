@@ -21,7 +21,7 @@ class RandomIntegerActivity : BaseRandomActivity() {
         val start = with (settings) { if (includeFrom) from else from + 1 }
         val end = with (settings) { if (includeTo) to + 1 else to }
 
-        val resultTextView: TextView = findViewById<TextView>(R.id.randomIntegerResultTextView).apply {
+        val resultTextView = findViewById<TextView>(R.id.randomIntegerResultTextView).apply {
             text = (start..end).random().toString()
         }
     }
