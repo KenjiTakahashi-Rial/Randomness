@@ -33,7 +33,19 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
     }
 
     override fun save() {
-        var isValid = true
+        val (settings, isValid) = getSettings()
+
+        if (!isValid) {
+            errorAlertDialog.show()
+        } else with (sharedPreferences.edit()) {
+            putClass(settingsKey, settings)
+            apply()
+            finish()
+        }
+    }
+
+    private fun getSettings(): Pair<RandomIntegerSettings, Boolean>  {
+        var isValidInts = true
         val settings = RandomIntegerSettings()
 
         try {
@@ -44,20 +56,17 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
                 includeTo = includeToSwitch.isChecked
             }
         } catch (e: NumberFormatException) {
-            isValid = false
+            isValidInts = false
         }
 
-        isValid = isValid && with(settings) {
+        val isValidRange = isValidRange(settings)
+        
+        return Pair(settings, isValidInts && isValidRange)
+    }
+
+    private fun isValidRange(settings: RandomIntegerSettings): Boolean =
+        with(settings) {
             from < to && (to - from > 1 || includeFrom || includeTo) ||
             (from == to && includeFrom && includeTo)
         }
-
-        if (!isValid) {
-            errorAlertDialog.show()
-        } else with (sharedPreferences.edit()) {
-            putClass(settingsKey, settings)
-            apply()
-            finish()
-        }
-    }
 }
