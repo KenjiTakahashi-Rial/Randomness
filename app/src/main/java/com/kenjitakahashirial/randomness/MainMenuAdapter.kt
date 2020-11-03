@@ -1,7 +1,6 @@
 package com.kenjitakahashirial.randomness
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -12,8 +11,8 @@ class MainMenuAdapter(private val mainMenuCards: Array<MainMenuCard>, val onClic
     RecyclerView.Adapter<MainMenuAdapter.MainMenuViewHolder>() {
 
     inner class MainMenuViewHolder(cardView: CardView) : RecyclerView.ViewHolder(cardView) {
-        val imageView: ImageView = cardView.findViewById(R.id.card_image)
-        val textView: TextView = cardView.findViewById(R.id.card_text)
+        val imageView: ImageView = cardView.findViewById(R.id.main_menu_card_image)
+        val textView: TextView = cardView.findViewById(R.id.main_menu_card_text)
 
         init { cardView.setOnClickListener { onClick(adapterPosition) } }
     }
@@ -26,13 +25,13 @@ class MainMenuAdapter(private val mainMenuCards: Array<MainMenuCard>, val onClic
     override fun onBindViewHolder(holder: MainMenuViewHolder, position: Int) {
         val card = mainMenuCards[position]
 
-        // Set card text
-        holder.textView.text = card.name
+        holder.apply {
+            textView.text = card.name
 
-        // Set card image
-        holder.imageView.apply {
-            contentDescription = card.name
-            setImageResource(card.imageId)
+            imageView.apply {
+                contentDescription = card.name
+                setImageResource(card.imageId)
+            }
         }
     }
 
