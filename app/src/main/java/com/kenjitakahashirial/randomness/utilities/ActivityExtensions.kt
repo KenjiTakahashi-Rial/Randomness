@@ -1,4 +1,4 @@
-package com.kenjitakahashirial.randomness
+package com.kenjitakahashirial.randomness.utilities
 
 import android.app.Activity
 import android.view.inputmethod.InputMethodManager

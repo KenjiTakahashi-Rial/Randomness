@@ -5,6 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.kenjitakahashirial.randomness.activities.RandomIntegerActivity
+import com.kenjitakahashirial.randomness.adapters.MainMenuAdapter
+import com.kenjitakahashirial.randomness.utilities.MainMenuCard
 
 class MainMenuActivity : AppCompatActivity() {
     private lateinit var cards: Array<MainMenuCard>

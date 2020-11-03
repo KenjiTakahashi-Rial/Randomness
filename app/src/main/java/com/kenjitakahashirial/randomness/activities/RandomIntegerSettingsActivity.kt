@@ -1,10 +1,14 @@
-package com.kenjitakahashirial.randomness
+package com.kenjitakahashirial.randomness.activities
 
 import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.widget.SwitchCompat
+import com.kenjitakahashirial.randomness.R
+import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
+import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 
 class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
+    override val layout = R.layout.activity_random_integer_settings
     override val layoutId = R.id.randomIntegerSettingsLayout
     override val saveButtonId = R.id.randomIntegerSettingsSaveButton
     override val cancelButtonId = R.id.randomIntegerSettingsCancelButton
@@ -16,7 +20,6 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
     private lateinit var includeToSwitch: SwitchCompat
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setContentView(R.layout.activity_random_integer_settings)
         super.onCreate(savedInstanceState)
 
         val settings = sharedPreferences.getClass(settingsKey, RandomIntegerSettings())
@@ -60,7 +63,7 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
         }
 
         val isValidRange = isValidRange(settings)
-        
+
         return Pair(settings, isValidInts && isValidRange)
     }
 

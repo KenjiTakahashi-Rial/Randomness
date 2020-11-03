@@ -1,19 +1,17 @@
-package com.kenjitakahashirial.randomness
+package com.kenjitakahashirial.randomness.activities
 
-import android.os.Bundle
 import android.widget.TextView
+import com.kenjitakahashirial.randomness.R
+import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
+import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import kotlin.random.Random
 
 class RandomIntegerActivity : BaseRandomActivity() {
+    override val layout = R.layout.activity_random_integer
     override val generateButtonId = R.id.randomIntegerGenerateButton
     override val settingsButtonId = R.id.randomIntegerSettingsButton
     override val settingsId = R.string.random_integer_settings_key
     override val settingsActivityClass = RandomIntegerSettingsActivity::class.java
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        setContentView(R.layout.activity_random_integer)
-        super.onCreate(savedInstanceState)
-    }
 
     override fun generateNext() {
         val settings = sharedPreferences.getClass(settingsKey, RandomIntegerSettings())

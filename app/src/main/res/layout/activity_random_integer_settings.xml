@@ -9,7 +9,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:clickable="true"
-    tools:context=".RandomIntegerSettingsActivity">
+    tools:context=".activities.RandomIntegerSettingsActivity">
 
     <EditText
         android:id="@+id/randomIntegerSettingsTo"

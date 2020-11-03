@@ -1,9 +1,12 @@
-package com.kenjitakahashirial.randomness
+package com.kenjitakahashirial.randomness.activities.abstract
 
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.kenjitakahashirial.randomness.BaseSharedPreferencesActivity
+import com.kenjitakahashirial.randomness.R
+import com.kenjitakahashirial.randomness.utilities.hideSoftKeyboard
 
 abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     override val sharedPreferencesId = R.string.shared_preferences_key

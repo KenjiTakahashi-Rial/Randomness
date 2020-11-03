@@ -6,7 +6,7 @@
     android:id="@+id/randomIntegerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RandomIntegerActivity">
+    tools:context=".activities.RandomIntegerActivity">
 
     <TextView
         android:id="@+id/randomIntegerNameTextView"
