@@ -3,6 +3,7 @@ package com.kenjitakahashirial.randomness.activities.abstract
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import com.kenjitakahashirial.randomness.BaseSharedPreferencesActivity
 import com.kenjitakahashirial.randomness.R
 
@@ -22,7 +23,7 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
         val generateButton = findViewById<Button>(generateButtonId).apply {
             setOnClickListener { generateNext() }
         }
-        val settingsButton = findViewById<Button>(settingsButtonId).apply {
+        val settingsButton = findViewById<ImageButton>(settingsButtonId).apply {
             setOnClickListener { openSettings() }
         }
 
