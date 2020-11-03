@@ -15,4 +15,7 @@
     <string name="random_settings_save">Save</string>
     <string name="random_settings_cancel">Cancel</string>
     <string name="random_integer_settings_key">com.kenjitakahashirial.randomness.RANDOM_INTEGER_SETTINGS</string>
+    <string name="error">Error</string>
+    <string name="valid_range_prompt">Please enter a valid range.</string>
+    <string name="okay">Okay</string>
 </resources>

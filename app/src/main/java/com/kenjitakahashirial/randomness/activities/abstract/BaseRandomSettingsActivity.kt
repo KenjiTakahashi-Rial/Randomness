@@ -34,11 +34,10 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
 
         settingsKey = getString(settingsId)
 
-        // TODO: Move these to strings.xml
         errorAlertDialog = with (AlertDialog.Builder(this)) {
-            setTitle("Error")
-            setMessage("Please enter a valid range")
-            setPositiveButton("Okay") { _, _ -> }
+            setTitle(getString(R.string.error))
+            setMessage(getString(R.string.valid_range_prompt))
+            setPositiveButton(getString(R.string.okay)) { _, _ -> }
             create()
         }
     }
