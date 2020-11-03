@@ -7,10 +7,14 @@ import android.widget.Button
 abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
     protected abstract val generateButtonId: Int
     protected abstract val settingsButtonId: Int
+    protected abstract val settingsId: Int
+    protected lateinit var settingsKey: String
     protected abstract val settingsActivityClass: Class<out BaseRandomSettingsActivity>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        settingsKey = getString(settingsId)
 
         val generateButton: Button = findViewById<Button>(generateButtonId).apply {
             setOnClickListener { generateNext() }

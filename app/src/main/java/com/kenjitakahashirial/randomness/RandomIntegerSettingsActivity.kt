@@ -8,6 +8,7 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
     override val sharedPreferencesId = R.string.random_integer_shared_preferences_key
     override val saveButtonId = R.id.randomIntegerGenerateButton
     override val cancelButtonId = R.id.randomIntegerSettingsButton
+    override val settingsId = R.string.random_integer_settings_key
 
     private lateinit var fromText: EditText
     private lateinit var toText: EditText
@@ -40,7 +41,11 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
             includeTo = includeToSwitch.isChecked
         )
 
-        val invalidRange = with(settings) { from > to || from == to && (!includeFrom || !includeTo) }
+        val invalidRange = with(settings) {
+            from > to ||
+            from == to && (!includeFrom || !includeTo) ||
+            from == to - 1 && !includeFrom && !includeTo
+        }
 
         if (invalidRange) {
             TODO("Add an alert for invalid range")
