@@ -13,7 +13,7 @@
         <activity android:name=".activities.FlipCoinActivity" />
         <activity android:name=".activities.RandomIntegerSettingsActivity" />
         <activity android:name=".activities.RandomIntegerActivity" />
-        <activity android:name=".MainMenuActivity">
+        <activity android:name=".activities.MainMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
