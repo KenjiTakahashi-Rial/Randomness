@@ -4,7 +4,7 @@
     <string name="default_main_menu_card_description">$card_description</string>
     <string name="random_integer_name">Random Integer</string>
     <string name="generate_button">Go</string>
-    <string name="random_integer_shared_preferences_key">com.kenjitakahashirial.randomness.RANDOM_INTEGER</string>
+    <string name="shared_preferences_key">com.kenjitakahashirial.randomness.SHARED_PREFERENCES</string>
     <string name="random_integer_settings_title">Random Integer Settings</string>
     <string name="random_integer_from_label">Random Integer From</string>
     <string name="random_integer_to_label">Random Integer To</string>

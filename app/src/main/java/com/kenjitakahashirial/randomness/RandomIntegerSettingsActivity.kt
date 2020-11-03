@@ -5,9 +5,9 @@ import android.widget.EditText
 import androidx.appcompat.widget.SwitchCompat
 
 class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
-    override val sharedPreferencesId = R.string.random_integer_shared_preferences_key
-    override val saveButtonId = R.id.randomIntegerGenerateButton
-    override val cancelButtonId = R.id.randomIntegerSettingsButton
+    override val layoutId = R.id.randomIntegerSettingsLayout
+    override val saveButtonId = R.id.randomIntegerSettingsSaveButton
+    override val cancelButtonId = R.id.randomIntegerSettingsCancelButton
     override val settingsId = R.string.random_integer_settings_key
 
     private lateinit var fromText: EditText
