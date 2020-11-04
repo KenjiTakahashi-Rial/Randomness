@@ -11,6 +11,7 @@
     android:clickable="true"
     tools:context=".activities.RandomIntegerSettingsActivity">
 
+    <!-- TODO: Allow negatives -->
     <EditText
         android:id="@+id/randomIntegerSettingsTo"
         android:layout_width="wrap_content"
@@ -72,6 +73,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsTitle" />
 
+    <!-- TODO: Allow negatives -->
     <EditText
         android:id="@+id/randomIntegerSettingsFrom"
         android:layout_width="wrap_content"

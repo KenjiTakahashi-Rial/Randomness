@@ -24,29 +24,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/flipCoinSettingsStartLabel"
+        android:id="@+id/flipCoinSettingsNumCoinsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:focusable="false"
-        android:text="@string/flip_coin_number_label"
+        android:text="@string/flip_coin_num_coins_label"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flipCoinSettingsTitle" />
 
     <EditText
-        android:id="@+id/flipCoinSettingsFrom"
+        android:id="@+id/flipCoinSettingsNumCoins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:ems="10"
         android:inputType="number"
-        android:hint="@string/random_settings_from_hint"
-        android:autofillHints="@string/random_settings_from_hint"
+        android:hint="@string/flip_coin_num_coins_label"
+        android:autofillHints="@string/flip_coin_num_coins_label"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/flipCoinSettingsStartLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/flipCoinSettingsNumCoinsLabel" />
 
     <Button
         android:id="@+id/flipCoinSettingsSaveButton"
