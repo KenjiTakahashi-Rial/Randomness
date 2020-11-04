@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.kenjitakahashirial.randomness.utilities.baseRandomSettingsSerializerFormat
+import com.kenjitakahashirial.randomness.utilities.baseRandomSettingsSerializerModule
 import kotlinx.serialization.*
 import kotlinx.serialization.json.Json
 
@@ -23,11 +25,11 @@ abstract class BaseSharedPreferencesActivity : AppCompatActivity() {
     protected inline fun <reified T> SharedPreferences.getClass(key: String, defValue: T): T {
         val serialized = getString(key, "")
         return if (serialized.isNullOrEmpty()) defValue
-            else Json.decodeFromString(serialized)
+            else baseRandomSettingsSerializerFormat.decodeFromString(serialized)
     }
 
     protected inline fun <reified T> SharedPreferences.Editor.putClass(key: String, value: T): SharedPreferences.Editor {
-        val serialized = Json.encodeToString(value)
+        val serialized = baseRandomSettingsSerializerFormat.encodeToString(value)
         return putString(key, serialized)
     }
 }

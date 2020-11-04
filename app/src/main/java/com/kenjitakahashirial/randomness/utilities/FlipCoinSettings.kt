@@ -1,6 +1,8 @@
 package com.kenjitakahashirial.randomness.utilities
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class FlipCoinSettings (val numCoins: Int = 1)
+@SerialName("FlipCoinSettings")
+data class FlipCoinSettings (var numCoins: Int = 1) : BaseRandomSettings()

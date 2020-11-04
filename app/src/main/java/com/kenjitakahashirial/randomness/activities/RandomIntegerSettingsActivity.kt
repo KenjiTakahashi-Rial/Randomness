@@ -2,7 +2,6 @@ package com.kenjitakahashirial.randomness.activities
 
 import android.os.Bundle
 import android.widget.EditText
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SwitchCompat
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
@@ -51,7 +50,7 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
             isValidInts = false
         }
 
-        val error = 
+        val error =
             if (!isValidInts || !isValidRange(settings)) SettingsError.RANGE
             else SettingsError.NONE
 

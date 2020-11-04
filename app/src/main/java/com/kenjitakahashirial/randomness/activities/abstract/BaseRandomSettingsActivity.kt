@@ -5,6 +5,7 @@ import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.kenjitakahashirial.randomness.R
+import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
 import com.kenjitakahashirial.randomness.utilities.hideSoftKeyboard
 
 abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
@@ -16,9 +17,7 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     protected abstract val settingsId: Int
 
     protected lateinit var settingsKey: String
-    protected lateinit var errorAlertDialog: AlertDialog
-
-
+    private lateinit var errorAlertDialog: AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +50,6 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     private fun save() {
         val (settings, error) = getSettings()
 
-
         errorAlertDialog.setMessage(getString(
             when (error) {
                 SettingsError.NONE -> R.string.invalid_string
@@ -75,5 +73,5 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
         finish()
     }
 
-    protected abstract fun getSettings(): Pair<Any, SettingsError>
+    protected abstract fun getSettings(): Pair<BaseRandomSettings, SettingsError>
 }
