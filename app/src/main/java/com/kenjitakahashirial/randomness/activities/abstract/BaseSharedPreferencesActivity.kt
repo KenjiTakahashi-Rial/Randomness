@@ -1,4 +1,4 @@
-package com.kenjitakahashirial.randomness
+package com.kenjitakahashirial.randomness.activities.abstract
 
 import android.content.Context
 import android.content.SharedPreferences

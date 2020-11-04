@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.kenjitakahashirial.randomness.BaseSharedPreferencesActivity
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.utilities.hideSoftKeyboard
 
@@ -18,6 +17,8 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
 
     protected lateinit var settingsKey: String
     protected lateinit var errorAlertDialog: AlertDialog
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,15 +37,43 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
 
         errorAlertDialog = with (AlertDialog.Builder(this)) {
             setTitle(getString(R.string.error))
-            setMessage(getString(R.string.valid_range_prompt))
             setPositiveButton(getString(R.string.okay)) { _, _ -> }
             create()
         }
     }
 
-    abstract fun save()
+    protected enum class SettingsError {
+        NONE,
+        RANGE,
+        NUMBER
+    }
+
+    private fun save() {
+        val (settings, error) = getSettings()
+
+
+        errorAlertDialog.setMessage(getString(
+            when (error) {
+                SettingsError.NONE -> R.string.invalid_string
+                SettingsError.RANGE -> R.string.valid_range_prompt
+                SettingsError.NUMBER -> R.string.flip_coin_settings_range_prompt
+            }
+        ))
+
+        if (error == SettingsError.NONE) {
+            with (sharedPreferences.edit()) {
+                putClass(settingsKey, settings)
+                apply()
+                finish()
+            }
+        } else {
+            errorAlertDialog.show()
+        }
+    }
 
     private fun cancel() {
         finish()
     }
+
+    protected abstract fun getSettings(): Pair<Any, SettingsError>
 }

@@ -2,6 +2,7 @@ package com.kenjitakahashirial.randomness.activities
 
 import android.os.Bundle
 import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SwitchCompat
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
@@ -35,19 +36,7 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
         includeToSwitch.isChecked = settings.includeTo
     }
 
-    override fun save() {
-        val (settings, isValid) = getSettings()
-
-        if (!isValid) {
-            errorAlertDialog.show()
-        } else with (sharedPreferences.edit()) {
-            putClass(settingsKey, settings)
-            apply()
-            finish()
-        }
-    }
-
-    private fun getSettings(): Pair<RandomIntegerSettings, Boolean>  {
+    override fun getSettings(): Pair<RandomIntegerSettings, SettingsError>  {
         var isValidInts = true
         val settings = RandomIntegerSettings()
 
@@ -62,9 +51,11 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
             isValidInts = false
         }
 
-        val isValidRange = isValidRange(settings)
+        val error = 
+            if (!isValidInts || !isValidRange(settings)) SettingsError.RANGE
+            else SettingsError.NONE
 
-        return Pair(settings, isValidInts && isValidRange)
+        return Pair(settings, error)
     }
 
     private fun isValidRange(settings: RandomIntegerSettings): Boolean =
