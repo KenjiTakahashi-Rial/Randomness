@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Randomness">
-        <activity android:name=".activities.FlipCoinSettingsActivity"></activity>
+        <activity android:name=".activities.RollDiceSettingsActivity"></activity>
+        <activity android:name=".activities.RollDiceActivity" />
+        <activity android:name=".activities.FlipCoinSettingsActivity" />
         <activity android:name=".activities.FlipCoinActivity" />
         <activity android:name=".activities.RandomIntegerSettingsActivity" />
         <activity android:name=".activities.RandomIntegerActivity" />
