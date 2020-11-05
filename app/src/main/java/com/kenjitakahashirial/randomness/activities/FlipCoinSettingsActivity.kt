@@ -13,6 +13,7 @@ class FlipCoinSettingsActivity : BaseRandomSettingsActivity() {
     override val cancelButtonId = R.id.flipCoinSettingsCancelButton
     override val settingsId = R.string.flip_coin_settings_key
 
+    private val numCoinsRange = 1..10
     private lateinit var numCoinsText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +23,7 @@ class FlipCoinSettingsActivity : BaseRandomSettingsActivity() {
 
         numCoinsText = findViewById(R.id.flipCoinSettingsNumCoins)
         numCoinsText.setText(settings.numCoins.toString())
+        numCoinsText.hint = getString(R.string.range_format, numCoinsRange.first, numCoinsRange.last)
     }
 
     override fun getSettings(): Pair<FlipCoinSettings, SettingsError>  {
@@ -35,7 +37,7 @@ class FlipCoinSettingsActivity : BaseRandomSettingsActivity() {
         }
 
         val error =
-            if (!isValidInt || settings.numCoins !in 1..10) SettingsError.NUMBER
+            if (!isValidInt || settings.numCoins !in numCoinsRange) SettingsError.RANGE
             else SettingsError.NONE
 
         return Pair(settings, error)
