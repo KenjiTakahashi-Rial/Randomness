@@ -30,10 +30,11 @@ class MainMenuActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    // TODO: Get images for each activity
     private fun createCards(): Array<MainMenuCard> = arrayOf(
         MainMenuCard(getString(R.string.random_integer_name), R.drawable.temp_rando, RandomIntegerActivity::class.java),
         MainMenuCard(getString(R.string.flip_coin_name), R.drawable.temp_rando, FlipCoinActivity::class.java),
-        MainMenuCard("temp_name2", R.drawable.temp_rando, AppCompatActivity::class.java),
+        MainMenuCard(getString(R.string.roll_dice_name), R.drawable.temp_rando, RollDiceActivity::class.java),
         MainMenuCard("temp_name3", R.drawable.temp_rando, AppCompatActivity::class.java),
         MainMenuCard("temp_name4", R.drawable.temp_rando, AppCompatActivity::class.java),
         MainMenuCard("temp_name5", R.drawable.temp_rando, AppCompatActivity::class.java),
