@@ -28,4 +28,5 @@
     <string name="roll_dice_num_faces_label">Number of faces</string>
     <string name="roll_dice_num_dice_label">Number of dice</string>
     <string name="roll_dice_name">Roll Dice</string>
+    <string name="roll_dice_settings_key">com.kenjitakahashirial.randomness.ROLL_DICE_SETTINGS</string>
 </resources>
