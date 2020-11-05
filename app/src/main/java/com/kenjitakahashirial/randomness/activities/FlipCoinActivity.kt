@@ -15,12 +15,18 @@ class FlipCoinActivity : BaseRandomActivity() {
 
     override fun generateNext() {
         val settings = sharedPreferences.getClass(settingsKey, FlipCoinSettings())
+        val numCoins = settings.numCoins
 
-        // TODO: Use an image instead of a String
-        val result = if (Random.nextBoolean()) "H" else "T"
+        // TODO: Use an image instead of a String for heads/tails
+        val result = StringBuilder()
+        for (i in 1..numCoins) {
+            if (i == (numCoins + 1) / 2 && numCoins > 5) result.append("\n")
+            result.append(if (Random.nextBoolean()) "H " else "T ")
+        }
+        result.setLength(result.length - 1)
 
         val resultTextView = findViewById<TextView>(R.id.flipCoinResultTextView).apply {
-            text = result
+            text = result.toString()
         }
     }
 }
