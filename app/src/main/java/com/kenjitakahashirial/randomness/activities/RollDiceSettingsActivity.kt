@@ -12,8 +12,10 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
     override val layoutId = R.id.rollDiceSettingsLayout
     override val saveButtonId = R.id.rollDiceSettingsSaveButton
     override val cancelButtonId = R.id.rollDiceSettingsCancelButton
-    override val settingsId = R.id.rollDiceSettingsButton
+    override val settingsId = R.string.roll_dice_settings_key
 
+    private val numDiceRange = 1..10
+    private val numFacesRange = 1..20
     private lateinit var numDiceText: EditText
     private lateinit var numFacesText: EditText
 
@@ -27,6 +29,9 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
 
         numDiceText.setText(settings.numDice.toString())
         numFacesText.setText(settings.numFaces.toString())
+
+        numDiceText.hint = getString(R.string.range_format, numDiceRange.first, numDiceRange.last)
+        numFacesText.hint = getString(R.string.range_format, numFacesRange.first, numFacesRange.last)
     }
 
     override fun getSettings(): Pair<BaseRandomSettings, SettingsError> {
@@ -41,7 +46,7 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
         }
 
         val error = with (settings) {
-            if (!isValidInt || numDice !in 1..10 || numFaces !in 1..20) SettingsError.RANGE
+            if (!isValidInt || numDice !in numDiceRange || numFaces !in numFacesRange) SettingsError.RANGE
             else SettingsError.NONE
         }
 
