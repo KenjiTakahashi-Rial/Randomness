@@ -24,4 +24,8 @@
     <string name="flip_coin_num_coins_label">Number of coins</string>
     <string name="flip_coin_settings_range_prompt">Please enter a number between 1 and 10.</string>
     <string name="invalid_string">!@#$%^&amp;*</string>
+    <string name="roll_dice_settings_title">Roll Dice Settings</string>
+    <string name="roll_dice_num_faces_label">Number of faces</string>
+    <string name="roll_dice_num_dice_label">Number of dice</string>
+    <string name="roll_dice_name">Roll Dice</string>
 </resources>
