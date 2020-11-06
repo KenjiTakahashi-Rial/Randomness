@@ -15,17 +15,18 @@ class RollDiceActivity : BaseRandomActivity() {
 
     override fun generateNext() {
         val settings = sharedPreferences.getClass(settingsKey, RollDiceSettings())
-        val numDice = settings.numDice
-        val numFaces = settings.numFaces
 
         // TODO: Use an image instead of a String for dice values
         val result = StringBuilder()
-        for (i in 1..numDice) {
-            if (i == (numDice + 1) / 2 && numDice > 5) result.append("\n")
-            val roll = Random.nextInt(1, numFaces + 1)
-            result.append("$roll ")
+
+        with (settings) {
+            for (i in 1..numDice) {
+                if (i == (numDice + 1) / 2 && numDice > 5) result.append("\n")
+                val roll = Random.nextInt(1, numFaces + 1)
+                result.append("$roll ")
+            }
+            result.setLength(result.length - 1)
         }
-        result.setLength(result.length - 1)
 
         val resultTextView = findViewById<TextView>(R.id.rollDiceResultTextView).apply {
             text = result.toString()
