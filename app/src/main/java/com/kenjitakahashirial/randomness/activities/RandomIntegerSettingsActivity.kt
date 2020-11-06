@@ -29,10 +29,12 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
         includeFromSwitch = findViewById(R.id.randomIntegerSettingsIncludeFrom)
         includeToSwitch = findViewById(R.id.randomIntegerSettingsIncludeTo)
 
-        fromText.setText(settings.from.toString())
-        toText.setText(settings.to.toString())
-        includeFromSwitch.isChecked = settings.includeFrom
-        includeToSwitch.isChecked = settings.includeTo
+        with (settings) {
+            fromText.setText(from.toString())
+            toText.setText(to.toString())
+            includeFromSwitch.isChecked = includeFrom
+            includeToSwitch.isChecked = includeTo
+        }
     }
 
     override fun getSettings(): Pair<RandomIntegerSettings, SettingsError>  {

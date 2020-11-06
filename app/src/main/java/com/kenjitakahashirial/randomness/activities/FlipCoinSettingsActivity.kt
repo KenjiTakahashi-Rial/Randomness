@@ -23,18 +23,15 @@ class FlipCoinSettingsActivity : BaseRandomSettingsActivity() {
 
         numCoinsText = findViewById(R.id.flipCoinSettingsNumCoins)
         numCoinsText.setText(settings.numCoins.toString())
-        numCoinsText.hint = getString(R.string.range_format, numCoinsRange.first, numCoinsRange.last)
+        numCoinsText.hint = with (numCoinsRange) { getString(R.string.range_format, first, last) }
     }
 
     override fun getSettings(): Pair<FlipCoinSettings, SettingsError>  {
         var isValidInt = true
         val settings = FlipCoinSettings()
 
-        try {
-            settings.numCoins = numCoinsText.text.toString().toInt()
-        } catch (e: NumberFormatException) {
-            isValidInt = false
-        }
+        try { settings.numCoins = numCoinsText.text.toString().toInt() }
+        catch (e: NumberFormatException) { isValidInt = false }
 
         val error =
             if (!isValidInt || settings.numCoins !in numCoinsRange) SettingsError.RANGE

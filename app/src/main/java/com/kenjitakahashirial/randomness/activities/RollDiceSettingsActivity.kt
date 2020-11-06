@@ -27,11 +27,13 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
         numDiceText = findViewById(R.id.rollDiceSettingsNumDice)
         numFacesText = findViewById(R.id.rollDiceSettingsNumFaces)
 
-        numDiceText.setText(settings.numDice.toString())
-        numFacesText.setText(settings.numFaces.toString())
+        with (settings) {
+            numDiceText.setText(numDice.toString())
+            numFacesText.setText(numFaces.toString())
+        }
 
-        numDiceText.hint = getString(R.string.range_format, numDiceRange.first, numDiceRange.last)
-        numFacesText.hint = getString(R.string.range_format, numFacesRange.first, numFacesRange.last)
+        numDiceText.hint = with (numDiceRange) { getString(R.string.range_format, first, last) }
+        numFacesText.hint = with (numFacesRange) { getString(R.string.range_format, first, last) }
     }
 
     override fun getSettings(): Pair<BaseRandomSettings, SettingsError> {
