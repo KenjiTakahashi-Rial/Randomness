@@ -34,4 +34,5 @@
     <string name="random_decimal_places_label">Decimal places</string>
     <string name="random_decimal_settings_title">Random Decimal Settings</string>
     <string name="random_decimal_name">Random Decimal</string>
+    <string name="random_decimal_settings_key">com.kenjitakahashirial.randomness.RANDOM_DECIMAL_SETTINGS</string>
 </resources>
