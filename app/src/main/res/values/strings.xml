@@ -30,4 +30,7 @@
     <string name="roll_dice_name">Roll Dice</string>
     <string name="roll_dice_settings_key">com.kenjitakahashirial.randomness.ROLL_DICE_SETTINGS</string>
     <string name="range_format">%1$d - %2$d</string>
+    <string name="random_decimal_settings_show_trailing_zeros">Show trailing zeros</string>
+    <string name="random_decimal_places_label">Decimal places</string>
+    <string name="random_decimal_settings_title">Random Decimal Settings</string>
 </resources>
