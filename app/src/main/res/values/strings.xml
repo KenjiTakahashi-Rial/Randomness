@@ -33,4 +33,5 @@
     <string name="random_decimal_settings_show_trailing_zeros">Show trailing zeros</string>
     <string name="random_decimal_places_label">Decimal places</string>
     <string name="random_decimal_settings_title">Random Decimal Settings</string>
+    <string name="random_decimal_name">Random Decimal</string>
 </resources>
