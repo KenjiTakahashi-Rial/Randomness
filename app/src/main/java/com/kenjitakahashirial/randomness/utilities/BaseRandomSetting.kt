@@ -14,6 +14,7 @@ val baseRandomSettingsSerializerModule = SerializersModule {
         subclass(RandomIntegerSettings::class)
         subclass(FlipCoinSettings::class)
         subclass(RollDiceSettings::class)
+        subclass(RandomDecimalSettings::class)
     }
 }
 
