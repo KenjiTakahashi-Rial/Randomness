@@ -25,14 +25,14 @@ class RandomDecimalActivity : BaseRandomActivity() {
 
     private fun Double.toTruncatedString(decimalPlaces: Int, showTrailingZeros: Boolean): String {
         val truncated = StringBuilder(this.toString())
-        while (truncated.length > decimalPlaces + 2) truncated.deleteLast()
 
-        if (showTrailingZeros) {
-            while (truncated.length < decimalPlaces + 2) truncated.append('0')
-        }
+        fun isOverDecimalPlaces() = truncated.length > decimalPlaces + 2
+        fun hasTrailingZero() = truncated.isNotEmpty() && truncated[truncated.lastIndex] == '0'
+
+        while (isOverDecimalPlaces() || !showTrailingZeros && hasTrailingZero()) truncated.deleteLast()
 
         return truncated.toString()
     }
 
-    private fun StringBuilder.deleteLast(): StringBuilder = deleteAt(length - 1)
+    private fun StringBuilder.deleteLast(): StringBuilder = deleteAt(lastIndex)
 }
