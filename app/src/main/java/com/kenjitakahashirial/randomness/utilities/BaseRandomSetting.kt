@@ -13,6 +13,7 @@ val baseRandomSettingsSerializerModule = SerializersModule {
     polymorphic(BaseRandomSettings::class) {
         subclass(RandomIntegerSettings::class)
         subclass(FlipCoinSettings::class)
+        subclass(RollDiceSettings::class)
     }
 }
 

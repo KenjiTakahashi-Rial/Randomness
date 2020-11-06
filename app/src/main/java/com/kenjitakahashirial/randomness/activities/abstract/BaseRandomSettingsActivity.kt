@@ -43,8 +43,7 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
 
     protected enum class SettingsError {
         NONE,
-        RANGE,
-        NUMBER
+        RANGE
     }
 
     private fun save() {
@@ -54,7 +53,6 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
             when (error) {
                 SettingsError.NONE -> R.string.invalid_string
                 SettingsError.RANGE -> R.string.valid_range_prompt
-                SettingsError.NUMBER -> R.string.flip_coin_settings_range_prompt
             }
         ))
 
