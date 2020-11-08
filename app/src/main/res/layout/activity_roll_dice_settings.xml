@@ -67,7 +67,7 @@
         android:layout_marginTop="25dp"
         android:ems="10"
         android:inputType="number"
-        android:hint="@string/random_settings_from_hint"
+        android:hint="@string/random_integer_settings_from_hint"
         android:autofillHints="@string/roll_dice_num_dice_label"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
