@@ -4,21 +4,25 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 
 abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
     override val sharedPreferencesId = R.string.shared_preferences_key
 
+    protected abstract val resultTextViewId: Int
     protected abstract val generateButtonId: Int
     protected abstract val settingsButtonId: Int
     protected abstract val settingsId: Int
     protected abstract val settingsActivityClass: Class<out BaseRandomSettingsActivity>
 
+    protected lateinit var resultTextView: TextView
     protected lateinit var settingsKey: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        resultTextView = findViewById(resultTextViewId)
         val generateButton = findViewById<Button>(generateButtonId).apply {
             setOnClickListener { generateNext() }
         }
