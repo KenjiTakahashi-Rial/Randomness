@@ -1,6 +1,5 @@
 package com.kenjitakahashirial.randomness.activities
 
-import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.utilities.RollDiceSettings
@@ -8,6 +7,7 @@ import kotlin.random.Random
 
 class RollDiceActivity : BaseRandomActivity() {
     override val layout = R.layout.activity_roll_dice
+    override val resultTextViewId = R.id.rollDiceResultTextView
     override val generateButtonId = R.id.rollDiceGenerateButton
     override val settingsButtonId = R.id.rollDiceSettingsButton
     override val settingsId = R.string.roll_dice_settings_key
@@ -28,8 +28,6 @@ class RollDiceActivity : BaseRandomActivity() {
             result.setLength(result.length - 1)
         }
 
-        val resultTextView = findViewById<TextView>(R.id.rollDiceResultTextView).apply {
-            text = result.toString()
-        }
+        resultTextView.text = result.toString()
     }
 }

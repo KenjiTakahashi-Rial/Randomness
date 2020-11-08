@@ -1,6 +1,5 @@
 package com.kenjitakahashirial.randomness.activities
 
-import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.utilities.FlipCoinSettings
@@ -8,6 +7,7 @@ import kotlin.random.Random
 
 class FlipCoinActivity : BaseRandomActivity() {
     override val layout = R.layout.activity_flip_coin
+    override val resultTextViewId = R.id.flipCoinResultTextView
     override val generateButtonId = R.id.flipCoinGenerateButton
     override val settingsButtonId = R.id.flipCoinSettingsButton
     override val settingsId = R.string.flip_coin_settings_key
@@ -27,8 +27,6 @@ class FlipCoinActivity : BaseRandomActivity() {
             result.setLength(result.length - 1)
         }
 
-        val resultTextView = findViewById<TextView>(R.id.flipCoinResultTextView).apply {
-            text = result.toString()
-        }
+        resultTextView.text = result.toString()
     }
 }
