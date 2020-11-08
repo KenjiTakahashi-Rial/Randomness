@@ -39,7 +39,7 @@
     <string name="random_settings_save">Save</string>
 
     <string name="random_word_name">Random Word</string>
-    <string name="random_word_remaining">Words remaining: </string>
+    <string name="random_word_remaining">Words remaining:</string>
     <string name="random_word_settings_key">com.kenjitakahashirial.randomness.RANDOM_WORD_SETTINGS</string>
     <string name="random_word_settings_title">Random Word Settings</string>
 

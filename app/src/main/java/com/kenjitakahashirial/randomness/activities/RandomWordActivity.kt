@@ -12,12 +12,12 @@ import kotlin.random.Random
 
 class RandomWordActivity : BaseRandomActivity() {
     override val layout = R.layout.activity_random_word
+    override val resultTextViewId = R.id.randomWordResultTextView
     override val generateButtonId = R.id.randomWordGenerateButton
     override val settingsButtonId = R.id.randomWordSettingsButton
     override val settingsId = R.string.random_word_settings_key
     override val settingsActivityClass = RandomWordSettingsActivity::class.java
 
-    private lateinit var resultTextView: TextView
     private lateinit var wordsRemainingTextView: TextView
     private lateinit var resetButton: Button
     private var randomizedWordPool = emptyList<String>()
@@ -26,7 +26,6 @@ class RandomWordActivity : BaseRandomActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        resultTextView = findViewById(R.id.randomWordResultTextView)
         wordsRemainingTextView = findViewById(R.id.randomWordRemaining)
         resetButton = findViewById<Button>(R.id.randomWordResetButton).apply {
             setOnClickListener { resetRandomizedWords() }
@@ -44,18 +43,17 @@ class RandomWordActivity : BaseRandomActivity() {
     override fun generateNext() {
         val settings = sharedPreferences.getClass(settingsKey, RandomWordSettings())
 
-        with (settings) {
+        resultTextView.text = with (settings) {
             if (usesReplacement) {
-                resultTextView.text = wordPool[Random.nextInt(wordPool.size)]
+                 wordPool[Random.nextInt(wordPool.size)]
             } else {
-                if (randomizedWordPool.isEmpty()) randomizedWordPool = wordPool.shuffled()
+                if (randomizedWordPool.isEmpty() || randomizedWordIndex >= wordPool.size) resetRandomizedWords()
 
-                resultTextView.text = randomizedWordPool[randomizedWordIndex++]
-
-                if (randomizedWordIndex >= wordPool.size) resetRandomizedWords()
-                else updateWordsRemaining()
+                randomizedWordPool[randomizedWordIndex++]
             }
         }
+
+        updateWordsRemaining()
     }
 
     private fun resetRandomizedWords() {
