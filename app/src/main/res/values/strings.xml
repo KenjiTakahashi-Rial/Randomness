@@ -38,6 +38,10 @@
     <string name="random_settings_cancel">Cancel</string>
     <string name="random_settings_save">Save</string>
 
+    <string name="random_word_name">Random Word</string>
+    <string name="random_word_settings_key">com.kenjitakahashirial.randomness.RANDOM_WORD_SETTINGS</string>
+    <string name="random_word_settings_title">Random Word Settings</string>
+
     <string name="range_format">%1$d - %2$d</string>
 
     <string name="roll_dice_name">Roll Dice</string>
