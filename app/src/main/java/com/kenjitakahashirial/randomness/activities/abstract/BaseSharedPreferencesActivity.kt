@@ -5,9 +5,8 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.kenjitakahashirial.randomness.utilities.baseRandomSettingsSerializerFormat
-import com.kenjitakahashirial.randomness.utilities.baseRandomSettingsSerializerModule
-import kotlinx.serialization.*
-import kotlinx.serialization.json.Json
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.encodeToString
 
 abstract class BaseSharedPreferencesActivity : AppCompatActivity() {
     protected abstract val layout: Int
