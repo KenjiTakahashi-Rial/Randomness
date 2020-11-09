@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">Randomness</string>
 
+    <string name="comma">Comma</string>
+
     <string name="default_main_menu_card_description">$card_description</string>
     <string name="default_main_menu_card_name">$card_name</string>
 
@@ -16,6 +18,8 @@
     <string name="generate_button">Go</string>
 
     <string name="invalid_string">!@#$%^&amp;*</string>
+
+    <string name="newline">Newline</string>
 
     <string name="okay">Okay</string>
 
@@ -42,6 +46,7 @@
     <string name="random_word_remaining">Words remaining:</string>
     <string name="random_word_settings_key">com.kenjitakahashirial.randomness.RANDOM_WORD_SETTINGS</string>
     <string name="random_word_settings_title">Random Word Settings</string>
+    <string name="random_word_pool_hint">Words to randomize</string>
 
     <string name="range_format">%1$d - %2$d</string>
 
@@ -54,6 +59,8 @@
     <string name="roll_dice_settings_title">Roll Dice Settings</string>
 
     <string name="shared_preferences_key">com.kenjitakahashirial.randomness.SHARED_PREFERENCES</string>
+
+    <string name="space">Space</string>
 
     <string name="valid_range_prompt">Please enter a valid range.</string>
 </resources>
