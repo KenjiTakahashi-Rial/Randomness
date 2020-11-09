@@ -4,7 +4,7 @@ Let's face it, humans are no good at being random. We create patterns, follow ro
 
 Enter Randomness. A simple app to just do random things for you. 
 * Need to make a tough decision? Flip a coin!
-* Excercising? Generate a random number of sit-ups to do!
+* Exercising? Generate a random number of sit-ups to do!
 * Bored and have hours to kill? Try to guess the next random number!
 
 All these exclusive features could be yours for the low, low price of [however many days it takes me to finish this]!

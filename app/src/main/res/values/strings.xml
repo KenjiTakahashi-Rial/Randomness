@@ -10,7 +10,6 @@
     <string name="flip_coin_name">Flip Coin</string>
     <string name="flip_coin_num_coins_label">Number of coins</string>
     <string name="flip_coin_settings_key">com.kenjitakahashirial.randomness.FLIP_COIN_SETTINGS</string>
-    <string name="flip_coin_settings_range_prompt">Please enter a number between 1 and 10.</string>
     <string name="flip_coin_settings_title">Flip Coin Settings</string>
 
     <string name="generate_button">Go</string>
