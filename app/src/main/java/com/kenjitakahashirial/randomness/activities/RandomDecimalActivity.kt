@@ -3,6 +3,7 @@ package com.kenjitakahashirial.randomness.activities
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.utilities.RandomDecimalSettings
+import com.kenjitakahashirial.randomness.utilities.deleteLast
 import kotlin.random.Random
 
 class RandomDecimalActivity : BaseRandomActivity() {
@@ -31,6 +32,4 @@ class RandomDecimalActivity : BaseRandomActivity() {
 
         return truncated.toString()
     }
-
-    private fun StringBuilder.deleteLast(): StringBuilder = deleteAt(lastIndex)
 }
