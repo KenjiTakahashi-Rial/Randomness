@@ -39,6 +39,7 @@
     <string name="random_integer_to_label">Random Integer To</string>
 
     <string name="random_settings_cancel">Cancel</string>
+    <string name="random_settings_replacement">Uses replacement</string>
     <string name="random_settings_save">Save</string>
 
     <string name="random_word_name">Random Word</string>

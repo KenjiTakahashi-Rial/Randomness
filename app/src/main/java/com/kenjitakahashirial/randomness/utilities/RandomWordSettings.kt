@@ -7,5 +7,6 @@ import kotlinx.serialization.Serializable
 @SerialName("RandomWordSettings")
 data class RandomWordSettings(
     var wordPool: List<String> = mutableListOf("random", "ness", "rocks"),
-    var usesReplacement: Boolean = false
+    var usesReplacement: Boolean = false,
+    var wordPoolSeparator: Char = '\n'
 ) : BaseRandomSettings()

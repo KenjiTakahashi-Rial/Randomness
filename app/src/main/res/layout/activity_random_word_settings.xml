@@ -33,7 +33,7 @@
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsWordPoolLabel" />
 
     <Button
         android:id="@+id/randomWordSettingsSaveButton"
@@ -100,7 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsTitle" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/randomWordSettingsWordPoolLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -109,4 +109,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsSeparatorRadioGroup" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/randomWordSettingsReplacementSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/random_settings_replacement"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsWordPool" />
 </androidx.constraintlayout.widget.ConstraintLayout>
