@@ -44,8 +44,9 @@
     <string name="random_word_name">Random Word</string>
     <string name="random_word_remaining">Words remaining:</string>
     <string name="random_word_settings_key">com.kenjitakahashirial.randomness.RANDOM_WORD_SETTINGS</string>
+    <string name="random_word_settings_separator_label">Separator</string>
     <string name="random_word_settings_title">Random Word Settings</string>
-    <string name="random_word_pool_hint">Words to randomize</string>
+    <string name="random_word_pool_label">Words to randomize</string>
 
     <string name="range_format">%1$d - %2$d</string>
 

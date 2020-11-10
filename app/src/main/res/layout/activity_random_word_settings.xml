@@ -27,14 +27,13 @@
         android:id="@+id/randomWordSettingsWordPool"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:hint="@string/random_word_pool_hint"
+        android:layout_marginTop="15dp"
+        android:hint="@string/random_word_pool_label"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsSeparatorRadioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/randomWordSettingsSaveButton"
@@ -63,29 +62,51 @@
         android:id="@+id/randomWordSettingsSeparatorRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:orientation="horizontal"
         android:checkedButton="@id/randomWordSettingsNewlineRadioButton"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsTitle">
+        app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsSeparatorLabel">
 
         <RadioButton
             android:id="@+id/randomWordSettingsNewlineRadioButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/newline"/>
+            android:text="@string/newline" />
 
         <RadioButton
             android:id="@+id/randomWordSettingsCommaRadioButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/comma"/>
+            android:text="@string/comma" />
 
         <RadioButton
             android:id="@+id/randomWordSettingsSpaceRadioButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/space"/>
+            android:text="@string/space" />
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/randomWordSettingsSeparatorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/random_word_settings_separator_label"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsTitle" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/random_word_pool_label"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsSeparatorRadioGroup" />
 </androidx.constraintlayout.widget.ConstraintLayout>
