@@ -18,6 +18,7 @@ class RandomWordActivity : BaseRandomActivity() {
     override val settingsId = R.string.random_word_settings_key
     override val settingsActivityClass = RandomWordSettingsActivity::class.java
 
+    private lateinit var wordsRemainingLabel: TextView
     private lateinit var wordsRemainingTextView: TextView
     private lateinit var resetButton: Button
     private var randomizedWordPool = emptyList<String>()
@@ -26,6 +27,7 @@ class RandomWordActivity : BaseRandomActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        wordsRemainingLabel = findViewById(R.id.randomWordRemainingLabel)
         wordsRemainingTextView = findViewById(R.id.randomWordRemaining)
         resetButton = findViewById<Button>(R.id.randomWordResetButton).apply {
             setOnClickListener { resetRandomizedWords() }
@@ -71,6 +73,7 @@ class RandomWordActivity : BaseRandomActivity() {
         val settings = sharedPreferences.getClass(settingsKey, RandomWordSettings())
         val visibility = if (!settings.usesReplacement) View.VISIBLE else View.GONE
 
+        wordsRemainingLabel.visibility = visibility
         wordsRemainingTextView.visibility = visibility
         resetButton.visibility = visibility
     }
