@@ -10,6 +10,8 @@ import com.kenjitakahashirial.randomness.R
 abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
     override val sharedPreferencesId = R.string.shared_preferences_key
 
+    protected val settingsActivityRequestCode = 0
+
     protected abstract val resultTextViewId: Int
     protected abstract val generateButtonId: Int
     protected abstract val settingsButtonId: Int
@@ -37,6 +39,6 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
 
     private fun openSettings() {
         val intent = Intent(this, settingsActivityClass)
-        startActivity(intent)
+        startActivityForResult(intent, settingsActivityRequestCode)
     }
 }

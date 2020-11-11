@@ -36,7 +36,6 @@ class RandomWordActivity : BaseRandomActivity() {
         setReplacementUiVisibility()
     }
 
-    // TODO: May need to use startActivityForResult(intent, requestCode) when starting settings activity for this to work
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         setReplacementUiVisibility()
