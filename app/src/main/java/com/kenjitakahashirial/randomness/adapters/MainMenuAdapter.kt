@@ -16,7 +16,9 @@ class MainMenuAdapter(private val mainMenuCards: Array<MainMenuCard>, val onClic
         val imageView: ImageView = cardView.findViewById(R.id.main_menu_card_image)
         val textView: TextView = cardView.findViewById(R.id.main_menu_card_text)
 
-        init { cardView.setOnClickListener { onClick(adapterPosition) } }
+        init {
+            cardView.setOnClickListener { onClick(adapterPosition) }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainMenuViewHolder {

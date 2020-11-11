@@ -19,7 +19,7 @@ class FlipCoinActivity : BaseRandomActivity() {
         // TODO: Use an image instead of a String for heads/tails
         val result = StringBuilder()
 
-        with (settings) {
+        with(settings) {
             for (i in 1..numCoins) {
                 if (i == (numCoins + 1) / 2 && numCoins > 5) result.append("\n")
                 result.append(if (Random.nextBoolean()) "H " else "T ")

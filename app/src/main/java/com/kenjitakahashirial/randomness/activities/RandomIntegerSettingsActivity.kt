@@ -29,7 +29,7 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
         includeFromSwitch = findViewById(R.id.randomIntegerSettingsIncludeFrom)
         includeToSwitch = findViewById(R.id.randomIntegerSettingsIncludeTo)
 
-        with (settings) {
+        with(settings) {
             fromText.setText(from.toString())
             toText.setText(to.toString())
             includeFromSwitch.isChecked = includeFrom
@@ -37,7 +37,7 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
         }
     }
 
-    override fun getSettings(): Pair<RandomIntegerSettings, SettingsError>  {
+    override fun getSettings(): Pair<RandomIntegerSettings, SettingsError> {
         var isValidInts = true
         val settings = RandomIntegerSettings()
 
@@ -62,6 +62,6 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
     private fun isValidRange(settings: RandomIntegerSettings): Boolean =
         with(settings) {
             from < to && (to - from > 1 || includeFrom || includeTo) ||
-            (from == to && includeFrom && includeTo)
+                    (from == to && includeFrom && includeTo)
         }
 }

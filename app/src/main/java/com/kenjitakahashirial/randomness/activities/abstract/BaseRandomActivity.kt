@@ -10,7 +10,7 @@ import com.kenjitakahashirial.randomness.R
 abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
     override val sharedPreferencesId = R.string.shared_preferences_key
 
-    protected val settingsActivityRequestCode = 0
+    private val settingsActivityRequestCode = 0
 
     protected abstract val resultTextViewId: Int
     protected abstract val generateButtonId: Int

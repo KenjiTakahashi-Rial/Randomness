@@ -19,7 +19,7 @@ class RollDiceActivity : BaseRandomActivity() {
         // TODO: Use an image instead of a String for dice values
         val result = StringBuilder()
 
-        with (settings) {
+        with(settings) {
             for (i in 1..numDice) {
                 if (i == (numDice + 1) / 2 && numDice > 5) result.append("\n")
                 val roll = Random.nextInt(1, numFaces + 1)

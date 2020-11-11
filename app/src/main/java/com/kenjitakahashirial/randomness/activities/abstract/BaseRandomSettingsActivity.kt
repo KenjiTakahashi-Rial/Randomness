@@ -23,7 +23,7 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
         super.onCreate(savedInstanceState)
 
         val layout = findViewById<ConstraintLayout>(layoutId).apply {
-            setOnFocusChangeListener { _, hasFocus ->  if (hasFocus) hideSoftKeyboard() }
+            setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
         }
         val saveButton = findViewById<Button>(saveButtonId).apply {
             setOnClickListener { save() }
@@ -34,7 +34,7 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
 
         settingsKey = getString(settingsId)
 
-        errorAlertDialog = with (AlertDialog.Builder(this)) {
+        errorAlertDialog = with(AlertDialog.Builder(this)) {
             setTitle(getString(R.string.error))
             setPositiveButton(getString(R.string.okay)) { _, _ -> }
             create()
@@ -49,15 +49,17 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     private fun save() {
         val (settings, error) = getSettings()
 
-        errorAlertDialog.setMessage(getString(
-            when (error) {
-                SettingsError.NONE -> R.string.invalid_string
-                SettingsError.RANGE -> R.string.valid_range_prompt
-            }
-        ))
+        errorAlertDialog.setMessage(
+            getString(
+                when (error) {
+                    SettingsError.NONE -> R.string.invalid_string
+                    SettingsError.RANGE -> R.string.valid_range_prompt
+                }
+            )
+        )
 
         if (error == SettingsError.NONE) {
-            with (sharedPreferences.edit()) {
+            with(sharedPreferences.edit()) {
                 putClass(settingsKey, settings)
                 apply()
                 finish()

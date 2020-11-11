@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @SerialName("RollDiceSettings")
-data class RollDiceSettings (
+data class RollDiceSettings(
     var numDice: Int = 1,
     var numFaces: Int = 6
 ) : BaseRandomSettings()

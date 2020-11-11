@@ -5,4 +5,4 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @SerialName("FlipCoinSettings")
-data class FlipCoinSettings (var numCoins: Int = 1) : BaseRandomSettings()
+data class FlipCoinSettings(var numCoins: Int = 1) : BaseRandomSettings()

@@ -24,7 +24,7 @@ abstract class BaseSharedPreferencesActivity : AppCompatActivity() {
     protected inline fun <reified T> SharedPreferences.getClass(key: String, defValue: T): T {
         val serialized = getString(key, "")
         return if (serialized.isNullOrEmpty()) defValue
-            else baseRandomSettingsSerializerFormat.decodeFromString(serialized)
+        else baseRandomSettingsSerializerFormat.decodeFromString(serialized)
     }
 
     protected inline fun <reified T> SharedPreferences.Editor.putClass(key: String, value: T): SharedPreferences.Editor {

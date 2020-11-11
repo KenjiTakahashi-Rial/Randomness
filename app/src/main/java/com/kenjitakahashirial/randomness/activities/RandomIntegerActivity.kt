@@ -16,8 +16,8 @@ class RandomIntegerActivity : BaseRandomActivity() {
     override fun generateNext() {
         val settings = sharedPreferences.getClass(settingsKey, RandomIntegerSettings())
 
-        val start = with (settings) { if (includeFrom) from else from + 1 }
-        val end = with (settings) { if (includeTo) to + 1 else to }
+        val start = with(settings) { if (includeFrom) from else from + 1 }
+        val end = with(settings) { if (includeTo) to + 1 else to }
 
         resultTextView.text = (start..end).random().toString()
     }

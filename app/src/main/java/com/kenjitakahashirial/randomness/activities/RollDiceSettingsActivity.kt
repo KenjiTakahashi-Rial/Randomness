@@ -27,13 +27,13 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
         numDiceText = findViewById(R.id.rollDiceSettingsNumDice)
         numFacesText = findViewById(R.id.rollDiceSettingsNumFaces)
 
-        with (settings) {
+        with(settings) {
             numDiceText.setText(numDice.toString())
             numFacesText.setText(numFaces.toString())
         }
 
-        numDiceText.hint = with (numDiceRange) { getString(R.string.range_format, first, last) }
-        numFacesText.hint = with (numFacesRange) { getString(R.string.range_format, first, last) }
+        numDiceText.hint = with(numDiceRange) { getString(R.string.range_format, first, last) }
+        numFacesText.hint = with(numFacesRange) { getString(R.string.range_format, first, last) }
     }
 
     override fun getSettings(): Pair<BaseRandomSettings, SettingsError> {
@@ -47,7 +47,7 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
             isValidInt = false
         }
 
-        val error = with (settings) {
+        val error = with(settings) {
             if (!isValidInt || numDice !in numDiceRange || numFaces !in numFacesRange) SettingsError.RANGE
             else SettingsError.NONE
         }

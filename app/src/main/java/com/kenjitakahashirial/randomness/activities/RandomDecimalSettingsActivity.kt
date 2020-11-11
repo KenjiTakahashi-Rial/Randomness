@@ -27,12 +27,12 @@ class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
         decimalPlacesText = findViewById(R.id.randomDecimalSettingsPlaces)
         showTrailingZerosSwitch = findViewById(R.id.randomDecimalSettingsShowTrailingZeros)
 
-        with (settings) {
+        with(settings) {
             decimalPlacesText.setText(decimalPlaces.toString())
             showTrailingZerosSwitch.isChecked = showTrailingZeros
         }
 
-        decimalPlacesText.hint = with (decimalPlacesRange) { getString(R.string.range_format, first, last) }
+        decimalPlacesText.hint = with(decimalPlacesRange) { getString(R.string.range_format, first, last) }
     }
 
     override fun getSettings(): Pair<BaseRandomSettings, SettingsError> {
@@ -48,7 +48,7 @@ class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
             isValidInt = false
         }
 
-        val error = with (settings) {
+        val error = with(settings) {
             if (!isValidInt || decimalPlaces !in decimalPlacesRange) SettingsError.RANGE
             else SettingsError.NONE
         }

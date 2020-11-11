@@ -44,9 +44,9 @@ class RandomWordActivity : BaseRandomActivity() {
     override fun generateNext() {
         val settings = sharedPreferences.getClass(settingsKey, RandomWordSettings())
 
-        resultTextView.text = with (settings) {
+        resultTextView.text = with(settings) {
             if (usesReplacement) {
-                 wordPool[Random.nextInt(wordPool.size)]
+                wordPool[Random.nextInt(wordPool.size)]
             } else {
                 if (randomizedWordPool.isEmpty() || randomizedWordIndex >= wordPool.size) resetRandomizedWords()
 

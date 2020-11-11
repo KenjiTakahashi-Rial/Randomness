@@ -17,7 +17,7 @@ class RandomDecimalActivity : BaseRandomActivity() {
     override fun generateNext() {
         val settings = sharedPreferences.getClass(settingsKey, RandomDecimalSettings())
 
-        with (settings) {
+        with(settings) {
             resultTextView.text = Random.nextDouble().toTruncatedString(decimalPlaces, showTrailingZeros)
         }
     }
