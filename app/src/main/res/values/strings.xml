@@ -22,9 +22,11 @@
 
     <string name="okay">Okay</string>
 
+    <string name="random_color_from_label">Random Color From</string>
     <string name="random_color_name">Random Color</string>
     <string name="random_color_settings_key">com.kenjitakahashirial.randomness.RANDOM_COLOR_SETTINGS</string>
     <string name="random_color_settings_title">Random Color Settings</string>
+    <string name="random_color_to_label">Random Color To</string>
 
     <string name="random_decimal_name">Random Decimal</string>
     <string name="random_decimal_places_label">Decimal places</string>
