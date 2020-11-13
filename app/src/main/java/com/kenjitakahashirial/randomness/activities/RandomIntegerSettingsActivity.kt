@@ -5,6 +5,7 @@ import android.widget.EditText
 import androidx.appcompat.widget.SwitchCompat
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
+import com.kenjitakahashirial.randomness.utilities.isValid
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 
 class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
@@ -37,6 +38,7 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
         }
     }
 
+    // TODO: Clean up isValidInts to be isValid and include (settings.from..settings.to).isValid()
     override fun getSettings(): Pair<RandomIntegerSettings, SettingsError> {
         var isValidInts = true
         val settings = RandomIntegerSettings()
@@ -53,15 +55,9 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
         }
 
         val error =
-            if (!isValidInts || !isValidRange(settings)) SettingsError.RANGE
+            if (!isValidInts || with(settings) { (from..to).isValid(includeFrom, includeTo) }) SettingsError.RANGE
             else SettingsError.NONE
 
         return Pair(settings, error)
     }
-
-    private fun isValidRange(settings: RandomIntegerSettings): Boolean =
-        with(settings) {
-            from < to && (to - from > 1 || includeFrom || includeTo) ||
-                    (from == to && includeFrom && includeTo)
-        }
 }

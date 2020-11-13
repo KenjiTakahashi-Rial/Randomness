@@ -32,8 +32,8 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
             numFacesText.setText(numFaces.toString())
         }
 
-        numDiceText.hint = with(numDiceRange) { getString(R.string.range_format, first, last) }
-        numFacesText.hint = with(numFacesRange) { getString(R.string.range_format, first, last) }
+        numDiceText.hint = with(numDiceRange) { getString(R.string.format_range_int, first, last) }
+        numFacesText.hint = with(numFacesRange) { getString(R.string.format_range_int, first, last) }
     }
 
     override fun getSettings(): Pair<BaseRandomSettings, SettingsError> {

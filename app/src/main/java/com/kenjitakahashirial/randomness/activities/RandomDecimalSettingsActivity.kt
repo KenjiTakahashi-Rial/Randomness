@@ -32,7 +32,7 @@ class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
             showTrailingZerosSwitch.isChecked = showTrailingZeros
         }
 
-        decimalPlacesText.hint = with(decimalPlacesRange) { getString(R.string.range_format, first, last) }
+        decimalPlacesText.hint = with(decimalPlacesRange) { getString(R.string.format_range_int, first, last) }
     }
 
     override fun getSettings(): Pair<BaseRandomSettings, SettingsError> {

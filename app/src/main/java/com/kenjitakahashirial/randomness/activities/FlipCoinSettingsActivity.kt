@@ -23,7 +23,7 @@ class FlipCoinSettingsActivity : BaseRandomSettingsActivity() {
 
         numCoinsText = findViewById(R.id.flipCoinSettingsNumCoins)
         numCoinsText.setText(settings.numCoins.toString())
-        numCoinsText.hint = with(numCoinsRange) { getString(R.string.range_format, first, last) }
+        numCoinsText.hint = with(numCoinsRange) { getString(R.string.format_range_int, first, last) }
     }
 
     override fun getSettings(): Pair<FlipCoinSettings, SettingsError> {
