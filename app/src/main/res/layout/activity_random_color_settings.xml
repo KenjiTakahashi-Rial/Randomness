@@ -10,7 +10,7 @@
     android:focusableInTouchMode="true"
     android:clickable="true"
     tools:context=".activities.RandomColorSettingsActivity">
-    
+
     <EditText
         android:id="@+id/randomColorSettingsTo"
         android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
         android:ems="10"
         android:hint="@string/random_color_to_label"
         android:importantForAutofill="no"
-        android:inputType="number"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsToLabel" />
@@ -71,16 +71,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsTitle" />
-    
+
     <EditText
         android:id="@+id/randomColorSettingsFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:ems="10"
-        android:inputType="number"
         android:hint="@string/random_color_from_label"
         android:importantForAutofill="no"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsStartLabel" />
@@ -119,5 +119,23 @@
         android:text="@string/random_settings_cancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/randomColorSettingsSaveButton" />
+
+    <TextView
+        android:id="@+id/randomColorFromHashLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hash"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/randomColorSettingsFrom"
+        app:layout_constraintEnd_toStartOf="@+id/randomColorSettingsFrom" />
+
+    <TextView
+        android:id="@+id/randomColorToHashLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hash"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/randomColorSettingsTo"
+        app:layout_constraintEnd_toStartOf="@+id/randomColorSettingsTo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
