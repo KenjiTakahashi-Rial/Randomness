@@ -20,7 +20,7 @@
             android:background="@color/hawaii_light_gray"
             android:contentDescription="@string/default_main_menu_card_description"
             android:padding="6dp"
-            android:src="@drawable/temp_rando" />
+            android:src="@mipmap/temp_rando" />
 
         <TextView
             android:id="@+id/main_menu_card_text"

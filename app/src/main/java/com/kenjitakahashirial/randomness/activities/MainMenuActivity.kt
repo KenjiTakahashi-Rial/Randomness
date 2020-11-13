@@ -32,11 +32,11 @@ class MainMenuActivity : AppCompatActivity() {
 
     // TODO: Get images for each activity
     private fun createCards(): Array<MainMenuCard> = arrayOf(
-        MainMenuCard(getString(R.string.random_integer_name), R.drawable.temp_rando, RandomIntegerActivity::class.java),
-        MainMenuCard(getString(R.string.flip_coin_name), R.drawable.temp_rando, FlipCoinActivity::class.java),
-        MainMenuCard(getString(R.string.roll_dice_name), R.drawable.temp_rando, RollDiceActivity::class.java),
-        MainMenuCard(getString(R.string.random_decimal_name), R.drawable.temp_rando, RandomDecimalActivity::class.java),
-        MainMenuCard(getString(R.string.random_word_name), R.drawable.temp_rando, RandomWordActivity::class.java),
-        MainMenuCard(getString(R.string.random_color_name), R.drawable.temp_rando, RandomColorActivity::class.java)
+        MainMenuCard(getString(R.string.random_integer_name), R.mipmap.temp_rando, RandomIntegerActivity::class.java),
+        MainMenuCard(getString(R.string.flip_coin_name), R.mipmap.temp_rando, FlipCoinActivity::class.java),
+        MainMenuCard(getString(R.string.roll_dice_name), R.mipmap.temp_rando, RollDiceActivity::class.java),
+        MainMenuCard(getString(R.string.random_decimal_name), R.mipmap.temp_rando, RandomDecimalActivity::class.java),
+        MainMenuCard(getString(R.string.random_word_name), R.mipmap.temp_rando, RandomWordActivity::class.java),
+        MainMenuCard(getString(R.string.random_color_name), R.mipmap.temp_rando, RandomColorActivity::class.java)
     )
 }
