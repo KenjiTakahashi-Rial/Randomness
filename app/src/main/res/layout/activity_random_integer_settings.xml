@@ -19,7 +19,7 @@
         android:layout_marginTop="25dp"
         android:ems="10"
         android:hint="@string/random_integer_settings_to_hint"
-        android:autofillHints=""
+        android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +82,7 @@
         android:ems="10"
         android:inputType="number"
         android:hint="@string/random_integer_settings_from_hint"
-        android:autofillHints="@string/random_integer_settings_from_hint"
+        android:importantForAutofill="no"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsStartLabel" />
