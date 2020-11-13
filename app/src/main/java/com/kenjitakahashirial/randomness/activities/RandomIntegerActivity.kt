@@ -1,5 +1,6 @@
 package com.kenjitakahashirial.randomness.activities
 
+import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
@@ -19,7 +20,7 @@ class RandomIntegerActivity : BaseRandomActivity() {
         val start = with(settings) { if (includeFrom) from else from + 1 }
         val end = with(settings) { if (includeTo) to + 1 else to }
 
-        resultView.text = (start..end).random().toString()
+        (resultView as TextView).text = (start..end).random().toString()
     }
 
     private fun IntRange.random() = Random.nextInt(start, endInclusive)

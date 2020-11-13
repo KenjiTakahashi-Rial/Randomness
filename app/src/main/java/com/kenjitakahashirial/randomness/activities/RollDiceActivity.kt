@@ -1,5 +1,6 @@
 package com.kenjitakahashirial.randomness.activities
 
+import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.utilities.RollDiceSettings
@@ -28,6 +29,6 @@ class RollDiceActivity : BaseRandomActivity() {
             result.setLength(result.length - 1)
         }
 
-        resultView.text = result.toString()
+        (resultView as TextView).text = result.toString()
     }
 }

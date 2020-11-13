@@ -44,7 +44,7 @@ class RandomWordActivity : BaseRandomActivity() {
     override fun generateNext() {
         val settings = sharedPreferences.getClass(settingsKey, RandomWordSettings())
 
-        resultView.text = with(settings) {
+        (resultView as TextView).text = with(settings) {
             if (usesReplacement) {
                 wordPool[Random.nextInt(wordPool.size)]
             } else {
@@ -63,7 +63,7 @@ class RandomWordActivity : BaseRandomActivity() {
         randomizedWordIndex = 0
         randomizedWordPool = settings.wordPool.shuffled()
 
-        resultView.text = ""
+        (resultView as TextView).text = ""
 
         updateWordsRemaining()
     }

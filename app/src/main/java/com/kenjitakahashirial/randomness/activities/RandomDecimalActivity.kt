@@ -1,5 +1,6 @@
 package com.kenjitakahashirial.randomness.activities
 
+import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.utilities.RandomDecimalSettings
@@ -18,7 +19,7 @@ class RandomDecimalActivity : BaseRandomActivity() {
         val settings = sharedPreferences.getClass(settingsKey, RandomDecimalSettings())
 
         with(settings) {
-            resultView.text = Random.nextDouble().toTruncatedString(decimalPlaces, showTrailingZeros)
+            (resultView as TextView).text = Random.nextDouble().toTruncatedString(decimalPlaces, showTrailingZeros)
         }
     }
 
