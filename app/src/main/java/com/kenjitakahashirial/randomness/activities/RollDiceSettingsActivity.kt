@@ -47,7 +47,7 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
             )
 
             error = with(settings) {
-                if (numDice !in numDiceRange || numFaces !in numFacesRange) SettingsError.NONE
+                if (numDice in numDiceRange && numFaces in numFacesRange) SettingsError.NONE
                 else SettingsError.RANGE
             }
         } catch (e: NumberFormatException) {

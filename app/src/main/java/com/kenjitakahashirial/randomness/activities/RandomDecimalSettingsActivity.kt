@@ -1,6 +1,7 @@
 package com.kenjitakahashirial.randomness.activities
 
 import android.os.Bundle
+import android.provider.Settings
 import android.widget.EditText
 import androidx.appcompat.widget.SwitchCompat
 import com.kenjitakahashirial.randomness.R
@@ -35,22 +36,23 @@ class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
         decimalPlacesText.hint = with(decimalPlacesRange) { getString(R.string.format_range_int, first, last) }
     }
 
-    override fun getSettings(): Pair<BaseRandomSettings, SettingsError> {
-        var isValidInt = true
-        val settings = RandomDecimalSettings()
+    override fun getSettings(): Pair<RandomDecimalSettings, SettingsError> {
+        var settings: RandomDecimalSettings
+        var error: SettingsError
 
         try {
-            settings.apply {
-                decimalPlaces = decimalPlacesText.text.toString().toInt()
+            settings = RandomDecimalSettings(
+                decimalPlaces = decimalPlacesText.text.toString().toInt(),
                 showTrailingZeros = showTrailingZerosSwitch.isChecked
+            )
+
+            error = with(settings) {
+                if (decimalPlaces in decimalPlacesRange) SettingsError.NONE
+                else SettingsError.RANGE
             }
         } catch (e: NumberFormatException) {
-            isValidInt = false
-        }
-
-        val error = with(settings) {
-            if (!isValidInt || decimalPlaces !in decimalPlacesRange) SettingsError.RANGE
-            else SettingsError.NONE
+            settings = RandomDecimalSettings()
+            error = SettingsError.RANGE
         }
 
         return Pair(settings, error)
