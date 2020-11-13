@@ -59,7 +59,7 @@ class RandomWordSettingsActivity : BaseRandomSettingsActivity() {
     private fun setSettings() {
         val settings = sharedPreferences.getClass(settingsKey, RandomWordSettings())
 
-        with (settings) {
+        with(settings) {
             separator = wordPoolSeparator
 
             val wordPoolString = StringBuilder()
