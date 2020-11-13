@@ -8,7 +8,7 @@ import kotlin.random.Random
 
 class FlipCoinActivity : BaseRandomActivity() {
     override val layout = R.layout.activity_flip_coin
-    override val resultTextViewId = R.id.flipCoinResultTextView
+    override val resultViewId = R.id.flipCoinResultTextView
     override val generateButtonId = R.id.flipCoinGenerateButton
     override val settingsButtonId = R.id.flipCoinSettingsButton
     override val settingsId = R.string.flip_coin_settings_key

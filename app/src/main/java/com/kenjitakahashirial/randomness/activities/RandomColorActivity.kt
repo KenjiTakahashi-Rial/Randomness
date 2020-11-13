@@ -6,7 +6,7 @@ import com.kenjitakahashirial.randomness.utilities.RandomColorSettings
 
 class RandomColorActivity : BaseRandomActivity() {
     override val layout = R.layout.activity_random_color
-    override val resultTextViewId = R.id.randomColorResultView
+    override val resultViewId = R.id.randomColorResultView
     override val generateButtonId = R.id.randomColorGenerateButton
     override val settingsButtonId = R.id.randomColorSettingsButton
     override val settingsId = R.string.random_color_settings_key

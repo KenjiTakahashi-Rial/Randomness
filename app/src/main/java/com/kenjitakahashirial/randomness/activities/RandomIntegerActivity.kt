@@ -7,7 +7,7 @@ import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
 
 class RandomIntegerActivity : BaseRandomActivity() {
     override val layout = R.layout.activity_random_integer
-    override val resultTextViewId = R.id.randomIntegerResultTextView
+    override val resultViewId = R.id.randomIntegerResultTextView
     override val generateButtonId = R.id.randomIntegerGenerateButton
     override val settingsButtonId = R.id.randomIntegerSettingsButton
     override val settingsId = R.string.random_integer_settings_key

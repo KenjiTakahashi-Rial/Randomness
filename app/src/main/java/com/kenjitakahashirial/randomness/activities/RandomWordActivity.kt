@@ -12,7 +12,7 @@ import kotlin.random.Random
 
 class RandomWordActivity : BaseRandomActivity() {
     override val layout = R.layout.activity_random_word
-    override val resultTextViewId = R.id.randomWordResultTextView
+    override val resultViewId = R.id.randomWordResultTextView
     override val generateButtonId = R.id.randomWordGenerateButton
     override val settingsButtonId = R.id.randomWordSettingsButton
     override val settingsId = R.string.random_word_settings_key

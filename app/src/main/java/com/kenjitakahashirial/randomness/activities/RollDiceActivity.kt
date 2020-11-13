@@ -8,7 +8,7 @@ import kotlin.random.Random
 
 class RollDiceActivity : BaseRandomActivity() {
     override val layout = R.layout.activity_roll_dice
-    override val resultTextViewId = R.id.rollDiceResultTextView
+    override val resultViewId = R.id.rollDiceResultTextView
     override val generateButtonId = R.id.rollDiceGenerateButton
     override val settingsButtonId = R.id.rollDiceSettingsButton
     override val settingsId = R.string.roll_dice_settings_key

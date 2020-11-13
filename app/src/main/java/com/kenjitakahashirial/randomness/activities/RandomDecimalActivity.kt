@@ -9,7 +9,7 @@ import kotlin.random.Random
 
 class RandomDecimalActivity : BaseRandomActivity() {
     override val layout = R.layout.activity_random_decimal
-    override val resultTextViewId = R.id.randomDecimalResultTextView
+    override val resultViewId = R.id.randomDecimalResultTextView
     override val generateButtonId = R.id.randomDecimalGenerateButton
     override val settingsButtonId = R.id.randomDecimalSettingsButton
     override val settingsId = R.string.random_decimal_settings_key
