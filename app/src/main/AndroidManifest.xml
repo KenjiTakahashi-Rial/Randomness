@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Randomness">
+        <activity android:name=".activities.MagicEightBallSettingsActivity"></activity>
+        <activity android:name=".activities.MagicEightBallActivity" />
         <activity android:name=".activities.RandomColorSettingsActivity" />
         <activity android:name=".activities.RandomColorActivity" />
         <activity android:name=".activities.RandomWordSettingsActivity" />
