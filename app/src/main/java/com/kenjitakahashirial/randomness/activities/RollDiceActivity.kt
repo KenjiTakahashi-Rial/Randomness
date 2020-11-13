@@ -28,6 +28,6 @@ class RollDiceActivity : BaseRandomActivity() {
             result.setLength(result.length - 1)
         }
 
-        resultTextView.text = result.toString()
+        resultView.text = result.toString()
     }
 }

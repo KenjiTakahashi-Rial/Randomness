@@ -18,7 +18,7 @@ class RandomDecimalActivity : BaseRandomActivity() {
         val settings = sharedPreferences.getClass(settingsKey, RandomDecimalSettings())
 
         with(settings) {
-            resultTextView.text = Random.nextDouble().toTruncatedString(decimalPlaces, showTrailingZeros)
+            resultView.text = Random.nextDouble().toTruncatedString(decimalPlaces, showTrailingZeros)
         }
     }
 

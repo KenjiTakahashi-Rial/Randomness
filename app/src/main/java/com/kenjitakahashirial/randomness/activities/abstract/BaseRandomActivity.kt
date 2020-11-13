@@ -2,9 +2,9 @@ package com.kenjitakahashirial.randomness.activities.abstract
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 
 abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
@@ -18,13 +18,13 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
     protected abstract val settingsId: Int
     protected abstract val settingsActivityClass: Class<out BaseRandomSettingsActivity>
 
-    protected lateinit var resultTextView: TextView
+    protected lateinit var resultView: View
     protected lateinit var settingsKey: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        resultTextView = findViewById(resultTextViewId)
+        resultView = findViewById(resultTextViewId)
         val generateButton = findViewById<Button>(generateButtonId).apply {
             setOnClickListener { generateNext() }
         }

@@ -19,7 +19,7 @@ class RandomIntegerActivity : BaseRandomActivity() {
         val start = with(settings) { if (includeFrom) from else from + 1 }
         val end = with(settings) { if (includeTo) to + 1 else to }
 
-        resultTextView.text = (start..end).random().toString()
+        resultView.text = (start..end).random().toString()
     }
 
     private fun IntRange.random() = Random.nextInt(start, endInclusive)
