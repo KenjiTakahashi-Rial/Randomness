@@ -22,6 +22,7 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getViews()
+        settingsKey = getString(settingsId)
         setSettings()
         buildErrorAlertDialog()
     }
@@ -30,6 +31,24 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
         NONE,
         RANGE
     }
+
+    protected fun getViews() {
+        val layout = findViewById<ConstraintLayout>(layoutId).apply {
+            setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
+        }
+
+        val saveButton = findViewById<Button>(saveButtonId).apply {
+            setOnClickListener { save() }
+        }
+
+        val cancelButton = findViewById<Button>(cancelButtonId).apply {
+            setOnClickListener { cancel() }
+        }
+    }
+
+    protected abstract fun getSettings(): Pair<BaseRandomSettings, SettingsError>
+
+    protected abstract fun setSettings()
 
     private fun save() {
         val (settings, error) = getSettings()
@@ -56,26 +75,6 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
 
     private fun cancel() {
         finish()
-    }
-
-    protected fun getViews() {
-        val layout = findViewById<ConstraintLayout>(layoutId).apply {
-            setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
-        }
-
-        val saveButton = findViewById<Button>(saveButtonId).apply {
-            setOnClickListener { save() }
-        }
-
-        val cancelButton = findViewById<Button>(cancelButtonId).apply {
-            setOnClickListener { cancel() }
-        }
-    }
-
-    protected abstract fun getSettings(): Pair<BaseRandomSettings, SettingsError>
-
-    protected fun setSettings() {
-        settingsKey = getString(settingsId)
     }
 
     private fun buildErrorAlertDialog() {
