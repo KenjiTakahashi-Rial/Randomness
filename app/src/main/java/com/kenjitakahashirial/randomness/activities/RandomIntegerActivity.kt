@@ -4,7 +4,6 @@ import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
-import kotlin.random.Random
 
 class RandomIntegerActivity : BaseRandomActivity() {
     override val layout = R.layout.activity_random_integer
@@ -18,10 +17,8 @@ class RandomIntegerActivity : BaseRandomActivity() {
         val settings = sharedPreferences.getClass(settingsKey, RandomIntegerSettings())
 
         val start = with(settings) { if (includeFrom) from else from + 1 }
-        val end = with(settings) { if (includeTo) to + 1 else to }
+        val end = with(settings) { if (includeTo) to else to - 1 }
 
         (resultView as TextView).text = (start..end).random().toString()
     }
-
-    private fun IntRange.random() = Random.nextInt(start, endInclusive)
 }
