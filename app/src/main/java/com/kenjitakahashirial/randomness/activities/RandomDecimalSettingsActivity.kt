@@ -1,12 +1,10 @@
 package com.kenjitakahashirial.randomness.activities
 
 import android.os.Bundle
-import android.provider.Settings
 import android.widget.EditText
 import androidx.appcompat.widget.SwitchCompat
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
-import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
 import com.kenjitakahashirial.randomness.utilities.RandomDecimalSettings
 
 class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
@@ -22,18 +20,13 @@ class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        decimalPlacesText.hint = with(decimalPlacesRange) { getString(R.string.format_range_int, first, last) }
+    }
 
-        val settings = sharedPreferences.getClass(settingsKey, RandomDecimalSettings())
-
+    override fun findViews() {
+        super.findViews()
         decimalPlacesText = findViewById(R.id.randomDecimalSettingsPlaces)
         showTrailingZerosSwitch = findViewById(R.id.randomDecimalSettingsShowTrailingZeros)
-
-        with(settings) {
-            decimalPlacesText.setText(decimalPlaces.toString())
-            showTrailingZerosSwitch.isChecked = showTrailingZeros
-        }
-
-        decimalPlacesText.hint = with(decimalPlacesRange) { getString(R.string.format_range_int, first, last) }
     }
 
     override fun getSettings(): Pair<RandomDecimalSettings, SettingsError> {
@@ -56,5 +49,14 @@ class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
         }
 
         return Pair(settings, error)
+    }
+
+    override fun setSettings() {
+        val settings = sharedPreferences.getClass(settingsKey, RandomDecimalSettings())
+
+        with(settings) {
+            decimalPlacesText.setText(decimalPlaces.toString())
+            showTrailingZerosSwitch.isChecked = showTrailingZeros
+        }
     }
 }

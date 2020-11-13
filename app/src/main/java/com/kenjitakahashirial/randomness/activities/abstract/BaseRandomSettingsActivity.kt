@@ -21,30 +21,34 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val layout = findViewById<ConstraintLayout>(layoutId).apply {
-            setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
-        }
-        val saveButton = findViewById<Button>(saveButtonId).apply {
-            setOnClickListener { save() }
-        }
-        val cancelButton = findViewById<Button>(cancelButtonId).apply {
-            setOnClickListener { cancel() }
-        }
-
+        findViews()
         settingsKey = getString(settingsId)
-
-        errorAlertDialog = with(AlertDialog.Builder(this)) {
-            setTitle(getString(R.string.error))
-            setPositiveButton(getString(R.string.okay)) { _, _ -> }
-            create()
-        }
+        setSettings()
+        buildErrorAlertDialog()
     }
 
     protected enum class SettingsError {
         NONE,
         RANGE
     }
+
+    protected open fun findViews() {
+        val layout = findViewById<ConstraintLayout>(layoutId).apply {
+            setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
+        }
+
+        val saveButton = findViewById<Button>(saveButtonId).apply {
+            setOnClickListener { save() }
+        }
+
+        val cancelButton = findViewById<Button>(cancelButtonId).apply {
+            setOnClickListener { cancel() }
+        }
+    }
+
+    protected abstract fun getSettings(): Pair<BaseRandomSettings, SettingsError>
+
+    protected abstract fun setSettings()
 
     private fun save() {
         val (settings, error) = getSettings()
@@ -73,5 +77,11 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
         finish()
     }
 
-    protected abstract fun getSettings(): Pair<BaseRandomSettings, SettingsError>
+    private fun buildErrorAlertDialog() {
+        errorAlertDialog = with(AlertDialog.Builder(this)) {
+            setTitle(getString(R.string.error))
+            setPositiveButton(getString(R.string.okay)) { _, _ -> }
+            create()
+        }
+    }
 }

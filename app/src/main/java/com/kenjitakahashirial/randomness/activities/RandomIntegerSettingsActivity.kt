@@ -1,13 +1,11 @@
 package com.kenjitakahashirial.randomness.activities
 
-import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.widget.SwitchCompat
 import com.kenjitakahashirial.randomness.R
+import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
 import com.kenjitakahashirial.randomness.utilities.isValid
-import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
-import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
 
 class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
     override val layout = R.layout.activity_random_integer_settings
@@ -21,22 +19,12 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
     private lateinit var includeFromSwitch: SwitchCompat
     private lateinit var includeToSwitch: SwitchCompat
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        val settings = sharedPreferences.getClass(settingsKey, RandomIntegerSettings())
-
+    override fun findViews() {
+        super.findViews()
         fromText = findViewById(R.id.randomIntegerSettingsFrom)
         toText = findViewById(R.id.randomIntegerSettingsTo)
         includeFromSwitch = findViewById(R.id.randomIntegerSettingsIncludeFrom)
         includeToSwitch = findViewById(R.id.randomIntegerSettingsIncludeTo)
-
-        with(settings) {
-            fromText.setText(from.toString())
-            toText.setText(to.toString())
-            includeFromSwitch.isChecked = includeFrom
-            includeToSwitch.isChecked = includeTo
-        }
     }
 
     override fun getSettings(): Pair<RandomIntegerSettings, SettingsError> {
@@ -61,5 +49,16 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
         }
 
         return Pair(settings, error)
+    }
+
+    override fun setSettings() {
+        val settings = sharedPreferences.getClass(settingsKey, RandomIntegerSettings())
+
+        with(settings) {
+            fromText.setText(from.toString())
+            toText.setText(to.toString())
+            includeFromSwitch.isChecked = includeFrom
+            includeToSwitch.isChecked = includeTo
+        }
     }
 }

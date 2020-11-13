@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.EditText
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
-import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
 import com.kenjitakahashirial.randomness.utilities.RollDiceSettings
 
 class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
@@ -21,19 +20,14 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val settings = sharedPreferences.getClass(settingsKey, RollDiceSettings())
-
-        numDiceText = findViewById(R.id.rollDiceSettingsNumDice)
-        numFacesText = findViewById(R.id.rollDiceSettingsNumFaces)
-
-        with(settings) {
-            numDiceText.setText(numDice.toString())
-            numFacesText.setText(numFaces.toString())
-        }
-
         numDiceText.hint = with(numDiceRange) { getString(R.string.format_range_int, first, last) }
         numFacesText.hint = with(numFacesRange) { getString(R.string.format_range_int, first, last) }
+    }
+
+    override fun findViews() {
+        super.findViews()
+        numDiceText = findViewById(R.id.rollDiceSettingsNumDice)
+        numFacesText = findViewById(R.id.rollDiceSettingsNumFaces)
     }
 
     override fun getSettings(): Pair<RollDiceSettings, SettingsError> {
@@ -56,5 +50,14 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
         }
 
         return Pair(settings, error)
+    }
+
+    override fun setSettings() {
+        val settings = sharedPreferences.getClass(settingsKey, RollDiceSettings())
+
+        with(settings) {
+            numDiceText.setText(numDice.toString())
+            numFacesText.setText(numFaces.toString())
+        }
     }
 }
