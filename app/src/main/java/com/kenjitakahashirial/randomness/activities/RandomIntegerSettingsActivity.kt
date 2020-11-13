@@ -7,6 +7,7 @@ import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
 import com.kenjitakahashirial.randomness.utilities.isValid
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
+import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
 
 class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
     override val layout = R.layout.activity_random_integer_settings
@@ -38,25 +39,26 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
         }
     }
 
-    // TODO: Clean up isValidInts to be isValid and include (settings.from..settings.to).isValid()
-    override fun getSettings(): Pair<RandomIntegerSettings, SettingsError> {
-        var isValidInts = true
-        val settings = RandomIntegerSettings()
+    override fun getSettings(): Pair<BaseRandomSettings, SettingsError> {
+        var settings: BaseRandomSettings
+        var error: SettingsError
 
         try {
-            settings.apply {
-                from = fromText.text.toString().toInt()
-                to = toText.text.toString().toInt()
-                includeFrom = includeFromSwitch.isChecked
+            settings = RandomIntegerSettings(
+                from = fromText.text.toString().toInt(),
+                to = toText.text.toString().toInt(),
+                includeFrom = includeFromSwitch.isChecked,
                 includeTo = includeToSwitch.isChecked
+            )
+
+            error = with(settings) {
+                if ((from..to).isValid(includeFrom, includeTo)) SettingsError.NONE
+                else SettingsError.RANGE
             }
         } catch (e: NumberFormatException) {
-            isValidInts = false
+            settings = RandomIntegerSettings()
+            error = SettingsError.RANGE
         }
-
-        val error =
-            if (!isValidInts || with(settings) { (from..to).isValid(includeFrom, includeTo) }) SettingsError.RANGE
-            else SettingsError.NONE
 
         return Pair(settings, error)
     }
