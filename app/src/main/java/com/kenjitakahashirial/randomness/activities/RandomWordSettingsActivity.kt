@@ -46,7 +46,7 @@ class RandomWordSettingsActivity : BaseRandomSettingsActivity() {
         setSettings()
     }
 
-    override fun getSettings(): Pair<BaseRandomSettings, SettingsError> {
+    override fun getSettings(): Pair<RandomWordSettings, SettingsError> {
         val settings = RandomWordSettings(
             wordPoolEditText.text.toString().split(separator),
             replacementSwitch.isChecked,
