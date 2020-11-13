@@ -39,8 +39,8 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
         }
     }
 
-    override fun getSettings(): Pair<BaseRandomSettings, SettingsError> {
-        var settings: BaseRandomSettings
+    override fun getSettings(): Pair<RandomIntegerSettings, SettingsError> {
+        var settings: RandomIntegerSettings
         var error: SettingsError
 
         try {

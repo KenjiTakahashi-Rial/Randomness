@@ -27,18 +27,16 @@ class FlipCoinSettingsActivity : BaseRandomSettingsActivity() {
     }
 
     override fun getSettings(): Pair<FlipCoinSettings, SettingsError> {
-        var isValidInt = true
-        val settings = FlipCoinSettings()
+        var settings: FlipCoinSettings
+        var error: SettingsError
 
         try {
-            settings.numCoins = numCoinsText.text.toString().toInt()
+            settings = FlipCoinSettings(numCoinsText.text.toString().toInt())
+            error = if (settings.numCoins in numCoinsRange) SettingsError.NONE else SettingsError.RANGE
         } catch (e: NumberFormatException) {
-            isValidInt = false
+            settings = FlipCoinSettings()
+            error = SettingsError.RANGE
         }
-
-        val error =
-            if (!isValidInt || settings.numCoins !in numCoinsRange) SettingsError.RANGE
-            else SettingsError.NONE
 
         return Pair(settings, error)
     }
