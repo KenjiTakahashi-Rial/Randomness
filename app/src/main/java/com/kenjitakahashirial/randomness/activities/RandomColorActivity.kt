@@ -12,6 +12,8 @@ class RandomColorActivity : BaseRandomActivity() {
     override val settingsId = R.string.random_color_settings_key
     override val settingsActivityClass = RandomColorSettingsActivity::class.java
 
+    // TODO: Add a TextView to show the current color hex and a button to copy it
+
     override fun generateNext() {
         val settings = sharedPreferences.getClass(settingsKey, RandomColorSettings())
 

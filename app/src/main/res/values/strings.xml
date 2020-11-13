@@ -25,6 +25,10 @@
 
     <string name="newline">Newline</string>
 
+    <string name="magic_eight_ball_name">Magic Eight Ball</string>
+    <string name="magic_eight_ball_settings_key">com.kenjitakahashirial.randomness.MAGIC_EIGHT_BALL</string>
+    <string name="magic_eight_ball_settings_title">Magic Eight Ball Settings</string>
+
     <string name="okay">Okay</string>
 
     <string name="random_color_from_label">Random Color From</string>
