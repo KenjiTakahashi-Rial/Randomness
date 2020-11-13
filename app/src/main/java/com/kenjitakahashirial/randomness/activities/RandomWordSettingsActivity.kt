@@ -1,12 +1,10 @@
 package com.kenjitakahashirial.randomness.activities
 
-import android.os.Bundle
 import android.widget.EditText
 import android.widget.RadioGroup
 import androidx.appcompat.widget.SwitchCompat
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
-import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
 import com.kenjitakahashirial.randomness.utilities.RandomWordSettings
 import com.kenjitakahashirial.randomness.utilities.deleteLast
 
@@ -36,14 +34,11 @@ class RandomWordSettingsActivity : BaseRandomSettingsActivity() {
             separatorCharToId.getOrElse(value) { R.id.randomWordSettingsNewlineRadioButton }
         )
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    override fun findViews() {
+        super.findViews()
         separatorRadioGroup = findViewById(R.id.randomWordSettingsSeparatorRadioGroup)
         wordPoolEditText = findViewById(R.id.randomWordSettingsWordPool)
         replacementSwitch = findViewById(R.id.randomWordSettingsReplacementSwitch)
-
-        setSettings()
     }
 
     override fun getSettings(): Pair<RandomWordSettings, SettingsError> {
@@ -56,7 +51,7 @@ class RandomWordSettingsActivity : BaseRandomSettingsActivity() {
         return Pair(settings, SettingsError.NONE)
     }
 
-    private fun setSettings() {
+    override fun setSettings() {
         val settings = sharedPreferences.getClass(settingsKey, RandomWordSettings())
 
         with(settings) {

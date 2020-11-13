@@ -27,25 +27,19 @@ class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val settings = sharedPreferences.getClass(settingsKey, RandomColorSettings())
-
-        fromText = findViewById(R.id.randomColorSettingsFrom)
-        toText = findViewById(R.id.randomColorSettingsTo)
-        includeFromSwitch = findViewById(R.id.randomColorSettingsIncludeFrom)
-        includeToSwitch = findViewById(R.id.randomColorSettingsIncludeTo)
-
-        with(settings) {
-            fromText.setText(from.colorToHexString())
-            toText.setText(to.colorToHexString())
-            includeFromSwitch.isChecked = includeFrom
-            includeToSwitch.isChecked = includeTo
-        }
-
         val blackHex = Color.BLACK.colorToHexString()
         val whiteHex = WHITE.colorToHexString()
 
         fromText.hint = getString(R.string.format_range_string, blackHex, whiteHex)
         toText.hint = getString(R.string.format_range_string, blackHex, whiteHex)
+    }
+
+    override fun findViews() {
+        super.findViews()
+        fromText = findViewById(R.id.randomColorSettingsFrom)
+        toText = findViewById(R.id.randomColorSettingsTo)
+        includeFromSwitch = findViewById(R.id.randomColorSettingsIncludeFrom)
+        includeToSwitch = findViewById(R.id.randomColorSettingsIncludeTo)
     }
 
     override fun getSettings(): Pair<BaseRandomSettings, SettingsError> {
@@ -73,6 +67,17 @@ class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
         }
 
         return Pair(settings, error)
+    }
+
+    override fun setSettings() {
+        val settings = sharedPreferences.getClass(settingsKey, RandomColorSettings())
+
+        with(settings) {
+            fromText.setText(from.colorToHexString())
+            toText.setText(to.colorToHexString())
+            includeFromSwitch.isChecked = includeFrom
+            includeToSwitch.isChecked = includeTo
+        }
     }
 
     private fun Int.colorToHexString(): String =

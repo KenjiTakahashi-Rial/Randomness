@@ -18,12 +18,12 @@ class FlipCoinSettingsActivity : BaseRandomSettingsActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val settings = sharedPreferences.getClass(settingsKey, FlipCoinSettings())
-
-        numCoinsText = findViewById(R.id.flipCoinSettingsNumCoins)
-        numCoinsText.setText(settings.numCoins.toString())
         numCoinsText.hint = with(numCoinsRange) { getString(R.string.format_range_int, first, last) }
+    }
+
+    override fun findViews() {
+        super.findViews()
+        numCoinsText = findViewById(R.id.flipCoinSettingsNumCoins)
     }
 
     override fun getSettings(): Pair<FlipCoinSettings, SettingsError> {
@@ -39,5 +39,10 @@ class FlipCoinSettingsActivity : BaseRandomSettingsActivity() {
         }
 
         return Pair(settings, error)
+    }
+
+    override fun setSettings() {
+        val settings = sharedPreferences.getClass(settingsKey, FlipCoinSettings())
+        numCoinsText.setText(settings.numCoins.toString())
     }
 }

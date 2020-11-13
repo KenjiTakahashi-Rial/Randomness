@@ -21,7 +21,7 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        getViews()
+        findViews()
         settingsKey = getString(settingsId)
         setSettings()
         buildErrorAlertDialog()
@@ -32,7 +32,7 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
         RANGE
     }
 
-    protected fun getViews() {
+    protected open fun findViews() {
         val layout = findViewById<ConstraintLayout>(layoutId).apply {
             setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
         }
