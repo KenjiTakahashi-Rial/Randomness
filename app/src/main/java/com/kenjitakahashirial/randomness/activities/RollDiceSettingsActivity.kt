@@ -36,20 +36,23 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
         numFacesText.hint = with(numFacesRange) { getString(R.string.format_range_int, first, last) }
     }
 
-    override fun getSettings(): Pair<BaseRandomSettings, SettingsError> {
-        var isValidInt = true
-        val settings = RollDiceSettings()
+    override fun getSettings(): Pair<RollDiceSettings, SettingsError> {
+        var settings: RollDiceSettings
+        var error: SettingsError
 
         try {
-            settings.numDice = numDiceText.text.toString().toInt()
-            settings.numFaces = numFacesText.text.toString().toInt()
-        } catch (e: NumberFormatException) {
-            isValidInt = false
-        }
+            settings = RollDiceSettings(
+                numDice = numDiceText.text.toString().toInt(),
+                numFaces = numFacesText.text.toString().toInt()
+            )
 
-        val error = with(settings) {
-            if (!isValidInt || numDice !in numDiceRange || numFaces !in numFacesRange) SettingsError.RANGE
-            else SettingsError.NONE
+            error = with(settings) {
+                if (numDice !in numDiceRange || numFaces !in numFacesRange) SettingsError.NONE
+                else SettingsError.RANGE
+            }
+        } catch (e: NumberFormatException) {
+            settings = RollDiceSettings()
+            error = SettingsError.RANGE
         }
 
         return Pair(settings, error)
