@@ -26,6 +26,15 @@
     <string name="newline">Newline</string>
 
     <string name="magic_eight_ball_name">Magic Eight Ball</string>
+    <string name="magic_eight_ball_result_yes_0">yes 0</string>
+    <string name="magic_eight_ball_result_yes_1">yes 1</string>
+    <string name="magic_eight_ball_result_yes_2">yes 2</string>
+    <string name="magic_eight_ball_result_no_0">no 0</string>
+    <string name="magic_eight_ball_result_no_1">no 1</string>
+    <string name="magic_eight_ball_result_no_2">no 2</string>
+    <string name="magic_eight_ball_result_maybe_0">maybe 0</string>
+    <string name="magic_eight_ball_result_maybe_1">maybe 1</string>
+    <string name="magic_eight_ball_result_maybe_2">maybe 2</string>
     <string name="magic_eight_ball_settings_key">com.kenjitakahashirial.randomness.MAGIC_EIGHT_BALL</string>
     <string name="magic_eight_ball_settings_title">Magic Eight Ball Settings</string>
 
