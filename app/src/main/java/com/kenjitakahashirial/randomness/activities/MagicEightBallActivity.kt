@@ -1,23 +1,21 @@
 package com.kenjitakahashirial.randomness.activities
 
+import android.widget.TextView
+import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
-import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
+import com.kenjitakahashirial.randomness.utilities.MagicEightBallSettings
 
 class MagicEightBallActivity : BaseRandomActivity() {
-    override val layout: Int
-        get() = TODO("Not yet implemented")
-    override val resultTextViewId: Int
-        get() = TODO("Not yet implemented")
-    override val generateButtonId: Int
-        get() = TODO("Not yet implemented")
-    override val settingsButtonId: Int
-        get() = TODO("Not yet implemented")
-    override val settingsId: Int
-        get() = TODO("Not yet implemented")
-    override val settingsActivityClass: Class<out BaseRandomSettingsActivity>
-        get() = TODO("Not yet implemented")
+    override val layout = R.layout.activity_magic_eight_ball
+    override val resultViewId = R.id.magicEightBallResultTextView
+    override val generateButtonId = R.id.magicEightBallGenerateButton
+    override val settingsButtonId = R.id.magicEightBallSettingsButton
+    override val settingsId = R.string.magic_eight_ball_settings_key
+    override val settingsActivityClass = MagicEightBallSettingsActivity::class.java
 
     override fun generateNext() {
-        TODO("Not yet implemented")
+        val settings = sharedPreferences.getClass(settingsKey, MagicEightBallSettings())
+
+        (resultView as TextView).text = getString(settings.resultIds.random())
     }
 }

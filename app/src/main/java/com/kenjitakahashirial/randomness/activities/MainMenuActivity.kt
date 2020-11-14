@@ -37,6 +37,7 @@ class MainMenuActivity : AppCompatActivity() {
         MainMenuCard(getString(R.string.roll_dice_name), R.mipmap.temp_rando, RollDiceActivity::class.java),
         MainMenuCard(getString(R.string.random_decimal_name), R.mipmap.temp_rando, RandomDecimalActivity::class.java),
         MainMenuCard(getString(R.string.random_word_name), R.mipmap.temp_rando, RandomWordActivity::class.java),
-        MainMenuCard(getString(R.string.random_color_name), R.mipmap.temp_rando, RandomColorActivity::class.java)
+        MainMenuCard(getString(R.string.random_color_name), R.mipmap.temp_rando, RandomColorActivity::class.java),
+        MainMenuCard(getString(R.string.magic_eight_ball_name), R.mipmap.temp_rando, MagicEightBallActivity::class.java)
     )
 }
