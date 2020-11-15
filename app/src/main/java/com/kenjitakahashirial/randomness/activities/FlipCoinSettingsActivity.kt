@@ -13,7 +13,7 @@ class FlipCoinSettingsActivity : BaseRandomSettingsActivity() {
     override val cancelButtonId = R.id.flipCoinSettingsCancelButton
     override val settingsId = R.string.flip_coin_settings_key
 
-    private val numCoinsRange = 1..10
+    private val numCoinsRange = 1..15
     private lateinit var numCoinsText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
