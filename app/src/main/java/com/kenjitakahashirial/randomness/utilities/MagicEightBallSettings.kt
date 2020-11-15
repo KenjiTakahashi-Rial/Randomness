@@ -3,6 +3,7 @@ package com.kenjitakahashirial.randomness.utilities
 import com.kenjitakahashirial.randomness.R
 
 data class MagicEightBallSettings(
+    var shake: Boolean = true,
     val resultIds: IntArray = intArrayOf(
         R.string.magic_eight_ball_result_yes_0,
         R.string.magic_eight_ball_result_yes_1,
