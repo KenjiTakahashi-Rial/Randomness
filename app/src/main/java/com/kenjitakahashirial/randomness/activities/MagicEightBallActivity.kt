@@ -13,6 +13,8 @@ class MagicEightBallActivity : BaseRandomActivity() {
     override val settingsId = R.string.magic_eight_ball_settings_key
     override val settingsActivityClass = MagicEightBallSettingsActivity::class.java
 
+    // TODO: Implement shake to generate
+
     override fun generateNext() {
         val settings = sharedPreferences.getClass(settingsKey, MagicEightBallSettings())
 
