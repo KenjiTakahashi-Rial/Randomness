@@ -36,6 +36,7 @@
     <string name="magic_eight_ball_result_maybe_1">maybe 1</string>
     <string name="magic_eight_ball_result_maybe_2">maybe 2</string>
     <string name="magic_eight_ball_settings_key">com.kenjitakahashirial.randomness.MAGIC_EIGHT_BALL</string>
+    <string name="magic_eight_ball_settings_shake">Shake to generate</string>
     <string name="magic_eight_ball_settings_title">Magic Eight Ball Settings</string>
 
     <string name="okay">Okay</string>
