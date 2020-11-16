@@ -26,26 +26,28 @@
     <string name="newline">Newline</string>
 
     <string name="magic_eight_ball_name">Magic Eight Ball</string>
-    <string name="magic_eight_ball_result_maybe_0">Reply hazy, try again.</string>
-    <string name="magic_eight_ball_result_maybe_1">Ask again later.</string>
-    <string name="magic_eight_ball_result_maybe_2">Better not tell you now.</string>
-    <string name="magic_eight_ball_result_maybe_3">Cannot predict now.</string>
-    <string name="magic_eight_ball_result_maybe_4">Concentrate and ask again.</string>
-    <string name="magic_eight_ball_result_no_0">Don\'t count on it.</string>
-    <string name="magic_eight_ball_result_no_1">My reply is no.</string>
-    <string name="magic_eight_ball_result_no_2">My sources say no.</string>
-    <string name="magic_eight_ball_result_no_3">Outlook not so good.</string>
-    <string name="magic_eight_ball_result_no_4">Very doubtful.</string>
-    <string name="magic_eight_ball_result_yes_0">It is certain.</string>
-    <string name="magic_eight_ball_result_yes_1">It is decidedly so.</string>
-    <string name="magic_eight_ball_result_yes_2">Without a doubt.</string>
-    <string name="magic_eight_ball_result_yes_3">Yes – definitely</string>
-    <string name="magic_eight_ball_result_yes_4">You may rely on it.</string>
-    <string name="magic_eight_ball_result_yes_5">As I see it, yes.</string>
-    <string name="magic_eight_ball_result_yes_6">Most likely.</string>
-    <string name="magic_eight_ball_result_yes_7">Outlook good.</string>
-    <string name="magic_eight_ball_result_yes_8">Yes.</string>
-    <string name="magic_eight_ball_result_yes_9">Signs point to yes.</string>
+    <string-array name="magic_eight_ball_result">
+        <item>Reply hazy, try again.</item>
+        <item>Ask again later.</item>
+        <item>Better not tell you now.</item>
+        <item>Cannot predict now.</item>
+        <item>Concentrate and ask again.</item>
+        <item>Don\'t count on it.</item>
+        <item>My reply is no.</item>
+        <item>My sources say no.</item>
+        <item>Outlook not so good.</item>
+        <item>Very doubtful.</item>
+        <item>It is certain.</item>
+        <item>It is decidedly so.</item>
+        <item>Without a doubt.</item>
+        <item>Yes – definitely</item>
+        <item>You may rely on it.</item>
+        <item>As I see it, yes.</item>
+        <item>Most likely.</item>
+        <item>Outlook good.</item>
+        <item>Yes.</item>
+        <item>Signs point to yes.</item>
+    </string-array>
     <string name="magic_eight_ball_settings_key">com.kenjitakahashirial.randomness.MAGIC_EIGHT_BALL</string>
     <string name="magic_eight_ball_settings_shake">Shake to generate</string>
     <string name="magic_eight_ball_settings_title">Magic Eight Ball Settings</string>

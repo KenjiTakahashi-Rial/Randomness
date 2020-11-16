@@ -17,7 +17,6 @@ class MagicEightBallActivity : BaseRandomActivity() {
 
     override fun generateNext() {
         val settings = sharedPreferences.getClass(settingsKey, MagicEightBallSettings())
-
-        (resultView as TextView).text = getString(settings.resultIds.random())
+        (resultView as TextView).text = resources.getStringArray(settings.resultsId).random()
     }
 }
