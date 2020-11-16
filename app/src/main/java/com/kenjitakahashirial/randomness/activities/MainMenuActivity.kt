@@ -29,7 +29,7 @@ class MainMenuActivity : AppCompatActivity() {
         val intent = Intent(this, cards[position].activityClass)
         startActivity(intent)
     }
-    
+
     private fun createCards(): Array<MainMenuCard> = arrayOf(
         MainMenuCard(getString(R.string.random_integer_name), R.mipmap.main_menu_image_random_integer, RandomIntegerActivity::class.java),
         MainMenuCard(getString(R.string.flip_coin_name), R.mipmap.main_menu_image_flip_coin, FlipCoinActivity::class.java),

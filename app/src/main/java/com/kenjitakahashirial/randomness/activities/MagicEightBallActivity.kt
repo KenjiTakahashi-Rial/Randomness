@@ -14,7 +14,6 @@ class MagicEightBallActivity : BaseRandomActivity() {
     override val settingsActivityClass = MagicEightBallSettingsActivity::class.java
 
     // TODO: Implement shake to generate
-    // TODO: Use an image of an eight ball to hold the text
 
     override fun generateNext() {
         val settings = sharedPreferences.getClass(settingsKey, MagicEightBallSettings())

@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".activities.MagicEightBallActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="261dp"
+        android:layout_height="518dp"
+        android:contentDescription="@string/magic_eight_ball_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497"
+        app:srcCompat="@mipmap/magic_eight_ball_result_image" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,9 +42,10 @@
 
     <TextView
         android:id="@+id/magicEightBallResultTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="48sp"
+        android:layout_width="44dp"
+        android:layout_height="45dp"
+        android:textColor="#FFFFFF"
+        android:textSize="9sp"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
