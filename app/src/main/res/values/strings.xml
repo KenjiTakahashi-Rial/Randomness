@@ -11,6 +11,7 @@
 
     <string name="error">Error</string>
 
+    <string name="format_hex">#%s</string>
     <string name="format_range_int">%1$d - %2$d</string>
     <string name="format_range_string">%1$s - %2$s</string>
 

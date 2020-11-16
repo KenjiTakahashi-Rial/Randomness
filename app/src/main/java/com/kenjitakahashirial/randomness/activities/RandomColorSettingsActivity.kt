@@ -9,8 +9,8 @@ import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
 import com.kenjitakahashirial.randomness.utilities.RandomColorSettings
+import com.kenjitakahashirial.randomness.utilities.toColorHexString
 import com.kenjitakahashirial.randomness.utilities.isValid
-import java.util.*
 
 class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
     override val layout = R.layout.activity_random_color_settings
@@ -27,8 +27,8 @@ class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val blackHex = Color.BLACK.colorToHexString()
-        val whiteHex = WHITE.colorToHexString()
+        val blackHex = Color.BLACK.toColorHexString()
+        val whiteHex = WHITE.toColorHexString()
 
         fromText.hint = getString(R.string.format_range_string, blackHex, whiteHex)
         toText.hint = getString(R.string.format_range_string, blackHex, whiteHex)
@@ -73,16 +73,10 @@ class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
         val settings = sharedPreferences.getClass(settingsKey, RandomColorSettings())
 
         with(settings) {
-            fromText.setText(from.colorToHexString())
-            toText.setText(to.colorToHexString())
+            fromText.setText(from.toColorHexString())
+            toText.setText(to.toColorHexString())
             includeFromSwitch.isChecked = includeFrom
             includeToSwitch.isChecked = includeTo
         }
     }
-
-    private fun Int.colorToHexString(): String =
-        (this - Color.BLACK)
-            .toString(16)
-            .padStart(6, '0')
-            .toUpperCase(Locale.getDefault())
 }
