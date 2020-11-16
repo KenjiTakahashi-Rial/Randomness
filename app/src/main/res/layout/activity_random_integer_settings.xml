@@ -11,7 +11,6 @@
     android:clickable="true"
     tools:context=".activities.RandomIntegerSettingsActivity">
 
-    <!-- TODO: Allow negatives -->
     <EditText
         android:id="@+id/randomIntegerSettingsTo"
         android:layout_width="wrap_content"
@@ -20,7 +19,7 @@
         android:ems="10"
         android:hint="@string/random_integer_settings_to_hint"
         android:importantForAutofill="no"
-        android:inputType="number"
+        android:inputType="numberSigned"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsToLabel" />
@@ -73,14 +72,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsTitle" />
 
-    <!-- TODO: Allow negatives -->
     <EditText
         android:id="@+id/randomIntegerSettingsFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberSigned"
         android:hint="@string/random_integer_settings_from_hint"
         android:importantForAutofill="no"
         app:layout_constraintEnd_toEndOf="parent"
