@@ -14,14 +14,14 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsId = R.string.roll_dice_settings_key
 
     private val numDiceRange = 1..10
-    private val numFacesRange = 1..20
+    private val numFacesArray = intArrayOf(4, 6, 8, 10, 12, 20)
     private lateinit var numDiceText: EditText
     private lateinit var numFacesText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         numDiceText.hint = with(numDiceRange) { getString(R.string.format_range_int, first, last) }
-        numFacesText.hint = with(numFacesRange) { getString(R.string.format_range_int, first, last) }
+        numFacesText.hint = numFacesArray.joinToString(", ")
     }
 
     override fun findViews() {
@@ -41,7 +41,7 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
             )
 
             error = with(settings) {
-                if (numDice in numDiceRange && numFaces in numFacesRange) SettingsError.NONE
+                if (numDice in numDiceRange && numFaces in numFacesArray) SettingsError.NONE
                 else SettingsError.RANGE
             }
         } catch (e: NumberFormatException) {
