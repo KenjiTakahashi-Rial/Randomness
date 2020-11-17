@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="dice_image_ids">
+        <item>@mipmap/d4</item>
+        <item>@mipmap/d6</item>
+        <item>@mipmap/d8</item>
+        <item>@mipmap/d10</item>
+        <item>@mipmap/d12</item>
+        <item>@mipmap/d20</item>
+    </integer-array>
+
+</resources>
