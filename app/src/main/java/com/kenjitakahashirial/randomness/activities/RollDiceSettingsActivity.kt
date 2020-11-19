@@ -13,7 +13,7 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
     override val cancelButtonId = R.id.rollDiceSettingsCancelButton
     override val settingsId = R.string.roll_dice_settings_key
 
-    private val numDiceRange = 1..10
+    private val numDiceRange = 1..15
     private val numFacesArray = intArrayOf(4, 6, 8, 10, 12, 20)
     private lateinit var numDiceText: EditText
     private lateinit var numFacesText: EditText
