@@ -12,3 +12,10 @@ inline fun <reified T : View> View.find(predicate: (View) -> Boolean = { true })
     }
     return null
 }
+
+fun ViewGroup.hasVisibleChild(): Boolean {
+    for (child in this) {
+        if (child.visibility == View.VISIBLE) return true
+    }
+    return false
+}

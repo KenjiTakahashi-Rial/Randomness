@@ -5,13 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.view.get
 import androidx.core.view.iterator
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
-import com.kenjitakahashirial.randomness.utilities.ImageTextView
-import com.kenjitakahashirial.randomness.utilities.RollDiceSettings
-import com.kenjitakahashirial.randomness.utilities.getIdArray
+import com.kenjitakahashirial.randomness.utilities.*
 import kotlin.random.Random
 
 class RollDiceActivity : BaseRandomActivity() {
@@ -23,6 +22,7 @@ class RollDiceActivity : BaseRandomActivity() {
     override val settingsActivityClass = RollDiceSettingsActivity::class.java
 
     private val maxResultsPerRow = 5
+    private val resultRows = mutableListOf<LinearLayoutCompat>()
     private val resultImageTextViews = mutableListOf<ImageTextView>()
     private lateinit var dieImageIdMap: Map<Int, Int>
 
@@ -42,13 +42,19 @@ class RollDiceActivity : BaseRandomActivity() {
                 parent.visibility = if (index < settings.numDice) View.VISIBLE else View.GONE
             }
         }
+
+        for (row in resultRows) {
+            row.weight = if (row.hasVisibleChild()) 1.0f else 0.0f
+        }
     }
 
     private fun inflateResultViews() {
-        for (resultRowParent in resultView as ViewGroup) {
+        for (resultRow in resultView as ViewGroup) {
+            resultRows.add(resultRow as LinearLayoutCompat)
+
             for (i in 0 until maxResultsPerRow) {
-                layoutInflater.inflate(R.layout.view_roll_dice_result, resultRowParent as ViewGroup)
-                resultImageTextViews.add(ImageTextView(resultRowParent[i] as RelativeLayout))
+                layoutInflater.inflate(R.layout.view_roll_dice_result, resultRow)
+                resultImageTextViews.add(ImageTextView(resultRow[i] as RelativeLayout))
                 resultImageTextViews.last().parent.visibility = View.GONE
             }
         }

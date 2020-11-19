@@ -5,6 +5,5 @@
     android:layout_height="match_parent"
     android:layout_weight="1"
     android:adjustViewBounds="true"
-    android:gravity="center_horizontal"
     android:padding="2dp"
     android:src="@mipmap/american_silver_eagle_obverse"/>
