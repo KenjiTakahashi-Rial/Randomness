@@ -49,6 +49,7 @@ class RollDiceActivity : BaseRandomActivity() {
             for (i in 0 until maxResultsPerRow) {
                 layoutInflater.inflate(R.layout.view_roll_dice_result, resultRowParent as ViewGroup)
                 resultImageTextViews.add(ImageTextView(resultRowParent[i] as RelativeLayout))
+                resultImageTextViews.last().parent.visibility = View.GONE
             }
         }
     }
@@ -70,7 +71,6 @@ class RollDiceActivity : BaseRandomActivity() {
                     dieImageIdMap[settings.numFaces]
                         ?: throw IllegalArgumentException("Image not found for ${settings.numFaces} die faces")
                 )
-                parent.visibility = View.VISIBLE
             }
         }
     }
