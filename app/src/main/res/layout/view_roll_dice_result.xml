@@ -13,9 +13,9 @@
         android:padding="2dp"
         android:src="@mipmap/d6" />
 
+    <!-- TODO: Adjust the text size programmatically -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="5" />
+        android:layout_centerInParent="true" />
 </RelativeLayout>
