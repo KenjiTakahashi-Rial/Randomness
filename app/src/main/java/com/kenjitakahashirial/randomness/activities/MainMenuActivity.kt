@@ -3,6 +3,7 @@ package com.kenjitakahashirial.randomness.activities
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kenjitakahashirial.randomness.R
@@ -20,8 +21,9 @@ class MainMenuActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.main_menu_recycler_view).apply {
             setHasFixedSize(true)
+            val colorRange = getColorRange(R.color.background_default, R.color.background_light)
+            adapter = MainMenuAdapter(cards, { startCardActivity(it) }, colorRange)
             layoutManager = LinearLayoutManager(this@MainMenuActivity)
-            adapter = MainMenuAdapter(cards) { startCardActivity(it) }
         }
     }
 
@@ -39,4 +41,7 @@ class MainMenuActivity : AppCompatActivity() {
         MainMenuCard(getString(R.string.random_color_name), R.mipmap.main_menu_image_random_color, RandomColorActivity::class.java),
         MainMenuCard(getString(R.string.magic_eight_ball_name), R.mipmap.main_menu_image_magic_eight_ball, MagicEightBallActivity::class.java)
     )
+
+    private fun getColorRange(startId: Int, endId: Int): IntRange =
+        ContextCompat.getColor(this, startId)..ContextCompat.getColor(this, endId)
 }
