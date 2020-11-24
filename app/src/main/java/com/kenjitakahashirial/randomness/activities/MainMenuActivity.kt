@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.adapters.MainMenuAdapter
 import com.kenjitakahashirial.randomness.utilities.MainMenuCard
+import com.kenjitakahashirial.randomness.utilities.OverlapDecoration
 
 class MainMenuActivity : AppCompatActivity() {
     private lateinit var cards: Array<MainMenuCard>
@@ -24,6 +25,7 @@ class MainMenuActivity : AppCompatActivity() {
             val colorRange = getColorRange(R.color.card_background_dark, R.color.card_background_light)
             adapter = MainMenuAdapter(cards, { startCardActivity(it) }, colorRange)
             layoutManager = LinearLayoutManager(this@MainMenuActivity)
+            addItemDecoration(OverlapDecoration(top = 27))
         }
     }
 

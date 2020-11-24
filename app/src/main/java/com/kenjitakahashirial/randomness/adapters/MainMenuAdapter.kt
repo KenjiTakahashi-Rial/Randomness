@@ -19,9 +19,10 @@ class MainMenuAdapter(
 
     inner class MainMenuViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cardView: CardView = itemView.findViewById(R.id.main_menu_card)
-        val imageView: ImageView = cardView.findViewById(R.id.main_menu_card_image)
-        val textView: TextView = cardView.findViewById(R.id.main_menu_card_text)
-        val topShadow: View = cardView.findViewById(R.id.main_menu_card_above_shadow)
+        val imageView: ImageView = itemView.findViewById(R.id.main_menu_card_image)
+        val textView: TextView = itemView.findViewById(R.id.main_menu_card_text)
+        val topShadow: View = itemView.findViewById(R.id.main_menu_card_above_shadow)
+        val bottomShadow: View = itemView.findViewById(R.id.main_menu_card_below_shadow)
 
         init {
             cardView.setOnClickListener { onClick(adapterPosition) }
@@ -52,7 +53,8 @@ class MainMenuAdapter(
                 setImageResource(card.imageId)
             }
 
-            if (adapterPosition == 0) topShadow.visibility = View.GONE
+            topShadow.visibility = if (adapterPosition == 0) View.GONE else View.VISIBLE
+            bottomShadow.visibility = if (adapterPosition == mainMenuCards.lastIndex) View.VISIBLE else View.GONE
         }
     }
 
