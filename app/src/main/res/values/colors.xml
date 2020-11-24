@@ -8,4 +8,6 @@
     <color name="hawaii_faint_yellow">#C7B593</color>
     <color name="background_default">#3F556F</color>
     <color name="background_light">#6F8EA5</color>
+    <color name="card_background_dark">#122B4A</color>
+    <color name="card_background_light">#527793</color>
 </resources>

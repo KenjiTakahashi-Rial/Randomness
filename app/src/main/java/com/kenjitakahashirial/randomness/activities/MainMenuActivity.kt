@@ -21,7 +21,7 @@ class MainMenuActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.main_menu_recycler_view).apply {
             setHasFixedSize(true)
-            val colorRange = getColorRange(R.color.background_default, R.color.background_light)
+            val colorRange = getColorRange(R.color.card_background_dark, R.color.card_background_light)
             adapter = MainMenuAdapter(cards, { startCardActivity(it) }, colorRange)
             layoutManager = LinearLayoutManager(this@MainMenuActivity)
         }
