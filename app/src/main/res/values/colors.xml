@@ -6,4 +6,6 @@
     <color name="hawaii_light_blue">#72D4E5</color>
     <color name="hawaii_faint_blue">#C5E1D5</color>
     <color name="hawaii_faint_yellow">#C7B593</color>
+    <color name="background_default">#3F556F</color>
+    <color name="background_light">#6F8EA5</color>
 </resources>
