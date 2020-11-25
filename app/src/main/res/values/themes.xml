@@ -1,18 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Theme.Randomness" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/hawaii_dark_gray</item>
-        <item name="colorPrimaryVariant">@color/hawaii_dark_gray</item>
-        <item name="colorOnPrimary">@color/hawaii_faint_yellow</item>
+        <!-- Color primary -->
+        <item name="colorPrimary">@color/background_light</item>
+        <item name="colorPrimaryVariant">@color/background_default</item>
         <item name="colorPrimaryDark">@color/hawaii_orange</item>
-        <!-- Secondary brand color. -->
+        <!-- Color secondary -->
         <item name="colorSecondary">@color/hawaii_light_gray</item>
         <item name="colorSecondaryVariant">@color/hawaii_light_gray</item>
         <item name="colorOnSecondary">@color/hawaii_faint_blue</item>
-        <!-- Status bar color. -->
+        <!-- Other colors -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Font face. -->
-        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:windowBackground">@color/background_default</item>
+        <!-- Text -->
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 </resources>
