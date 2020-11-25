@@ -19,7 +19,7 @@
 
     <Button
         android:id="@+id/randomIntegerGenerateButton"
-        android:layout_width="200dp"
+        android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="125dp"
         android:text="@string/generate_button"
