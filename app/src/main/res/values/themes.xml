@@ -21,7 +21,6 @@
     </style>
 
     <style name="RandomnessButton" parent="Widget.AppCompat.Button.Borderless">
-        <item name="android:color">@android:color/transparent</item>
-        <item name="background">@drawable/button_circle</item>
+        <item name="android:background">@drawable/button_circle</item>
     </style>
 </resources>
