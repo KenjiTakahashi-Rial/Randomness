@@ -44,10 +44,7 @@
                 android:layout_below="@+id/main_menu_card_image"
                 android:gravity="center"
                 android:text="@string/invalid_string"
-                android:textAllCaps="true"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textColor="@android:color/white" />
+                android:textSize="20sp" />
         </androidx.cardview.widget.CardView>
 
         <com.bosphere.fadingedgelayout.FadingEdgeLayout

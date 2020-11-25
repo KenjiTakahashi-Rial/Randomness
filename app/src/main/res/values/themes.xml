@@ -14,6 +14,7 @@
         <!-- Text -->
         <item name="fontFamily">@font/montserrat_regular</item>
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:textViewStyle">@style/RandomnessTextView</item>
         <!-- Buttons -->
         <item name="buttonStyle">@style/RandomnessButton</item>
         <item name="materialButtonStyle">@style/RandomnessButton</item>
@@ -22,5 +23,9 @@
 
     <style name="RandomnessButton" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:background">@drawable/button_circle</item>
+    </style>
+
+    <style name="RandomnessTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textAllCaps">true</item>
     </style>
 </resources>
