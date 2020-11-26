@@ -30,7 +30,7 @@ class MainMenuAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainMenuViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.view_main_menu_card, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_main_menu_card, parent, false)
         return MainMenuViewHolder(itemView)
     }
 

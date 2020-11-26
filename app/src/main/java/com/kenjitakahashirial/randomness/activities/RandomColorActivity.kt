@@ -12,10 +12,11 @@ import com.kenjitakahashirial.randomness.utilities.RandomColorSettings
 import com.kenjitakahashirial.randomness.utilities.toColorHexString
 
 class RandomColorActivity : BaseRandomActivity() {
-    override val layoutId = R.layout.activity_random_color
+    override val titleId: Int
+        get() = TODO("Not yet implemented")
+    override val resultLayoutId: Int
+        get() = TODO("Not yet implemented")
     override val resultViewId = R.id.randomColorResultView
-    override val generateButtonId = R.id.randomColorGenerateButton
-    override val settingsButtonId = R.id.randomColorSettingsButton
     override val settingsId = R.string.random_color_settings_key
     override val settingsActivityClass = RandomColorSettingsActivity::class.java
 

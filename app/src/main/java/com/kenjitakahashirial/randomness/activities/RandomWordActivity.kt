@@ -11,10 +11,11 @@ import com.kenjitakahashirial.randomness.utilities.RandomWordSettings
 import kotlin.random.Random
 
 class RandomWordActivity : BaseRandomActivity() {
-    override val layoutId = R.layout.activity_random_word
+    override val titleId: Int
+        get() = TODO("Not yet implemented")
+    override val resultLayoutId: Int
+        get() = TODO("Not yet implemented")
     override val resultViewId = R.id.randomWordResultTextView
-    override val generateButtonId = R.id.randomWordGenerateButton
-    override val settingsButtonId = R.id.randomWordSettingsButton
     override val settingsId = R.string.random_word_settings_key
     override val settingsActivityClass = RandomWordSettingsActivity::class.java
 

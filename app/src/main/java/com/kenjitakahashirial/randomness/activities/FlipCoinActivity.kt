@@ -15,10 +15,11 @@ import com.kenjitakahashirial.randomness.utilities.weight
 import kotlin.random.Random
 
 class FlipCoinActivity : BaseRandomActivity() {
-    override val layoutId = R.layout.activity_flip_coin
+    override val titleId: Int
+        get() = TODO("Not yet implemented")
+    override val resultLayoutId: Int
+        get() = TODO("Not yet implemented")
     override val resultViewId = R.id.flipCoinResultLinearLayout
-    override val generateButtonId = R.id.flipCoinGenerateButton
-    override val settingsButtonId = R.id.flipCoinSettingsButton
     override val settingsId = R.string.flip_coin_settings_key
     override val settingsActivityClass = FlipCoinSettingsActivity::class.java
 
