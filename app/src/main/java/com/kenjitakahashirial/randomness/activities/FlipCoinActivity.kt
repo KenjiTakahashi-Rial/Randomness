@@ -15,7 +15,7 @@ import com.kenjitakahashirial.randomness.utilities.weight
 import kotlin.random.Random
 
 class FlipCoinActivity : BaseRandomActivity() {
-    override val layout = R.layout.activity_flip_coin
+    override val layoutId = R.layout.activity_flip_coin
     override val resultViewId = R.id.flipCoinResultLinearLayout
     override val generateButtonId = R.id.flipCoinGenerateButton
     override val settingsButtonId = R.id.flipCoinSettingsButton

@@ -12,6 +12,7 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
 
     private val settingsActivityRequestCode = 0
 
+    protected abstract val layoutId: Int
     protected abstract val resultViewId: Int
     protected abstract val generateButtonId: Int
     protected abstract val settingsButtonId: Int
@@ -23,6 +24,8 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setContentView(layoutId)
 
         resultView = findViewById(resultViewId)
         val generateButton = findViewById<Button>(generateButtonId).apply {

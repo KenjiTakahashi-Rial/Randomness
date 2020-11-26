@@ -6,7 +6,7 @@ import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.utilities.MagicEightBallSettings
 
 class MagicEightBallActivity : BaseRandomActivity() {
-    override val layout = R.layout.activity_magic_eight_ball
+    override val layoutId = R.layout.activity_magic_eight_ball
     override val resultViewId = R.id.magicEightBallResultTextView
     override val generateButtonId = R.id.magicEightBallGenerateButton
     override val settingsButtonId = R.id.magicEightBallSettingsButton

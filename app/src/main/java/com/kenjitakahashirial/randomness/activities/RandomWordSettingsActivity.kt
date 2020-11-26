@@ -9,8 +9,7 @@ import com.kenjitakahashirial.randomness.utilities.RandomWordSettings
 import com.kenjitakahashirial.randomness.utilities.deleteLast
 
 class RandomWordSettingsActivity : BaseRandomSettingsActivity() {
-    override val layout = R.layout.activity_random_word_settings
-    override val layoutId = R.id.randomWordSettingsLayout
+    override val layoutId = R.layout.activity_random_word_settings
     override val saveButtonId = R.id.randomWordSettingsSaveButton
     override val cancelButtonId = R.id.randomWordSettingsCancelButton
     override val settingsId = R.string.random_word_settings_key

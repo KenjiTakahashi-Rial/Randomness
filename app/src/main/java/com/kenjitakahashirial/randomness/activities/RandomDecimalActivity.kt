@@ -8,7 +8,7 @@ import com.kenjitakahashirial.randomness.utilities.deleteLast
 import kotlin.random.Random
 
 class RandomDecimalActivity : BaseRandomActivity() {
-    override val layout = R.layout.activity_random_decimal
+    override val layoutId = R.layout.activity_random_decimal
     override val resultViewId = R.id.randomDecimalResultTextView
     override val generateButtonId = R.id.randomDecimalGenerateButton
     override val settingsButtonId = R.id.randomDecimalSettingsButton

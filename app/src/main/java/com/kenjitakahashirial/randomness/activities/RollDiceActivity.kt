@@ -14,7 +14,7 @@ import com.kenjitakahashirial.randomness.utilities.*
 import kotlin.random.Random
 
 class RollDiceActivity : BaseRandomActivity() {
-    override val layout = R.layout.activity_roll_dice
+    override val layoutId = R.layout.activity_roll_dice
     override val resultViewId = R.id.rollDiceResultLinearLayout
     override val generateButtonId = R.id.rollDiceGenerateButton
     override val settingsButtonId = R.id.rollDiceSettingsButton

@@ -7,8 +7,7 @@ import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsA
 import com.kenjitakahashirial.randomness.utilities.RollDiceSettings
 
 class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
-    override val layout = R.layout.activity_roll_dice_settings
-    override val layoutId = R.id.rollDiceSettingsLayout
+    override val layoutId = R.layout.activity_roll_dice_settings
     override val saveButtonId = R.id.rollDiceSettingsSaveButton
     override val cancelButtonId = R.id.rollDiceSettingsCancelButton
     override val settingsId = R.string.roll_dice_settings_key

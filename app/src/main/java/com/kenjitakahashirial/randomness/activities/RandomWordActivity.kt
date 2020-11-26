@@ -11,7 +11,7 @@ import com.kenjitakahashirial.randomness.utilities.RandomWordSettings
 import kotlin.random.Random
 
 class RandomWordActivity : BaseRandomActivity() {
-    override val layout = R.layout.activity_random_word
+    override val layoutId = R.layout.activity_random_word
     override val resultViewId = R.id.randomWordResultTextView
     override val generateButtonId = R.id.randomWordGenerateButton
     override val settingsButtonId = R.id.randomWordSettingsButton

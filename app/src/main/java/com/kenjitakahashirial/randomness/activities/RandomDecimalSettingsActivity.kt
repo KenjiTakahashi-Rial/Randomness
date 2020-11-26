@@ -8,8 +8,7 @@ import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsA
 import com.kenjitakahashirial.randomness.utilities.RandomDecimalSettings
 
 class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
-    override val layout = R.layout.activity_random_decimal_settings
-    override val layoutId = R.id.randomDecimalSettingsLayout
+    override val layoutId = R.layout.activity_random_decimal_settings
     override val saveButtonId = R.id.randomDecimalSettingsSaveButton
     override val cancelButtonId = R.id.randomDecimalSettingsCancelButton
     override val settingsId = R.string.random_decimal_settings_key

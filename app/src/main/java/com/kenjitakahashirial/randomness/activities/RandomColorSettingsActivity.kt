@@ -9,12 +9,11 @@ import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
 import com.kenjitakahashirial.randomness.utilities.RandomColorSettings
-import com.kenjitakahashirial.randomness.utilities.toColorHexString
 import com.kenjitakahashirial.randomness.utilities.isValid
+import com.kenjitakahashirial.randomness.utilities.toColorHexString
 
 class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
-    override val layout = R.layout.activity_random_color_settings
-    override val layoutId = R.id.randomColorSettingsLayout
+    override val layoutId = R.layout.activity_random_color_settings
     override val saveButtonId = R.id.randomColorSettingsSaveButton
     override val cancelButtonId = R.id.randomColorSettingsCancelButton
     override val settingsId = R.string.random_color_settings_key

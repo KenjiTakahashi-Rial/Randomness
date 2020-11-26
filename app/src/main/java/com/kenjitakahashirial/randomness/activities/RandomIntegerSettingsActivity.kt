@@ -8,8 +8,7 @@ import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
 import com.kenjitakahashirial.randomness.utilities.isValid
 
 class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
-    override val layout = R.layout.activity_random_integer_settings
-    override val layoutId = R.id.randomIntegerSettingsLayout
+    override val layoutId = R.layout.activity_random_integer_settings
     override val saveButtonId = R.id.randomIntegerSettingsSaveButton
     override val cancelButtonId = R.id.randomIntegerSettingsCancelButton
     override val settingsId = R.string.random_integer_settings_key

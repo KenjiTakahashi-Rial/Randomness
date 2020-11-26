@@ -7,8 +7,7 @@ import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsA
 import com.kenjitakahashirial.randomness.utilities.FlipCoinSettings
 
 class FlipCoinSettingsActivity : BaseRandomSettingsActivity() {
-    override val layout = R.layout.activity_flip_coin_settings
-    override val layoutId = R.id.flipCoinSettingsLayout
+    override val layoutId = R.layout.activity_flip_coin_settings
     override val saveButtonId = R.id.flipCoinSettingsSaveButton
     override val cancelButtonId = R.id.flipCoinSettingsCancelButton
     override val settingsId = R.string.flip_coin_settings_key

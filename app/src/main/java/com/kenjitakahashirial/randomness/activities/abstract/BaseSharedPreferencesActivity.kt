@@ -9,13 +9,11 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 
 abstract class BaseSharedPreferencesActivity : AppCompatActivity() {
-    protected abstract val layout: Int
     protected abstract val sharedPreferencesId: Int
     protected lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(layout)
 
         val sharedPreferencesKey = getString(sharedPreferencesId)
         sharedPreferences = getSharedPreferences(sharedPreferencesKey, Context.MODE_PRIVATE)

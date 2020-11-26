@@ -1,9 +1,9 @@
 package com.kenjitakahashirial.randomness.activities.abstract
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
 import com.kenjitakahashirial.randomness.utilities.hideSoftKeyboard
@@ -21,6 +21,7 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(layoutId)
         findViews()
         settingsKey = getString(settingsId)
         setSettings()
@@ -33,7 +34,8 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     }
 
     protected open fun findViews() {
-        val layout = findViewById<ConstraintLayout>(layoutId).apply {
+
+        val rootView = findViewById<View>(android.R.id.content).rootView.apply {
             setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
         }
 
