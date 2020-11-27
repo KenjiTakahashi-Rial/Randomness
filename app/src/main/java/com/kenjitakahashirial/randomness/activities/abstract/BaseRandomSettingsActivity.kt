@@ -1,31 +1,40 @@
 package com.kenjitakahashirial.randomness.activities.abstract
 
 import android.os.Bundle
-import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.kenjitakahashirial.randomness.R
+import com.kenjitakahashirial.randomness.R.string
 import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
+import com.kenjitakahashirial.randomness.utilities.defaultLayoutParams
 import com.kenjitakahashirial.randomness.utilities.hideSoftKeyboard
 
 abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
-    override val sharedPreferencesId = R.string.shared_preferences_key
+    override val sharedPreferencesId = string.shared_preferences_key
 
-    protected abstract val layoutId: Int
+    protected abstract val settingsLayoutId: Int
     protected abstract val saveButtonId: Int
     protected abstract val cancelButtonId: Int
     protected abstract val settingsId: Int
 
-    protected lateinit var settingsKey: String
+    protected val settingsKey get() = getString(settingsId)
     private lateinit var errorAlertDialog: AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(layoutId)
+        setContentView(R.layout.activity_base_random_settings)
         findViews()
-        settingsKey = getString(settingsId)
         setSettings()
         buildErrorAlertDialog()
+    }
+
+    override fun setContentView(layoutResId: Int) {
+        super.setContentView(layoutResId)
+        val settingsLayout = layoutInflater.inflate(settingsLayoutId, null).apply {
+            addContentView(this, (this as ViewGroup).defaultLayoutParams)
+        }
     }
 
     protected enum class SettingsError {
@@ -35,7 +44,7 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
 
     protected open fun findViews() {
 
-        val rootView = findViewById<View>(android.R.id.content).rootView.apply {
+        val rootLayout = findViewById<ConstraintLayout>(R.id.baseRandomSettingsLayout).apply {
             setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
         }
 
@@ -55,15 +64,6 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     private fun save() {
         val (settings, error) = getSettings()
 
-        errorAlertDialog.setMessage(
-            getString(
-                when (error) {
-                    SettingsError.NONE -> R.string.invalid_string
-                    SettingsError.RANGE -> R.string.valid_range_prompt
-                }
-            )
-        )
-
         if (error == SettingsError.NONE) {
             with(sharedPreferences.edit()) {
                 putClass(settingsKey, settings)
@@ -71,18 +71,19 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
                 finish()
             }
         } else {
-            errorAlertDialog.show()
+            errorAlertDialog.apply {
+                setMessage(getString(string.valid_range_prompt))
+                show()
+            }
         }
     }
 
-    private fun cancel() {
-        finish()
-    }
+    private fun cancel() = finish()
 
     private fun buildErrorAlertDialog() {
         errorAlertDialog = with(AlertDialog.Builder(this)) {
-            setTitle(getString(R.string.error))
-            setPositiveButton(getString(R.string.okay)) { _, _ -> }
+            setTitle(getString(string.error))
+            setPositiveButton(getString(string.okay)) { _, _ -> }
             create()
         }
     }
