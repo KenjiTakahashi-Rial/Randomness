@@ -3,8 +3,6 @@ package com.kenjitakahashirial.randomness.utilities
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.iterator
 
 inline fun <reified T : View> View.find(predicate: (View) -> Boolean = { true }): T? {
@@ -14,15 +12,6 @@ inline fun <reified T : View> View.find(predicate: (View) -> Boolean = { true })
         }
     }
     return null
-}
-
-fun View.constrainCenter(constraintLayout: ConstraintLayout) {
-    ConstraintSet().apply {
-        clone(constraintLayout)
-        centerHorizontally(id, constraintLayout.id)
-        centerVertically(id, constraintLayout.id)
-        applyTo(constraintLayout)
-    }
 }
 
 fun ViewGroup.hasVisibleChild(): Boolean {
