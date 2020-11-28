@@ -12,11 +12,14 @@ import com.kenjitakahashirial.randomness.utilities.defaultLayoutParams
 import com.kenjitakahashirial.randomness.utilities.hideSoftKeyboard
 
 abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
+    protected enum class SettingsError {
+        NONE,
+        RANGE
+    }
+
     override val sharedPreferencesId = string.shared_preferences_key
 
     protected abstract val settingsLayoutId: Int
-    protected abstract val saveButtonId: Int
-    protected abstract val cancelButtonId: Int
     protected abstract val settingsId: Int
 
     protected val settingsKey get() = getString(settingsId)
@@ -37,22 +40,17 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
         }
     }
 
-    protected enum class SettingsError {
-        NONE,
-        RANGE
-    }
-
     protected open fun findViews() {
 
         val rootLayout = findViewById<ConstraintLayout>(R.id.baseRandomSettingsLayout).apply {
             setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
         }
 
-        val saveButton = findViewById<Button>(saveButtonId).apply {
+        val saveButton = findViewById<Button>(R.id.baseRandomSettingsSaveButton).apply {
             setOnClickListener { save() }
         }
 
-        val cancelButton = findViewById<Button>(cancelButtonId).apply {
+        val cancelButton = findViewById<Button>(R.id.baseRandomSettingsCancelButton).apply {
             setOnClickListener { cancel() }
         }
     }

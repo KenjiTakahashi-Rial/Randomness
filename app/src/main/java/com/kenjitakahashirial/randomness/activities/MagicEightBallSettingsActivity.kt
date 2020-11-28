@@ -8,8 +8,6 @@ import com.kenjitakahashirial.randomness.utilities.MagicEightBallSettings
 class MagicEightBallSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsLayoutId: Int
         get() = TODO("Not yet implemented")
-    override val saveButtonId = R.id.magicEightBallSettingsSaveButton
-    override val cancelButtonId = R.id.magicEightBallSettingsCancelButton
     override val settingsId = R.string.magic_eight_ball_settings_key
 
     private lateinit var shakeSwitch: SwitchCompat

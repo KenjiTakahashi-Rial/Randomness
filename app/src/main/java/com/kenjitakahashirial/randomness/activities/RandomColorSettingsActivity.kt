@@ -15,8 +15,6 @@ import com.kenjitakahashirial.randomness.utilities.toColorHexString
 class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsLayoutId: Int
         get() = TODO("Not yet implemented")
-    override val saveButtonId = R.id.randomColorSettingsSaveButton
-    override val cancelButtonId = R.id.randomColorSettingsCancelButton
     override val settingsId = R.string.random_color_settings_key
 
     private lateinit var fromText: EditText

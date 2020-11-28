@@ -10,8 +10,6 @@ import com.kenjitakahashirial.randomness.utilities.RandomDecimalSettings
 class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsLayoutId: Int
         get() = TODO("Not yet implemented")
-    override val saveButtonId = R.id.randomDecimalSettingsSaveButton
-    override val cancelButtonId = R.id.randomDecimalSettingsCancelButton
     override val settingsId = R.string.random_decimal_settings_key
 
     private val decimalPlacesRange = 1..8
