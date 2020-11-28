@@ -1,19 +1,20 @@
 package com.kenjitakahashirial.randomness.activities
 
+import android.widget.CheckBox
 import android.widget.EditText
-import androidx.appcompat.widget.SwitchCompat
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
 import com.kenjitakahashirial.randomness.utilities.isValid
 
 class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
-    override val settingsLayoutId: Int
-        get() = TODO("Not yet implemented")
+    override val settingsLayoutId = R.layout.activity_random_integer_settings
     override val settingsId = R.string.random_integer_settings_key
 
     private lateinit var fromText: EditText
     private lateinit var toText: EditText
+    private lateinit var includeFromSwitch: CheckBox
+    private lateinit var includeToSwitch: CheckBox
 
     override fun findViews() {
         super.findViews()
