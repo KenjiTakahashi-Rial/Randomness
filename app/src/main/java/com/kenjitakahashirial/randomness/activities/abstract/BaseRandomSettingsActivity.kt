@@ -41,7 +41,6 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     }
 
     protected open fun findViews() {
-
         val rootLayout = findViewById<ConstraintLayout>(R.id.baseRandomSettingsLayout).apply {
             setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
         }
