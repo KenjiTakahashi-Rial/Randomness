@@ -11,17 +11,34 @@
         <item name="fontFamily">@font/montserrat_regular</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textViewStyle">@style/RandomnessTextView</item>
+        <item name="editTextStyle">@style/RandomnessEditText</item>
         <!-- Buttons -->
         <item name="buttonStyle">@style/RandomnessButton</item>
         <item name="materialButtonStyle">@style/RandomnessButton</item>
         <item name="android:buttonStyle">@style/RandomnessButton</item>
+        <!-- Compound Buttons -->
+        <item name="checkboxStyle">@style/RandomnessCheckBox</item>
+    </style>
+
+    <style name="RandomnessTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="RandomnessEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:backgroundTint">@android:color/white</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorHint">#AAFFFFFF</item>
     </style>
 
     <style name="RandomnessButton" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:background">@drawable/button_circle</item>
     </style>
 
-    <style name="RandomnessTextView" parent="Widget.AppCompat.TextView">
+    <style name="RandomnessCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:focusable">false</item>
         <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/check_box_circle</item>
+        <item name="android:button">@null</item>
     </style>
 </resources>
