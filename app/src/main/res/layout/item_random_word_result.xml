@@ -22,9 +22,8 @@
         android:gravity="center"
         android:text="@string/random_word_remaining"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="45dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomWordResultTextView" />
 
@@ -43,7 +42,7 @@
         android:id="@+id/randomWordResetButton"
         android:layout_width="55dp"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:text="@string/reset"
         android:textSize="12sp"
         app:layout_constraintDimensionRatio="1:1"
