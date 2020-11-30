@@ -17,10 +17,9 @@ import kotlin.random.Random
 class FlipCoinActivity : BaseRandomActivity() {
     override val titleId = R.string.flip_coin_name
     override val resultLayoutId = R.layout.item_random_result_rows
-    override val resultViewId = R.id.flipCoinResultLinearLayout
     override val settingsId = R.string.flip_coin_settings_key
     override val settingsActivityClass = FlipCoinSettingsActivity::class.java
-    override val shouldShowResultCircle = false
+    override val showResultCircle = false
 
     private val maxResultsPerRow = 5
     private val resultRows = mutableListOf<LinearLayoutCompat>()
@@ -46,6 +45,7 @@ class FlipCoinActivity : BaseRandomActivity() {
         }
     }
 
+    // TODO: Consider having equal coins per row, instead of filling each row entirely before the next one
     private fun inflateResultViews() {
         for (resultRow in resultView as ViewGroup) {
             resultRows.add(resultRow as LinearLayoutCompat)

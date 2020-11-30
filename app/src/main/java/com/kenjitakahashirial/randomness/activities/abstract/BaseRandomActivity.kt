@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.get
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.utilities.defaultLayoutParams
 
@@ -16,11 +17,10 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
 
     protected abstract val titleId: Int
     protected abstract val resultLayoutId: Int
-    protected abstract val resultViewId: Int
     protected abstract val settingsId: Int
     protected abstract val settingsActivityClass: Class<out BaseRandomSettingsActivity>
 
-    protected open val shouldShowResultCircle = true
+    protected open val showResultCircle = true
 
     protected val settingsKey get() = getString(settingsId)
     protected lateinit var resultView: View
@@ -37,16 +37,15 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
         super.setContentView(layoutResId)
         val resultLayout = layoutInflater.inflate(resultLayoutId, null).apply {
             addContentView(this, (this as ViewGroup).defaultLayoutParams)
+            resultView = this[0]
         }
     }
 
     protected abstract fun generateNext()
 
     private fun findViews() {
-        resultView = findViewById(resultViewId)
-
         resultCircle = findViewById<ImageView>(R.id.baseRandomResultCircle).apply {
-            visibility = if (shouldShowResultCircle) View.VISIBLE else View.INVISIBLE
+            visibility = if (showResultCircle) View.VISIBLE else View.INVISIBLE
         }
 
         val title = findViewById<TextView>(R.id.baseRandomTitle).apply {

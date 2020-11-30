@@ -16,7 +16,6 @@ class RandomColorActivity : BaseRandomActivity() {
         get() = TODO("Not yet implemented")
     override val resultLayoutId: Int
         get() = TODO("Not yet implemented")
-    override val resultViewId = R.id.randomColorResultView
     override val settingsId = R.string.random_color_settings_key
     override val settingsActivityClass = RandomColorSettingsActivity::class.java
 

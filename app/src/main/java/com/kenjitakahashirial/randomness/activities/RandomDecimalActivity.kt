@@ -12,7 +12,6 @@ class RandomDecimalActivity : BaseRandomActivity() {
         get() = TODO("Not yet implemented")
     override val resultLayoutId: Int
         get() = TODO("Not yet implemented")
-    override val resultViewId = R.id.randomDecimalResultTextView
     override val settingsId = R.string.random_decimal_settings_key
     override val settingsActivityClass = RandomDecimalSettingsActivity::class.java
 

@@ -10,7 +10,6 @@ class MagicEightBallActivity : BaseRandomActivity() {
         get() = TODO("Not yet implemented")
     override val resultLayoutId: Int
         get() = TODO("Not yet implemented")
-    override val resultViewId = R.id.magicEightBallResultTextView
     override val settingsId = R.string.magic_eight_ball_settings_key
     override val settingsActivityClass = MagicEightBallSettingsActivity::class.java
 

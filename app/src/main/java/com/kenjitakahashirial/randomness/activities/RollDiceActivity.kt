@@ -14,13 +14,11 @@ import com.kenjitakahashirial.randomness.utilities.*
 import kotlin.random.Random
 
 class RollDiceActivity : BaseRandomActivity() {
-    override val titleId: Int
-        get() = TODO("Not yet implemented")
-    override val resultLayoutId: Int
-        get() = TODO("Not yet implemented")
-    override val resultViewId = R.id.rollDiceResultLinearLayout
+    override val titleId = R.string.roll_dice_name
+    override val resultLayoutId = R.layout.item_random_result_rows
     override val settingsId = R.string.roll_dice_settings_key
     override val settingsActivityClass = RollDiceSettingsActivity::class.java
+    override val showResultCircle = false
 
     private val maxResultsPerRow = 5
     private val resultRows = mutableListOf<LinearLayoutCompat>()

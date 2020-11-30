@@ -15,7 +15,6 @@ class RandomWordActivity : BaseRandomActivity() {
         get() = TODO("Not yet implemented")
     override val resultLayoutId: Int
         get() = TODO("Not yet implemented")
-    override val resultViewId = R.id.randomWordResultTextView
     override val settingsId = R.string.random_word_settings_key
     override val settingsActivityClass = RandomWordSettingsActivity::class.java
 
