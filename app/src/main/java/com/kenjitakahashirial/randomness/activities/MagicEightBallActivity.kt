@@ -6,12 +6,11 @@ import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.utilities.MagicEightBallSettings
 
 class MagicEightBallActivity : BaseRandomActivity() {
-    override val titleId: Int
-        get() = TODO("Not yet implemented")
-    override val resultLayoutId: Int
-        get() = TODO("Not yet implemented")
+    override val titleId = R.string.magic_eight_ball_name
+    override val resultLayoutId = R.layout.item_random_result_image_text
     override val settingsId = R.string.magic_eight_ball_settings_key
     override val settingsActivityClass = MagicEightBallSettingsActivity::class.java
+    override val showResultCircle = false
 
     // TODO: Implement shake to generate
 
