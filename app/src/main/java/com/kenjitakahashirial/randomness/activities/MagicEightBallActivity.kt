@@ -7,7 +7,7 @@ import com.kenjitakahashirial.randomness.utilities.MagicEightBallSettings
 
 class MagicEightBallActivity : BaseRandomActivity() {
     override val titleId = R.string.magic_eight_ball_name
-    override val resultLayoutId = R.layout.item_random_result_image_text
+    override val resultLayoutId = R.layout.item_magic_eight_ball_result
     override val settingsId = R.string.magic_eight_ball_settings_key
     override val settingsActivityClass = MagicEightBallSettingsActivity::class.java
     override val showResultCircle = false
