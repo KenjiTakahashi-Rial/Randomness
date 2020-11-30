@@ -15,13 +15,12 @@ import com.kenjitakahashirial.randomness.utilities.weight
 import kotlin.random.Random
 
 class FlipCoinActivity : BaseRandomActivity() {
-    override val titleId: Int
-        get() = TODO("Not yet implemented")
-    override val resultLayoutId: Int
-        get() = TODO("Not yet implemented")
+    override val titleId = R.string.flip_coin_name
+    override val resultLayoutId = R.layout.item_random_result_rows
     override val resultViewId = R.id.flipCoinResultLinearLayout
     override val settingsId = R.string.flip_coin_settings_key
     override val settingsActivityClass = FlipCoinSettingsActivity::class.java
+    override val shouldShowResultCircle = false
 
     private val maxResultsPerRow = 5
     private val resultRows = mutableListOf<LinearLayoutCompat>()
