@@ -7,9 +7,10 @@
 
     <View
         android:id="@+id/randomColorResultView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
         android:background="@android:color/transparent"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,14 +36,14 @@
 
     <ImageView
         android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_height="0dp"
         android:src="@mipmap/copy"
         android:elevation="7dp"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintBottom_toBottomOf="@+id/randomColorCopyButton"
         app:layout_constraintEnd_toEndOf="@+id/randomColorCopyButton"
         app:layout_constraintStart_toStartOf="@+id/randomColorCopyButton"
         app:layout_constraintTop_toTopOf="@+id/randomColorCopyButton"
-        app:tint="@color/hawaii_faint_yellow"
         android:contentDescription="@string/copy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
