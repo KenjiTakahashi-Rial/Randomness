@@ -18,6 +18,7 @@
         <item name="android:buttonStyle">@style/RandomnessButton</item>
         <!-- Compound Buttons -->
         <item name="checkboxStyle">@style/RandomnessCheckBox</item>
+        <item name="radioButtonStyle">@style/RandomnessRadioButton</item>
     </style>
 
     <style name="RandomnessTextView" parent="Widget.AppCompat.TextView">
@@ -40,5 +41,12 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:background">@drawable/check_box_circle</item>
         <item name="android:button">@null</item>
+    </style>
+
+    <style name="RandomnessRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:focusable">false</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:button">@drawable/compound_button_circle</item>
     </style>
 </resources>
