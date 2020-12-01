@@ -6,55 +6,25 @@
     android:id="@+id/randomWordSettingsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:clickable="true"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:clickable="false"
     tools:context=".activities.RandomWordSettingsActivity">
-
-    <TextView
-        android:id="@+id/randomWordSettingsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:focusable="false"
-        android:text="@string/random_word_settings_title"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/randomWordSettingsWordPool"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:layout_marginTop="15dp"
         android:hint="@string/random_word_pool_label"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
+        android:gravity="center_horizontal"
+        android:background="@drawable/rectangle_outline"
+        android:layout_marginHorizontal="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsWordPoolLabel" />
-
-    <Button
-        android:id="@+id/randomWordSettingsSaveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="100dp"
-        android:focusable="false"
-        android:text="@string/random_settings_save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/randomWordSettingsCancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:focusable="false"
-        android:text="@string/random_settings_cancel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/randomWordSettingsSaveButton" />
 
     <RadioGroup
         android:id="@+id/randomWordSettingsSeparatorRadioGroup"
@@ -62,6 +32,7 @@
         android:layout_height="wrap_content"
         android:checkedButton="@id/randomWordSettingsNewlineRadioButton"
         android:orientation="horizontal"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsSeparatorLabel">
@@ -70,32 +41,41 @@
             android:id="@+id/randomWordSettingsNewlineRadioButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/newline" />
+            android:text="@string/newline"
+            android:textSize="15sp"
+            android:paddingHorizontal="8dp"
+            android:layout_marginHorizontal="5dp" />
 
         <RadioButton
             android:id="@+id/randomWordSettingsCommaRadioButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/comma" />
+            android:text="@string/comma"
+            android:textSize="15sp"
+            android:paddingHorizontal="8dp"
+            android:layout_marginHorizontal="5dp" />
 
         <RadioButton
             android:id="@+id/randomWordSettingsSpaceRadioButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/space" />
+            android:text="@string/space"
+            android:textSize="15sp"
+            android:paddingHorizontal="8dp"
+            android:layout_marginHorizontal="5dp" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/randomWordSettingsSeparatorLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:text="@string/random_word_settings_separator_label"
         android:textSize="20sp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsTitle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/randomWordSettingsWordPoolLabel"
@@ -108,12 +88,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsSeparatorRadioGroup" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/randomWordSettingsReplacementSwitch"
+    <CheckBox
+        android:id="@+id/randomWordSettingsReplacement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="@string/random_word_settings_replacement"
+        android:textSize="15sp"
+        android:paddingHorizontal="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomWordSettingsWordPool" />

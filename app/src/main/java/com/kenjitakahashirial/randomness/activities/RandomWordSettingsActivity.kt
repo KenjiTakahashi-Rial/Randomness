@@ -1,16 +1,15 @@
 package com.kenjitakahashirial.randomness.activities
 
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.RadioGroup
-import androidx.appcompat.widget.SwitchCompat
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 import com.kenjitakahashirial.randomness.utilities.RandomWordSettings
 import com.kenjitakahashirial.randomness.utilities.deleteLast
 
 class RandomWordSettingsActivity : BaseRandomSettingsActivity() {
-    override val settingsLayoutId: Int
-        get() = TODO("Not yet implemented")
+    override val settingsLayoutId = R.layout.activity_random_word_settings
     override val settingsId = R.string.random_word_settings_key
 
     private val separatorCharToId = mapOf(
@@ -22,7 +21,7 @@ class RandomWordSettingsActivity : BaseRandomSettingsActivity() {
 
     private lateinit var separatorRadioGroup: RadioGroup
     private lateinit var wordPoolEditText: EditText
-    private lateinit var replacementSwitch: SwitchCompat
+    private lateinit var replacementSwitch: CheckBox
 
     private var separator: Char
         get() = separatorIdToChar.getOrElse(separatorRadioGroup.checkedRadioButtonId) {
@@ -36,7 +35,7 @@ class RandomWordSettingsActivity : BaseRandomSettingsActivity() {
         super.findViews()
         separatorRadioGroup = findViewById(R.id.randomWordSettingsSeparatorRadioGroup)
         wordPoolEditText = findViewById(R.id.randomWordSettingsWordPool)
-        replacementSwitch = findViewById(R.id.randomWordSettingsReplacementSwitch)
+        replacementSwitch = findViewById(R.id.randomWordSettingsReplacement)
     }
 
     override fun getSettings(): Pair<RandomWordSettings, SettingsError> {
