@@ -51,36 +51,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsFromCircle" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/randomIntegerSettingsIncludeFromParent"
+    <CheckBox
+        android:id="@+id/randomIntegerSettingsIncludeFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:gravity="center"
+        android:text="@string/random_integer_from_label"
+        android:textSize="15sp"
+        android:paddingHorizontal="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsFromCircle">
-
-        <CheckBox
-            android:id="@+id/randomIntegerSettingsIncludeFrom"
-            android:layout_width="12.5dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/random_settings_include_from"
-            android:textSize="15sp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintStart_toEndOf="@+id/randomIntegerSettingsIncludeFrom"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsFromCircle" />
         
     <TextView
         android:id="@+id/randomIntegerSettingsToLabel"
@@ -92,7 +73,7 @@
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsIncludeFromParent" />
+        app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsIncludeFrom" />
 
     <ImageView
         android:id="@+id/randomIntegerSettingsToCircle"
@@ -121,33 +102,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsToCircle" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <CheckBox
+        android:id="@+id/randomIntegerSettingsIncludeTo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:gravity="center"
+        android:text="@string/random_integer_to_label"
+        android:textSize="15sp"
+        android:paddingHorizontal="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsToCircle">
-
-        <CheckBox
-            android:id="@+id/randomIntegerSettingsIncludeTo"
-            android:layout_width="12.5dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/random_settings_include_to"
-            android:textSize="15sp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintStart_toEndOf="@+id/randomIntegerSettingsIncludeTo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsToCircle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

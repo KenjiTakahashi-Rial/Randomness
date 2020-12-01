@@ -39,8 +39,7 @@
         <item name="android:focusable">false</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:background">@drawable/check_box_circle</item>
-        <item name="android:button">@null</item>
+        <item name="android:button">@drawable/compound_button_circle</item>
     </style>
 
     <style name="RandomnessRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
