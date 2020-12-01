@@ -1,20 +1,19 @@
 package com.kenjitakahashirial.randomness.activities
 
 import android.os.Bundle
+import android.widget.CheckBox
 import android.widget.EditText
-import androidx.appcompat.widget.SwitchCompat
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 import com.kenjitakahashirial.randomness.utilities.RandomDecimalSettings
 
 class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
-    override val settingsLayoutId: Int
-        get() = TODO("Not yet implemented")
+    override val settingsLayoutId = R.layout.activity_random_decimal_settings
     override val settingsId = R.string.random_decimal_settings_key
 
     private val decimalPlacesRange = 1..8
     private lateinit var decimalPlacesText: EditText
-    private lateinit var showTrailingZerosSwitch: SwitchCompat
+    private lateinit var showTrailingZerosSwitch: CheckBox
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

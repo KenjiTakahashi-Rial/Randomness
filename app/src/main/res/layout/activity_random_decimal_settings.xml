@@ -6,22 +6,10 @@
     android:id="@+id/randomDecimalSettingsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:clickable="true"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:clickable="false"
     tools:context=".activities.RandomDecimalSettingsActivity">
-
-    <TextView
-        android:id="@+id/randomDecimalSettingsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:focusable="false"
-        android:text="@string/random_decimal_settings_title"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/randomDecimalSettingsPlacesLabel"
@@ -30,56 +18,65 @@
         android:layout_marginTop="175dp"
         android:focusable="false"
         android:text="@string/random_decimal_places_label"
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomDecimalSettingsTitle" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/randomIntegerSettingsToCircle"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/circle_outline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randomDecimalSettingsPlacesLabel"
+        app:layout_constraintDimensionRatio="1:1" />
 
     <EditText
         android:id="@+id/randomDecimalSettingsPlaces"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:inputType="number"
+        android:ems="5"
         android:hint="@string/random_decimal_places_label"
         android:importantForAutofill="no"
+        android:inputType="numberSigned"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/randomIntegerSettingsToCircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomDecimalSettingsPlacesLabel" />
+        app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsToCircle" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/randomDecimalSettingsShowTrailingZeros"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:focusable="false"
-        android:text="@string/random_decimal_settings_show_trailing_zeros"
-        android:textSize="16sp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomDecimalSettingsPlaces" />
+        app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsToCircle">
 
+        <CheckBox
+            android:id="@+id/randomDecimalSettingsShowTrailingZeros"
+            android:layout_width="12.5dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1" />
 
-    <Button
-        android:id="@+id/randomDecimalSettingsSaveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="100dp"
-        android:focusable="false"
-        android:text="@string/random_settings_save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/randomDecimalSettingsCancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:focusable="false"
-        android:text="@string/random_settings_cancel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/randomDecimalSettingsSaveButton" />
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/random_decimal_settings_show_trailing_zeros"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/randomDecimalSettingsShowTrailingZeros"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
