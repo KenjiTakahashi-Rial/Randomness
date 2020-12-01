@@ -6,36 +6,82 @@
     android:id="@+id/randomColorSettingsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:clickable="true"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:clickable="false"
     tools:context=".activities.RandomColorSettingsActivity">
 
-    <EditText
-        android:id="@+id/randomColorSettingsTo"
+    <TextView
+        android:id="@+id/randomColorSettingsFromLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="@string/random_color_to_label"
-        android:importantForAutofill="no"
-        android:inputType="text"
+        android:focusable="false"
+        android:text="@string/random_color_from_label"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsToLabel" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/randomColorSettingsIncludeTo"
+    <ImageView
+        android:id="@+id/randomColorSettingsFromCircle"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/circle_outline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsFromLabel"
+        app:layout_constraintDimensionRatio="1:1" />
+
+    <!-- TODO: Adjust text size for large values -->
+    <EditText
+        android:id="@+id/randomColorSettingsFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:focusable="false"
-        android:text="@string/random_settings_include_to"
-        android:textSize="16sp"
+        android:ems="5"
+        android:hint="@string/random_color_from_label"
+        android:importantForAutofill="no"
+        android:inputType="textCapCharacters"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/randomColorSettingsFromCircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsTo" />
+        app:layout_constraintTop_toTopOf="@+id/randomColorSettingsFromCircle" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/randomColorSettingsIncludeFromParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsFromCircle">
+
+        <CheckBox
+            android:id="@+id/randomColorSettingsIncludeFrom"
+            android:layout_width="12.5dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/random_settings_include_from"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/randomColorSettingsIncludeFrom"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+        
     <TextView
         android:id="@+id/randomColorSettingsToLabel"
         android:layout_width="wrap_content"
@@ -43,97 +89,66 @@
         android:layout_marginTop="75dp"
         android:focusable="false"
         android:text="@string/random_color_to_label"
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsIncludeFrom" />
+        app:layout_constraintTop_toTopOf="@+id/randomColorSettingsIncludeFromParent" />
 
-    <TextView
-        android:id="@+id/randomColorSettingsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:focusable="false"
-        android:text="@string/random_color_settings_title"
-        android:textSize="24sp"
+    <ImageView
+        android:id="@+id/randomColorSettingsToCircle"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/circle_outline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/randomColorSettingsStartLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:focusable="false"
-        android:text="@string/random_color_from_label"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsToLabel"
+        app:layout_constraintDimensionRatio="1:1" />
 
     <EditText
-        android:id="@+id/randomColorSettingsFrom"
+        android:id="@+id/randomColorSettingsTo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="@string/random_color_from_label"
+        android:ems="5"
+        android:hint="@string/random_color_to_label"
         android:importantForAutofill="no"
-        android:inputType="text"
+        android:inputType="textCapCharacters"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/randomColorSettingsToCircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsStartLabel" />
+        app:layout_constraintTop_toTopOf="@+id/randomColorSettingsToCircle" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/randomColorSettingsIncludeFrom"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:focusable="false"
-        android:text="@string/random_settings_include_from"
-        android:textSize="16sp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsFrom" />
+        app:layout_constraintTop_toBottomOf="@+id/randomColorSettingsToCircle">
 
-    <Button
-        android:id="@+id/randomColorSettingsSaveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="100dp"
-        android:focusable="false"
-        android:text="@string/random_settings_save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <CheckBox
+            android:id="@+id/randomColorSettingsIncludeTo"
+            android:layout_width="12.5dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1" />
 
-    <Button
-        android:id="@+id/randomColorSettingsCancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:focusable="false"
-        android:text="@string/random_settings_cancel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/randomColorSettingsSaveButton" />
-
-    <TextView
-        android:id="@+id/randomColorFromHashLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hash"
-        android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/randomColorSettingsFrom"
-        app:layout_constraintEnd_toStartOf="@+id/randomColorSettingsFrom" />
-
-    <TextView
-        android:id="@+id/randomColorToHashLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hash"
-        android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/randomColorSettingsTo"
-        app:layout_constraintEnd_toStartOf="@+id/randomColorSettingsTo" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/random_settings_include_to"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/randomColorSettingsIncludeTo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

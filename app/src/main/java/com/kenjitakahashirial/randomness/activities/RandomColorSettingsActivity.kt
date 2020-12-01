@@ -3,8 +3,8 @@ package com.kenjitakahashirial.randomness.activities
 import android.graphics.Color
 import android.graphics.Color.WHITE
 import android.os.Bundle
+import android.widget.CheckBox
 import android.widget.EditText
-import androidx.appcompat.widget.SwitchCompat
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
@@ -13,14 +13,13 @@ import com.kenjitakahashirial.randomness.utilities.isValid
 import com.kenjitakahashirial.randomness.utilities.toColorHexString
 
 class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
-    override val settingsLayoutId: Int
-        get() = TODO("Not yet implemented")
+    override val settingsLayoutId = R.layout.activity_random_color_settings
     override val settingsId = R.string.random_color_settings_key
 
     private lateinit var fromText: EditText
     private lateinit var toText: EditText
-    private lateinit var includeFromSwitch: SwitchCompat
-    private lateinit var includeToSwitch: SwitchCompat
+    private lateinit var includeFromSwitch: CheckBox
+    private lateinit var includeToSwitch: CheckBox
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
