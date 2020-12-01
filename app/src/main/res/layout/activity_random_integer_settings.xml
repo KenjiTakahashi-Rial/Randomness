@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/randomIntegerSettingsFromCircle"
+        android:id="@+id/rollDiceSettingsNumDiceCircle"
         android:layout_width="150dp"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
@@ -37,7 +37,7 @@
 
     <!-- TODO: Adjust text size for large values -->
     <EditText
-        android:id="@+id/randomIntegerSettingsFrom"
+        android:id="@+id/rollDiceNumDice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="5"
@@ -46,10 +46,10 @@
         android:inputType="numberSigned"
         android:textSize="25sp"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/randomIntegerSettingsFromCircle"
+        app:layout_constraintBottom_toBottomOf="@+id/rollDiceSettingsNumDiceCircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsFromCircle" />
+        app:layout_constraintTop_toTopOf="@+id/rollDiceSettingsNumDiceCircle" />
 
     <CheckBox
         android:id="@+id/randomIntegerSettingsIncludeFrom"
@@ -61,10 +61,10 @@
         android:paddingHorizontal="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsFromCircle" />
+        app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumDiceCircle" />
         
     <TextView
-        android:id="@+id/randomIntegerSettingsToLabel"
+        android:id="@+id/rollDiceNumFacesLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsIncludeFrom" />
 
     <ImageView
-        android:id="@+id/randomIntegerSettingsToCircle"
+        android:id="@+id/rollDiceSettingsNumFacesCircle"
         android:layout_width="150dp"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
@@ -84,11 +84,11 @@
         android:src="@drawable/circle_outline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsToLabel"
+        app:layout_constraintTop_toBottomOf="@+id/rollDiceNumFacesLabel"
         app:layout_constraintDimensionRatio="1:1" />
 
     <EditText
-        android:id="@+id/randomIntegerSettingsTo"
+        android:id="@+id/rollDiceNumFaces"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="5"
@@ -97,10 +97,10 @@
         android:inputType="numberSigned"
         android:textSize="25sp"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/randomIntegerSettingsToCircle"
+        app:layout_constraintBottom_toBottomOf="@+id/rollDiceSettingsNumFacesCircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsToCircle" />
+        app:layout_constraintTop_toTopOf="@+id/rollDiceSettingsNumFacesCircle" />
 
     <CheckBox
         android:id="@+id/randomIntegerSettingsIncludeTo"
@@ -112,5 +112,5 @@
         android:paddingHorizontal="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsToCircle" />
+        app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumFacesCircle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

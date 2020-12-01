@@ -18,8 +18,8 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
 
     override fun findViews() {
         super.findViews()
-        fromText = findViewById(R.id.randomIntegerSettingsFrom)
-        toText = findViewById(R.id.randomIntegerSettingsTo)
+        fromText = findViewById(R.id.rollDiceNumDice)
+        toText = findViewById(R.id.rollDiceNumFaces)
         includeFromSwitch = findViewById(R.id.randomIntegerSettingsIncludeFrom)
         includeToSwitch = findViewById(R.id.randomIntegerSettingsIncludeTo)
     }

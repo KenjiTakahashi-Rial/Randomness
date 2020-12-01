@@ -7,8 +7,7 @@ import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsA
 import com.kenjitakahashirial.randomness.utilities.RollDiceSettings
 
 class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
-    override val settingsLayoutId: Int
-        get() = TODO("Not yet implemented")
+    override val settingsLayoutId = R.layout.activity_roll_dice_settings
     override val settingsId = R.string.roll_dice_settings_key
 
     private val numDiceRange = 1..15

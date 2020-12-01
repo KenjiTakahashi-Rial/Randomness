@@ -6,92 +6,88 @@
     android:id="@+id/rollDiceSettingsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:clickable="true"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:clickable="false"
     tools:context=".activities.RollDiceSettingsActivity">
     
-    <EditText
-        android:id="@+id/rollDiceSettingsNumFaces"
+    <TextView
+        android:id="@+id/rollDiceSettingsNumDiceLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="@string/roll_dice_num_faces_label"
-        android:importantForAutofill="no"
-        android:inputType="number"
+        android:focusable="false"
+        android:text="@string/roll_dice_num_dice_label"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumFacesLabel" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/rollDiceSettingsNumDiceCircle"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/circle_outline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumDiceLabel"
+        app:layout_constraintDimensionRatio="1:1" />
+
+    <!-- TODO: Adjust text size for large values -->
+    <EditText
+        android:id="@+id/rollDiceSettingsNumDice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:hint="@string/roll_dice_num_dice_label"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/rollDiceSettingsNumDiceCircle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rollDiceSettingsNumDiceCircle" />
 
     <TextView
         android:id="@+id/rollDiceSettingsNumFacesLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="115dp"
         android:focusable="false"
         android:text="@string/roll_dice_num_faces_label"
-        android:textSize="20sp"
+        android:textSize="25sp"
+        android:layout_marginTop="75dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumDice" />
+        app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumDiceCircle" />
 
-    <TextView
-        android:id="@+id/rollDiceSettingsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:focusable="false"
-        android:text="@string/roll_dice_settings_title"
-        android:textSize="24sp"
+    <ImageView
+        android:id="@+id/rollDiceSettingsNumFacesCircle"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/circle_outline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/rollDiceSettingsNumDiceLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:focusable="false"
-        android:text="@string/roll_dice_num_dice_label"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumFacesLabel"
+        app:layout_constraintDimensionRatio="1:1" />
 
     <EditText
-        android:id="@+id/rollDiceSettingsNumDice"
+        android:id="@+id/rollDiceSettingsNumFaces"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="@string/roll_dice_num_dice_label"
+        android:ems="5"
+        android:hint="@string/roll_dice_num_faces_label"
         android:importantForAutofill="no"
+        android:inputType="numberSigned"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/rollDiceSettingsNumFacesCircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumDiceLabel" />
-
-    <Button
-        android:id="@+id/rollDiceSettingsSaveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="100dp"
-        android:focusable="false"
-        android:text="@string/random_settings_save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/rollDiceSettingsCancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:focusable="false"
-        android:text="@string/random_settings_cancel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rollDiceSettingsSaveButton" />
+        app:layout_constraintTop_toTopOf="@+id/rollDiceSettingsNumFacesCircle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
