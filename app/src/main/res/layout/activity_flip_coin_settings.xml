@@ -6,67 +6,48 @@
     android:id="@+id/flipCoinSettingsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:clickable="true"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:clickable="false"
     tools:context=".activities.FlipCoinSettingsActivity">
-
-    <TextView
-        android:id="@+id/flipCoinSettingsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:focusable="false"
-        android:text="@string/flip_coin_settings_title"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/flipCoinSettingsNumCoinsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="175dp"
         android:focusable="false"
         android:text="@string/flip_coin_num_coins_label"
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/flipCoinSettingsTitle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/flipCoinSettingsNumCoinsCircle"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/circle_outline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flipCoinSettingsNumCoinsLabel"
+        app:layout_constraintDimensionRatio="1:1" />
+
+    <!-- TODO: Adjust text size for large values -->
     <EditText
         android:id="@+id/flipCoinSettingsNumCoins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:inputType="number"
+        android:ems="5"
         android:hint="@string/flip_coin_num_coins_label"
         android:importantForAutofill="no"
+        android:inputType="numberSigned"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/flipCoinSettingsNumCoinsCircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/flipCoinSettingsNumCoinsLabel" />
-
-    <Button
-        android:id="@+id/flipCoinSettingsSaveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="100dp"
-        android:focusable="false"
-        android:text="@string/random_settings_save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/flipCoinSettingsCancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:focusable="false"
-        android:text="@string/random_settings_cancel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/flipCoinSettingsSaveButton" />
-
+        app:layout_constraintTop_toTopOf="@+id/flipCoinSettingsNumCoinsCircle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
