@@ -17,6 +17,7 @@ val baseRandomSettingsSerializerModule = SerializersModule {
         subclass(RandomDecimalSettings::class)
         subclass(RandomWordSettings::class)
         subclass(RandomColorSettings::class)
+        subclass(MagicEightBallSettings::class)
     }
 }
 

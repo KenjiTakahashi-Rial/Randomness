@@ -1,16 +1,15 @@
 package com.kenjitakahashirial.randomness.activities
 
-import androidx.appcompat.widget.SwitchCompat
+import android.widget.CheckBox
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 import com.kenjitakahashirial.randomness.utilities.MagicEightBallSettings
 
 class MagicEightBallSettingsActivity : BaseRandomSettingsActivity() {
-    override val settingsLayoutId: Int
-        get() = TODO("Not yet implemented")
+    override val settingsLayoutId = R.layout.activity_magic_eight_ball_settings
     override val settingsId = R.string.magic_eight_ball_settings_key
 
-    private lateinit var shakeSwitch: SwitchCompat
+    private lateinit var shakeSwitch: CheckBox
 
     override fun findViews() {
         super.findViews()
