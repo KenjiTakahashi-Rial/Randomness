@@ -58,7 +58,6 @@
         android:layout_marginTop="15dp"
         android:text="@string/random_integer_from_label"
         android:textSize="15sp"
-        android:paddingHorizontal="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumDiceCircle" />
@@ -109,7 +108,6 @@
         android:layout_marginTop="15dp"
         android:text="@string/random_integer_to_label"
         android:textSize="15sp"
-        android:paddingHorizontal="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumFacesCircle" />

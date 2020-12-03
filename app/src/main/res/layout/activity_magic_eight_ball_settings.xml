@@ -18,7 +18,6 @@
         android:layout_marginTop="250dp"
         android:text="@string/magic_eight_ball_settings_shake"
         android:textSize="15sp"
-        android:paddingHorizontal="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

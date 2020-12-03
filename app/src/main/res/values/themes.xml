@@ -40,6 +40,7 @@
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:button">@drawable/compound_button_circle</item>
+        <item name="android:paddingHorizontal">8dp</item>
     </style>
 
     <style name="RandomnessRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
@@ -47,5 +48,6 @@
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:button">@drawable/compound_button_circle</item>
+        <item name="android:paddingHorizontal">8dp</item>
     </style>
 </resources>
