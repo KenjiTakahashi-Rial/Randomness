@@ -4,29 +4,29 @@ import android.content.Context
 import android.util.AttributeSet
 import android.util.TypedValue
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.core.view.doOnPreDraw
+import androidx.core.view.doOnLayout
+import androidx.core.widget.doBeforeTextChanged
 import androidx.core.widget.doOnTextChanged
 import com.kenjitakahashirial.randomness.R
 
-class AutoSizeEditText(context: Context, attrs: AttributeSet) : AppCompatEditText(context, attrs) {
+open class AutoSizeEditText(context: Context, attrs: AttributeSet) : AppCompatEditText(context, attrs) {
+    private var widthBeforeTextChange = width
+
     private var maxTextSize = 112.0f.spToPx()
         set(newSize) {
             field = newSize
-            invalidate()
             requestLayout()
         }
 
     private var minTextSize = 12.0f.spToPx()
         set(newSize) {
             field = newSize
-            invalidate()
             requestLayout()
         }
 
     private var stepGranularity = 1.0f.spToPx()
         set(newSize) {
             field = newSize
-            invalidate()
             requestLayout()
         }
 
@@ -46,8 +46,13 @@ class AutoSizeEditText(context: Context, attrs: AttributeSet) : AppCompatEditTex
             }
         }
 
-        doOnPreDraw { autoSizeText() }
+        doOnLayout { beforeTextChange(); autoSizeText() }
+        doBeforeTextChanged { _, _, _, _ -> beforeTextChange() }
         doOnTextChanged { _, _, _, _ -> autoSizeText() }
+    }
+
+    private fun beforeTextChange() {
+        widthBeforeTextChange = width
     }
 
     private fun autoSizeText() {
@@ -56,13 +61,15 @@ class AutoSizeEditText(context: Context, attrs: AttributeSet) : AppCompatEditTex
         val originalMaxWidth = maxWidth
         maxWidth = Int.MAX_VALUE
 
+        val widthThreshold = minOf(widthBeforeTextChange, originalMaxWidth)
         textSize = maxTextSize
 
-        while (measureWidth > originalMaxWidth && textSize > minTextSize) {
+        while (measureWidth > widthThreshold && textSize > minTextSize) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, maxOf(textSize - stepGranularity, minTextSize))
         }
 
         maxWidth = originalMaxWidth
+        requestLayout()
     }
 
     private fun Float.spToPx() = this * context.resources.displayMetrics.scaledDensity
