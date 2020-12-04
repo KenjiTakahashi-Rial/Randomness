@@ -5,6 +5,12 @@ import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import androidx.core.view.iterator
 
+val View.measureWidth: Int
+    get() {
+        if (display != null) measure(display.width, display.height)
+        return measuredWidth
+    }
+
 inline fun <reified T : View> View.find(predicate: (View) -> Boolean = { true }): T? {
     if (this is ViewGroup) {
         for (child in this) {
