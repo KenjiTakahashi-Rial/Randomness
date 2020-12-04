@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/rollDiceSettingsNumDiceCircle"
+        android:id="@+id/randomIntegerSettingsFromCircle"
         android:layout_width="150dp"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
@@ -35,21 +35,24 @@
         app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsFromLabel"
         app:layout_constraintDimensionRatio="1:1" />
 
-    <!-- TODO: Adjust text size for large values -->
-    <EditText
-        android:id="@+id/rollDiceNumDice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"
+    <com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
+        android:id="@+id/randomIntegerSettingsFrom"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:maxWidth="140dp"
         android:hint="@string/random_integer_settings_from_hint"
         android:importantForAutofill="no"
         android:inputType="numberSigned"
         android:textSize="25sp"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/rollDiceSettingsNumDiceCircle"
+        app:layout_constraintBottom_toBottomOf="@+id/randomIntegerSettingsFromCircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rollDiceSettingsNumDiceCircle" />
+        app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsFromCircle"
+        app:maxTextSize="112sp"
+        app:minTextSize="12sp"
+        app:stepGranularity="1sp"
+        style="@style/RandomnessEditText" />
 
     <CheckBox
         android:id="@+id/randomIntegerSettingsIncludeFrom"
@@ -60,10 +63,10 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumDiceCircle" />
+        app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsFromCircle" />
         
     <TextView
-        android:id="@+id/rollDiceNumFacesLabel"
+        android:id="@+id/randomIntegerToLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
@@ -75,7 +78,7 @@
         app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsIncludeFrom" />
 
     <ImageView
-        android:id="@+id/rollDiceSettingsNumFacesCircle"
+        android:id="@+id/randomIntegerSettingsToCircle"
         android:layout_width="150dp"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
@@ -83,23 +86,27 @@
         android:src="@drawable/circle_outline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rollDiceNumFacesLabel"
+        app:layout_constraintTop_toBottomOf="@+id/randomIntegerToLabel"
         app:layout_constraintDimensionRatio="1:1" />
 
-    <EditText
-        android:id="@+id/rollDiceNumFaces"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"
+    <com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
+        android:id="@+id/randomIntegerSettingsTo"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:maxWidth="140dp"
         android:hint="@string/random_integer_settings_to_hint"
         android:importantForAutofill="no"
         android:inputType="numberSigned"
         android:textSize="25sp"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/rollDiceSettingsNumFacesCircle"
+        app:layout_constraintBottom_toBottomOf="@+id/randomIntegerSettingsToCircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rollDiceSettingsNumFacesCircle" />
+        app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsToCircle"
+        app:maxTextSize="112sp"
+        app:minTextSize="12sp"
+        app:stepGranularity="1sp"
+        style="@style/RandomnessEditText" />
 
     <CheckBox
         android:id="@+id/randomIntegerSettingsIncludeTo"
@@ -110,5 +117,5 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumFacesCircle" />
+        app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsToCircle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

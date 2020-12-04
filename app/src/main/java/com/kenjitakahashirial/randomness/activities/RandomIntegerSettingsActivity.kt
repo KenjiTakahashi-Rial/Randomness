@@ -1,9 +1,9 @@
 package com.kenjitakahashirial.randomness.activities
 
 import android.widget.CheckBox
-import android.widget.EditText
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
+import com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
 import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
 import com.kenjitakahashirial.randomness.utilities.isValid
 
@@ -11,15 +11,17 @@ class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsLayoutId = R.layout.activity_random_integer_settings
     override val settingsId = R.string.random_integer_settings_key
 
-    private lateinit var fromText: EditText
-    private lateinit var toText: EditText
+    private lateinit var fromText: AutoSizeEditText
+    private lateinit var toText: AutoSizeEditText
     private lateinit var includeFromSwitch: CheckBox
     private lateinit var includeToSwitch: CheckBox
 
     override fun findViews() {
         super.findViews()
-        fromText = findViewById(R.id.rollDiceNumDice)
-        toText = findViewById(R.id.rollDiceNumFaces)
+
+        fromText = findViewById(R.id.randomIntegerSettingsFrom)
+        toText = findViewById(R.id.randomIntegerSettingsTo)
+
         includeFromSwitch = findViewById(R.id.randomIntegerSettingsIncludeFrom)
         includeToSwitch = findViewById(R.id.randomIntegerSettingsIncludeTo)
     }
