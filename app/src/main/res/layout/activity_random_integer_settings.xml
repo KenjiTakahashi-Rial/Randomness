@@ -49,9 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsFromCircle"
-        app:maxTextSize="112sp"
-        app:minTextSize="12sp"
-        app:stepGranularity="1sp" />
+        app:maxTextSize="25sp" />
 
     <CheckBox
         android:id="@+id/randomIntegerSettingsIncludeFrom"
@@ -102,9 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/randomIntegerSettingsToCircle"
-        app:maxTextSize="112sp"
-        app:minTextSize="12sp"
-        app:stepGranularity="1sp" />
+        app:maxTextSize="25sp" />
 
     <CheckBox
         android:id="@+id/randomIntegerSettingsIncludeTo"

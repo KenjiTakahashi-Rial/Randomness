@@ -15,20 +15,16 @@ open class AutoSizeEditText(context: Context, attrs: AttributeSet) : AppCompatEd
     private var maxTextSize = 112.0f.spToPx()
         set(newSize) {
             field = newSize
-            requestLayout()
+            autoSizeText()
         }
 
     private var minTextSize = 12.0f.spToPx()
         set(newSize) {
             field = newSize
-            requestLayout()
+            autoSizeText()
         }
 
     private var stepGranularity = 1.0f.spToPx()
-        set(newSize) {
-            field = newSize
-            requestLayout()
-        }
 
     init {
         context.theme.obtainStyledAttributes(
@@ -62,7 +58,7 @@ open class AutoSizeEditText(context: Context, attrs: AttributeSet) : AppCompatEd
         maxWidth = Int.MAX_VALUE
 
         val widthThreshold = minOf(widthBeforeTextChange, originalMaxWidth)
-        textSize = maxTextSize
+        textSize = maxTextSize.pxToSp()
 
         while (measureWidth > widthThreshold && textSize > minTextSize) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, maxOf(textSize - stepGranularity, minTextSize))
@@ -73,4 +69,5 @@ open class AutoSizeEditText(context: Context, attrs: AttributeSet) : AppCompatEd
     }
 
     private fun Float.spToPx() = this * context.resources.displayMetrics.scaledDensity
+    private fun Float.pxToSp() = this / context.resources.displayMetrics.scaledDensity
 }
