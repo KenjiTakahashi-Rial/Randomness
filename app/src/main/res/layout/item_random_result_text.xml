@@ -5,14 +5,13 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
-    <TextView
-        android:id="@+id/randomResultTextView"
-        android:layout_width="wrap_content"
+    <com.kenjitakahashirial.randomness.utilities.AutoSizeTextView
+        android:id="@+id/randomResultText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="72sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_gravity="center" />
+        android:layout_marginHorizontal="40dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="100sp"
+        app:maxTextSize="100sp" />
 </FrameLayout>
