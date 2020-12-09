@@ -2,9 +2,9 @@ package com.kenjitakahashirial.randomness.activities
 
 import android.os.Bundle
 import android.widget.CheckBox
-import android.widget.EditText
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
+import com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
 import com.kenjitakahashirial.randomness.utilities.RandomDecimalSettings
 
 class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
@@ -12,7 +12,7 @@ class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsId = R.string.random_decimal_settings_key
 
     private val decimalPlacesRange = 1..8
-    private lateinit var decimalPlacesText: EditText
+    private lateinit var decimalPlacesText: AutoSizeEditText
     private lateinit var showTrailingZerosSwitch: CheckBox
 
     override fun onCreate(savedInstanceState: Bundle?) {
