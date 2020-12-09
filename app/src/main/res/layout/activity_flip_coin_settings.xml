@@ -35,19 +35,20 @@
         app:layout_constraintTop_toBottomOf="@+id/flipCoinSettingsNumCoinsLabel"
         app:layout_constraintDimensionRatio="1:1" />
 
-    <!-- TODO: Adjust text size for large values -->
-    <EditText
+    <com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
         android:id="@+id/flipCoinSettingsNumCoins"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:ems="5"
+        android:gravity="center"
         android:hint="@string/flip_coin_num_coins_label"
         android:importantForAutofill="no"
-        android:inputType="numberSigned"
+        android:inputType="number"
+        android:maxWidth="150dp"
+        android:paddingHorizontal="5dp"
         android:textSize="25sp"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/flipCoinSettingsNumCoinsCircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/flipCoinSettingsNumCoinsCircle" />
+        app:layout_constraintTop_toTopOf="@+id/flipCoinSettingsNumCoinsCircle"
+        app:maxTextSize="25sp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

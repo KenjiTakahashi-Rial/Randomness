@@ -1,8 +1,8 @@
 package com.kenjitakahashirial.randomness.activities
 
-import android.widget.EditText
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
+import com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
 import com.kenjitakahashirial.randomness.utilities.FlipCoinSettings
 
 class FlipCoinSettingsActivity : BaseRandomSettingsActivity() {
@@ -10,12 +10,12 @@ class FlipCoinSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsId = R.string.flip_coin_settings_key
 
     private val numCoinsRange = 1..15
-    private lateinit var numCoinsText: EditText
+    private lateinit var numCoinsText: AutoSizeEditText
 
     override fun findViews() {
         super.findViews()
 
-        numCoinsText = findViewById<EditText>(R.id.flipCoinSettingsNumCoins).apply {
+        numCoinsText = findViewById<AutoSizeEditText>(R.id.flipCoinSettingsNumCoins).apply {
             hint = with(numCoinsRange) { getString(R.string.format_range_int, first, last) }
         }
     }
