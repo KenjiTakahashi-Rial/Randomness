@@ -35,21 +35,21 @@
         app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumDiceLabel"
         app:layout_constraintDimensionRatio="1:1" />
 
-    <!-- TODO: Adjust text size for large values -->
-    <EditText
+    <com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
         android:id="@+id/rollDiceSettingsNumDice"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:ems="5"
+        android:gravity="center"
         android:hint="@string/roll_dice_num_dice_label"
         android:importantForAutofill="no"
         android:inputType="numberSigned"
+        android:paddingHorizontal="5dp"
         android:textSize="25sp"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/rollDiceSettingsNumDiceCircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rollDiceSettingsNumDiceCircle" />
+        app:layout_constraintTop_toTopOf="@+id/rollDiceSettingsNumDiceCircle"
+        app:maxTextSize="25sp" />
 
     <TextView
         android:id="@+id/rollDiceSettingsNumFacesLabel"
@@ -75,19 +75,19 @@
         app:layout_constraintTop_toBottomOf="@+id/rollDiceSettingsNumFacesLabel"
         app:layout_constraintDimensionRatio="1:1" />
 
-    <EditText
+    <com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
         android:id="@+id/rollDiceSettingsNumFaces"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:ems="5"
+        android:gravity="center"
         android:hint="@string/roll_dice_num_faces_label"
         android:importantForAutofill="no"
         android:inputType="numberSigned"
+        android:paddingHorizontal="5dp"
         android:textSize="25sp"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/rollDiceSettingsNumFacesCircle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rollDiceSettingsNumFacesCircle" />
-
+        app:layout_constraintTop_toTopOf="@+id/rollDiceSettingsNumFacesCircle"
+        app:maxTextSize="25sp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

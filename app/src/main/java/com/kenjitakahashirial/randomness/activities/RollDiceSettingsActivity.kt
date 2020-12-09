@@ -1,9 +1,8 @@
 package com.kenjitakahashirial.randomness.activities
 
-import android.os.Bundle
-import android.widget.EditText
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
+import com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
 import com.kenjitakahashirial.randomness.utilities.RollDiceSettings
 
 class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
@@ -12,19 +11,17 @@ class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
 
     private val numDiceRange = 1..15
     private val numFacesArray = intArrayOf(4, 6, 8, 10, 12, 20)
-    private lateinit var numDiceText: EditText
-    private lateinit var numFacesText: EditText
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        numDiceText.hint = with(numDiceRange) { getString(R.string.format_range_int, first, last) }
-        numFacesText.hint = numFacesArray.joinToString(", ")
-    }
+    private lateinit var numDiceText: AutoSizeEditText
+    private lateinit var numFacesText: AutoSizeEditText
 
     override fun findViews() {
         super.findViews()
-        numDiceText = findViewById(R.id.rollDiceSettingsNumDice)
-        numFacesText = findViewById(R.id.rollDiceSettingsNumFaces)
+        numDiceText = findViewById<AutoSizeEditText>(R.id.rollDiceSettingsNumDice).apply {
+            hint = with(numDiceRange) { getString(R.string.format_range_int, first, last) }
+        }
+        numFacesText = findViewById<AutoSizeEditText>(R.id.rollDiceSettingsNumFaces).apply {
+            hint = numFacesArray.joinToString(", ")
+        }
     }
 
     override fun getSettings(): Pair<RollDiceSettings, SettingsError> {
