@@ -2,39 +2,33 @@ package com.kenjitakahashirial.randomness.activities
 
 import android.graphics.Color
 import android.graphics.Color.WHITE
-import android.os.Bundle
 import android.widget.CheckBox
-import android.widget.EditText
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
-import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
-import com.kenjitakahashirial.randomness.utilities.RandomColorSettings
-import com.kenjitakahashirial.randomness.utilities.isValid
-import com.kenjitakahashirial.randomness.utilities.toColorHexString
+import com.kenjitakahashirial.randomness.utilities.*
 
 class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsLayoutId = R.layout.activity_random_color_settings
     override val settingsId = R.string.random_color_settings_key
 
-    private lateinit var fromText: EditText
-    private lateinit var toText: EditText
+    private lateinit var fromText: AutoSizeEditText
+    private lateinit var toText: AutoSizeEditText
     private lateinit var includeFromSwitch: CheckBox
     private lateinit var includeToSwitch: CheckBox
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun findViews() {
+        super.findViews()
 
         val blackHex = Color.BLACK.toColorHexString()
         val whiteHex = WHITE.toColorHexString()
 
-        fromText.hint = getString(R.string.format_range_string, blackHex, whiteHex)
-        toText.hint = getString(R.string.format_range_string, blackHex, whiteHex)
-    }
+        fromText = findViewById<AutoSizeEditText>(R.id.randomColorSettingsFrom).apply {
+            hint = getString(R.string.format_range_string, blackHex, whiteHex)
+        }
+        toText = findViewById<AutoSizeEditText>(R.id.randomColorSettingsTo).apply {
+            hint = getString(R.string.format_range_string, blackHex, whiteHex)
+        }
 
-    override fun findViews() {
-        super.findViews()
-        fromText = findViewById(R.id.randomColorSettingsFrom)
-        toText = findViewById(R.id.randomColorSettingsTo)
         includeFromSwitch = findViewById(R.id.randomColorSettingsIncludeFrom)
         includeToSwitch = findViewById(R.id.randomColorSettingsIncludeTo)
     }
