@@ -32,11 +32,13 @@ class RandomWordActivity : BaseRandomActivity() {
         }
 
         setReplacementUiVisibility()
+        resetRandomizedWords()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         setReplacementUiVisibility()
+        resetRandomizedWords()
     }
 
     override fun generateNext() {
@@ -46,8 +48,7 @@ class RandomWordActivity : BaseRandomActivity() {
             if (usesReplacement) {
                 wordPool[Random.nextInt(wordPool.size)]
             } else {
-                if (randomizedWordPool.isEmpty() || randomizedWordIndex >= wordPool.size) resetRandomizedWords()
-
+                if (randomizedWordIndex >= randomizedWordPool.size) resetRandomizedWords()
                 randomizedWordPool[randomizedWordIndex++]
             }
         }
@@ -62,7 +63,6 @@ class RandomWordActivity : BaseRandomActivity() {
         randomizedWordPool = settings.wordPool.shuffled()
 
         (resultView as TextView).text = ""
-
         updateWordsRemaining()
     }
 
