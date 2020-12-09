@@ -57,6 +57,9 @@ open class AutoSizeEditText(context: Context, attrs: AttributeSet) : AppCompatEd
         val originalMaxWidth = maxWidth
         maxWidth = Int.MAX_VALUE
 
+        val originalHint = hint
+        if (text?.isNotEmpty() != false) hint = ""
+
         val widthThreshold = minOf(widthBeforeTextChange, originalMaxWidth)
         textSize = maxTextSize.pxToSp()
 
@@ -65,6 +68,7 @@ open class AutoSizeEditText(context: Context, attrs: AttributeSet) : AppCompatEd
         }
 
         maxWidth = originalMaxWidth
+        hint = originalHint
         requestLayout()
     }
 
