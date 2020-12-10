@@ -19,8 +19,8 @@ class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
     override fun findViews() {
         super.findViews()
 
-        val blackHex = Color.BLACK.toColorHexString()
-        val whiteHex = WHITE.toColorHexString()
+        val blackHex = getString(R.string.format_hex, Color.BLACK.toColorHexString())
+        val whiteHex = getString(R.string.format_hex, WHITE.toColorHexString())
 
         fromText = findViewById<AutoSizeEditText>(R.id.randomColorSettingsFrom).apply {
             hint = getString(R.string.format_range_string, blackHex, whiteHex)
@@ -38,9 +38,15 @@ class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
         var error: SettingsError
 
         try {
+            var fromHex = fromText.text.toString()
+            var toHex = toText.text.toString()
+
+            if (fromText.text?.get(0) == '#') fromHex = fromHex.substring(1)
+            if (toText.text?.get(0) == '#') toHex = toHex.substring(1)
+
             settings = RandomColorSettings(
-                from = fromText.text.toString().toInt(16) + Color.BLACK,
-                to = toText.text.toString().toInt(16) + Color.BLACK,
+                from = fromHex.toInt(16) + Color.BLACK,
+                to = toHex.toInt(16) + Color.BLACK,
                 includeFrom = includeFromSwitch.isChecked,
                 includeTo = includeToSwitch.isChecked
             )
@@ -64,8 +70,8 @@ class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
         val settings = sharedPreferences.getClass(settingsKey, RandomColorSettings())
 
         with(settings) {
-            fromText.setText(from.toColorHexString())
-            toText.setText(to.toColorHexString())
+            fromText.setText(getString(R.string.format_hex, from.toColorHexString()))
+            toText.setText(getString(R.string.format_hex, to.toColorHexString()))
             includeFromSwitch.isChecked = includeFrom
             includeToSwitch.isChecked = includeTo
         }
