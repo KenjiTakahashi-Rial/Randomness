@@ -1,10 +1,11 @@
 package com.kenjitakahashirial.randomness.utilities
 
+import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import android.widget.TextView
+import com.kenjitakahashirial.randomness.R
 
-data class ImageTextView(val parent: RelativeLayout) {
-    val imageView = parent.find<ImageView>() ?: throw InstantiationException("Could not find ImageView child of ImageTextView.")
-    val textView = parent.find<TextView>() ?: throw InstantiationException("Could not find TextView child of ImageTextView.")
+data class ImageTextView(val parent: ViewGroup) {
+    val imageView: ImageView = parent.findViewById(R.id.imageTextViewImage) ?: throw InstantiationException("Could not find ImageView.")
+    val textView: TextView = parent.findViewById(R.id.imageTextViewText) ?: throw InstantiationException("Could not find TextView.")
 }

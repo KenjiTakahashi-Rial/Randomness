@@ -3,7 +3,6 @@ package com.kenjitakahashirial.randomness.activities
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.view.get
@@ -52,8 +51,8 @@ class RollDiceActivity : BaseRandomActivity() {
             resultRows.add(resultRow as LinearLayoutCompat)
 
             for (i in 0 until maxResultsPerRow) {
-                layoutInflater.inflate(R.layout.view_roll_dice_result, resultRow)
-                resultImageTextViews.add(ImageTextView(resultRow[i] as RelativeLayout))
+                layoutInflater.inflate(R.layout.item_roll_dice_result, resultRow)
+                resultImageTextViews.add(ImageTextView(resultRow[i] as ViewGroup))
                 resultImageTextViews.last().parent.visibility = View.GONE
             }
         }

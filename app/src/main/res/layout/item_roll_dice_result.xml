@@ -6,6 +6,7 @@
     android:layout_weight="1">
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageTextViewImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
@@ -13,9 +14,13 @@
         android:padding="2dp"
         android:src="@mipmap/d6" />
 
-    <!-- TODO: Adjust the text size programmatically -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+    <com.kenjitakahashirial.randomness.utilities.ScalingTextView
+        android:id="@+id/imageTextViewText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textSize="100sp"
+        android:textColor="#000000" />
 </RelativeLayout>

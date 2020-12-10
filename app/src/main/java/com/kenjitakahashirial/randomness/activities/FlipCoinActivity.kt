@@ -51,7 +51,7 @@ class FlipCoinActivity : BaseRandomActivity() {
             resultRows.add(resultRow as LinearLayoutCompat)
 
             for (i in 0 until maxResultsPerRow) {
-                layoutInflater.inflate(R.layout.view_flip_coin_result, resultRow)
+                layoutInflater.inflate(R.layout.item_flip_coin_result, resultRow)
                 resultImageViews.add(resultRow[i] as ImageView)
                 resultImageViews.last().visibility = View.GONE
             }
