@@ -38,7 +38,7 @@ class RandomColorActivity : BaseRandomActivity() {
         val end = with(settings) { if (includeTo) to else to - 1 }
         val result = (start..end).random()
 
-        resultView.setBackgroundColor(result)
+        baseResultView.setBackgroundColor(result)
         resultTextView.text = getString(R.string.format_hex, result.toColorHexString())
     }
 

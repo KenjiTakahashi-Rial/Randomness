@@ -22,6 +22,9 @@ class MagicEightBallActivity : BaseRandomActivity() {
     private lateinit var accelerometer: Sensor
     private lateinit var shakeDetector: ShakeDetector
 
+    private val resultView: TextView
+        get() = baseResultView as TextView
+
     private val settings: MagicEightBallSettings
         get() = baseSettings as MagicEightBallSettings
 
@@ -53,6 +56,6 @@ class MagicEightBallActivity : BaseRandomActivity() {
     }
 
     override fun generateNext() {
-        (resultView as TextView).text = resources.getStringArray(settings.resultsId).random()
+        resultView.text = resources.getStringArray(settings.resultsId).random()
     }
 }

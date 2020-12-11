@@ -26,6 +26,9 @@ class FlipCoinActivity : BaseRandomActivity() {
     private val resultRows = mutableListOf<LinearLayoutCompat>()
     private val resultImageViews = mutableListOf<ImageView>()
 
+    private val resultView: ViewGroup
+        get() = baseResultView as ViewGroup
+
     private val settings: FlipCoinSettings
         get() = baseSettings as FlipCoinSettings
 
@@ -49,7 +52,7 @@ class FlipCoinActivity : BaseRandomActivity() {
 
     // TODO: Consider having equal coins per row, instead of filling each row entirely before the next one
     private fun inflateResultViews() {
-        for (resultRow in resultView as ViewGroup) {
+        for (resultRow in resultView) {
             resultRows.add(resultRow as LinearLayoutCompat)
 
             for (i in 0 until maxResultsPerRow) {

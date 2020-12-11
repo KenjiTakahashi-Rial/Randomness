@@ -12,6 +12,9 @@ class RandomIntegerActivity : BaseRandomActivity() {
     override val settingsId = R.string.random_integer_settings_key
     override val settingsActivityClass = RandomIntegerSettingsActivity::class.java
 
+    private val resultView: TextView
+        get() = baseResultView as TextView
+
     private val settings: RandomIntegerSettings
         get() = baseSettings as RandomIntegerSettings
 
@@ -24,6 +27,6 @@ class RandomIntegerActivity : BaseRandomActivity() {
             end = if (includeTo) to else to - 1
         }
 
-        (resultView as TextView).text = (start..end).random().toString()
+        resultView.text = (start..end).random().toString()
     }
 }

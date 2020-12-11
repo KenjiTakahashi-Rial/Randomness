@@ -25,7 +25,7 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
     protected open val showResultCircle = true
 
     protected lateinit var baseSettings: BaseRandomSettings
-    protected lateinit var resultView: View
+    protected lateinit var baseResultView: View
     private lateinit var resultCircle: ImageView
     private val settingsActivityRequestCode = 0
 
@@ -42,7 +42,7 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
         super.setContentView(layoutResId)
         val resultLayout = layoutInflater.inflate(resultLayoutId, null).apply {
             addContentView(this, (this as ViewGroup).defaultLayoutParams)
-            resultView = this[0]
+            baseResultView = this[0]
         }
     }
 

@@ -25,6 +25,9 @@ class RollDiceActivity : BaseRandomActivity() {
     private val resultImageTextViews = mutableListOf<ImageTextView>()
     private lateinit var dieImageIdMap: Map<Int, Int>
 
+    private val resultView: ViewGroup
+        get() = baseResultView as ViewGroup
+
     private val settings: RollDiceSettings
         get() = baseSettings as RollDiceSettings
 
@@ -49,7 +52,7 @@ class RollDiceActivity : BaseRandomActivity() {
     }
 
     private fun inflateResultViews() {
-        for (resultRow in resultView as ViewGroup) {
+        for (resultRow in resultView) {
             resultRows.add(resultRow as LinearLayoutCompat)
 
             for (i in 0 until maxResultsPerRow) {

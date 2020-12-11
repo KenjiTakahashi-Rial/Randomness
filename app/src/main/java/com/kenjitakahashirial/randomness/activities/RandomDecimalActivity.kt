@@ -14,12 +14,15 @@ class RandomDecimalActivity : BaseRandomActivity() {
     override val settingsId = R.string.random_decimal_settings_key
     override val settingsActivityClass = RandomDecimalSettingsActivity::class.java
 
+    private val resultView: TextView
+        get() = baseResultView as TextView
+
     private val settings: RandomDecimalSettings
         get() = baseSettings as RandomDecimalSettings
 
     override fun generateNext() {
         with(settings) {
-            (resultView as TextView).text = Random.nextDouble().toTruncatedString(decimalPlaces, showTrailingZeros)
+            resultView.text = Random.nextDouble().toTruncatedString(decimalPlaces, showTrailingZeros)
         }
     }
 
