@@ -47,15 +47,15 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
         resultCircle = findViewById<ImageView>(R.id.baseRandomResultCircle).apply {
             visibility = if (showResultCircle) View.VISIBLE else View.INVISIBLE
         }
-
         val title = findViewById<TextView>(R.id.baseRandomTitle).apply {
             text = getString(titleId)
         }
-
         val generateButton = findViewById<Button>(R.id.baseRandomGenerateButton).apply {
             setOnClickListener { generateNext() }
         }
-
+        val backButton = findViewById<ImageButton>(R.id.baseRandomBackButton).apply {
+            setOnClickListener { finish() }
+        }
         val settingsButton = findViewById<ImageButton>(R.id.baseRandomSettingsButton).apply {
             setOnClickListener { openSettings() }
         }
