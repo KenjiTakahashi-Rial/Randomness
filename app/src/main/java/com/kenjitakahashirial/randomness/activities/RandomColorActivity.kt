@@ -14,11 +14,15 @@ import com.kenjitakahashirial.randomness.utilities.toColorHexString
 class RandomColorActivity : BaseRandomActivity() {
     override val titleId = R.string.random_color_name
     override val resultLayoutId = R.layout.item_random_color_result
+    override val defaultSettings = RandomColorSettings()
     override val settingsId = R.string.random_color_settings_key
     override val settingsActivityClass = RandomColorSettingsActivity::class.java
 
     private lateinit var resultTextView: TextView
     private lateinit var copyButton: Button
+
+    private val settings: RandomColorSettings
+        get() = baseSettings as RandomColorSettings
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +34,6 @@ class RandomColorActivity : BaseRandomActivity() {
     }
 
     override fun generateNext() {
-        val settings = sharedPreferences.getClass(settingsKey, RandomColorSettings())
-
         val start = with(settings) { if (includeFrom) from else from + 1 }
         val end = with(settings) { if (includeTo) to else to - 1 }
         val result = (start..end).random()

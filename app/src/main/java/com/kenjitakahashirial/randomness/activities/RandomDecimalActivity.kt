@@ -10,12 +10,14 @@ import kotlin.random.Random
 class RandomDecimalActivity : BaseRandomActivity() {
     override val titleId = R.string.random_decimal_name
     override val resultLayoutId = R.layout.item_random_result_text
+    override val defaultSettings = RandomDecimalSettings()
     override val settingsId = R.string.random_decimal_settings_key
     override val settingsActivityClass = RandomDecimalSettingsActivity::class.java
 
-    override fun generateNext() {
-        val settings = sharedPreferences.getClass(settingsKey, RandomDecimalSettings())
+    private val settings: RandomDecimalSettings
+        get() = baseSettings as RandomDecimalSettings
 
+    override fun generateNext() {
         with(settings) {
             (resultView as TextView).text = Random.nextDouble().toTruncatedString(decimalPlaces, showTrailingZeros)
         }

@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.get
 import com.kenjitakahashirial.randomness.R
+import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
 import com.kenjitakahashirial.randomness.utilities.defaultLayoutParams
 
 abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
@@ -17,20 +18,24 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
 
     protected abstract val titleId: Int
     protected abstract val resultLayoutId: Int
+    protected abstract val defaultSettings: BaseRandomSettings
     protected abstract val settingsId: Int
     protected abstract val settingsActivityClass: Class<out BaseRandomSettingsActivity>
 
     protected open val showResultCircle = true
 
-    protected val settingsKey get() = getString(settingsId)
+    protected lateinit var baseSettings: BaseRandomSettings
     protected lateinit var resultView: View
     private lateinit var resultCircle: ImageView
     private val settingsActivityRequestCode = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_base_random)
         findViews()
+
+        baseSettings = sharedPreferences.getClass(getString(settingsId), defaultSettings)
     }
 
     override fun setContentView(layoutResId: Int) {
@@ -38,6 +43,13 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
         val resultLayout = layoutInflater.inflate(resultLayoutId, null).apply {
             addContentView(this, (this as ViewGroup).defaultLayoutParams)
             resultView = this[0]
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == settingsActivityRequestCode) {
+            baseSettings = sharedPreferences.getClass(getString(settingsId), defaultSettings)
         }
     }
 

@@ -17,6 +17,7 @@ import kotlin.random.Random
 class FlipCoinActivity : BaseRandomActivity() {
     override val titleId = R.string.flip_coin_name
     override val resultLayoutId = R.layout.item_random_result_rows
+    override val defaultSettings = FlipCoinSettings()
     override val settingsId = R.string.flip_coin_settings_key
     override val settingsActivityClass = FlipCoinSettingsActivity::class.java
     override val showResultCircle = false
@@ -25,14 +26,15 @@ class FlipCoinActivity : BaseRandomActivity() {
     private val resultRows = mutableListOf<LinearLayoutCompat>()
     private val resultImageViews = mutableListOf<ImageView>()
 
+    private val settings: FlipCoinSettings
+        get() = baseSettings as FlipCoinSettings
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         inflateResultViews()
     }
 
     override fun generateNext() {
-        val settings = sharedPreferences.getClass(settingsKey, FlipCoinSettings())
-
         for ((index, result) in resultImageViews.withIndex()) {
             result.apply {
                 generateNextCoinImage()

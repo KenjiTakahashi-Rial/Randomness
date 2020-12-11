@@ -13,6 +13,7 @@ import kotlin.random.Random
 class RandomWordActivity : BaseRandomActivity() {
     override val titleId = R.string.random_word_name
     override val resultLayoutId = R.layout.item_random_word_result
+    override val defaultSettings = RandomWordSettings()
     override val settingsId = R.string.random_word_settings_key
     override val settingsActivityClass = RandomWordSettingsActivity::class.java
 
@@ -21,6 +22,9 @@ class RandomWordActivity : BaseRandomActivity() {
     private lateinit var resetButton: Button
     private var randomizedWordPool = emptyList<String>()
     private var randomizedWordIndex = 0
+
+    private val settings: RandomWordSettings
+        get() = baseSettings as RandomWordSettings
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,9 +46,7 @@ class RandomWordActivity : BaseRandomActivity() {
     }
 
     override fun generateNext() {
-        val settings = sharedPreferences.getClass(settingsKey, RandomWordSettings())
-
-        (resultView as TextView).text = with(settings) {
+        (resultView as TextView).text = with((baseSettings as RandomWordSettings)) {
             if (usesReplacement) {
                 wordPool[Random.nextInt(wordPool.size)]
             } else {
@@ -57,8 +59,6 @@ class RandomWordActivity : BaseRandomActivity() {
     }
 
     private fun resetRandomizedWords() {
-        val settings = sharedPreferences.getClass(settingsKey, RandomWordSettings())
-
         randomizedWordIndex = 0
         randomizedWordPool = settings.wordPool.shuffled()
 
@@ -67,7 +67,6 @@ class RandomWordActivity : BaseRandomActivity() {
     }
 
     private fun setReplacementUiVisibility() {
-        val settings = sharedPreferences.getClass(settingsKey, RandomWordSettings())
         val visibility = if (!settings.usesReplacement) View.VISIBLE else View.GONE
 
         wordsRemainingLabel.visibility = visibility

@@ -8,14 +8,21 @@ import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
 class RandomIntegerActivity : BaseRandomActivity() {
     override val titleId = R.string.random_integer_name
     override val resultLayoutId = R.layout.item_random_result_text
+    override val defaultSettings = RandomIntegerSettings()
     override val settingsId = R.string.random_integer_settings_key
     override val settingsActivityClass = RandomIntegerSettingsActivity::class.java
 
-    override fun generateNext() {
-        val settings = sharedPreferences.getClass(settingsKey, RandomIntegerSettings())
+    private val settings: RandomIntegerSettings
+        get() = baseSettings as RandomIntegerSettings
 
-        val start = with(settings) { if (includeFrom) from else from + 1 }
-        val end = with(settings) { if (includeTo) to else to - 1 }
+    override fun generateNext() {
+        var start: Int
+        var end: Int
+
+        with(settings) {
+            start = if (includeFrom) from else from + 1
+            end = if (includeTo) to else to - 1
+        }
 
         (resultView as TextView).text = (start..end).random().toString()
     }

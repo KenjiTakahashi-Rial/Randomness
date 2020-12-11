@@ -15,6 +15,7 @@ import kotlin.random.Random
 class RollDiceActivity : BaseRandomActivity() {
     override val titleId = R.string.roll_dice_name
     override val resultLayoutId = R.layout.item_random_result_rows
+    override val defaultSettings = RollDiceSettings()
     override val settingsId = R.string.roll_dice_settings_key
     override val settingsActivityClass = RollDiceSettingsActivity::class.java
     override val showResultCircle = false
@@ -24,6 +25,9 @@ class RollDiceActivity : BaseRandomActivity() {
     private val resultImageTextViews = mutableListOf<ImageTextView>()
     private lateinit var dieImageIdMap: Map<Int, Int>
 
+    private val settings: RollDiceSettings
+        get() = baseSettings as RollDiceSettings
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         inflateResultViews()
@@ -32,8 +36,6 @@ class RollDiceActivity : BaseRandomActivity() {
     }
 
     override fun generateNext() {
-        val settings = sharedPreferences.getClass(settingsKey, RollDiceSettings())
-
         for ((index, result) in resultImageTextViews.withIndex()) {
             result.apply {
                 textView.generateNextDieRoll(settings)
@@ -67,8 +69,6 @@ class RollDiceActivity : BaseRandomActivity() {
     }
 
     private fun setDieImages() {
-        val settings = sharedPreferences.getClass(settingsKey, RollDiceSettings())
-
         for (result in resultImageTextViews) {
             result.apply {
                 imageView.setImageResource(
