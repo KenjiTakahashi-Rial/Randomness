@@ -2,8 +2,6 @@ package com.kenjitakahashirial.randomness.activities
 
 import android.os.Bundle
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
@@ -17,24 +15,17 @@ class RandomColorActivity : BaseRandomActivity() {
     override val defaultSettings = RandomColorSettings()
     override val settingsId = R.string.random_color_settings_key
     override val settingsActivityClass = RandomColorSettingsActivity::class.java
+    override val copyParentId = R.id.randomColorCopyParent
+    override val copyButtonId = R.id.randomColorCopyButton
 
     private lateinit var resultTextView: TextView
-    private lateinit var copyParent: ViewGroup
-    private lateinit var copyButton: Button
 
     private val settings: RandomColorSettings
         get() = baseSettings as RandomColorSettings
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         resultTextView = findViewById(R.id.randomColorResultTextView)
-        copyParent = findViewById<ViewGroup>(R.id.randomColorCopyParent).apply {
-            visibility = View.INVISIBLE
-        }
-        copyButton = findViewById<Button>(R.id.randomColorCopyButton).apply {
-            setOnClickListener { copyHex() }
-        }
     }
 
     override fun generateNext() {
@@ -44,8 +35,8 @@ class RandomColorActivity : BaseRandomActivity() {
 
         baseResultView.setBackgroundColor(result)
         resultTextView.text = getString(R.string.format_hex, result.toColorHexString())
-        copyParent.visibility = View.VISIBLE
+        copyParent?.visibility = View.VISIBLE
     }
 
-    private fun copyHex() = copyToClipBoard(getString(R.string.random_color_name), resultTextView.text)
+    override fun copyResult() = copyToClipBoard(getString(R.string.random_color_name), resultTextView.text)
 }
