@@ -10,9 +10,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.get
 import com.kenjitakahashirial.randomness.R
+import com.kenjitakahashirial.randomness.extensions.copyToClipBoard
+import com.kenjitakahashirial.randomness.extensions.defaultLayoutParams
 import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
-import com.kenjitakahashirial.randomness.utilities.copyToClipBoard
-import com.kenjitakahashirial.randomness.utilities.defaultLayoutParams
 
 abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
     override val sharedPreferencesId = R.string.shared_preferences_key

@@ -7,9 +7,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.R.string
+import com.kenjitakahashirial.randomness.extensions.defaultLayoutParams
+import com.kenjitakahashirial.randomness.extensions.hideSoftKeyboard
 import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
-import com.kenjitakahashirial.randomness.utilities.defaultLayoutParams
-import com.kenjitakahashirial.randomness.utilities.hideSoftKeyboard
 
 abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     protected enum class SettingsError {

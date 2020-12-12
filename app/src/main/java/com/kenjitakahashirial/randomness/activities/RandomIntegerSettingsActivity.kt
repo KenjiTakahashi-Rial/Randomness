@@ -3,9 +3,9 @@ package com.kenjitakahashirial.randomness.activities
 import android.widget.CheckBox
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
+import com.kenjitakahashirial.randomness.extensions.isValid
 import com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
 import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
-import com.kenjitakahashirial.randomness.utilities.isValid
 
 class RandomIntegerSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsLayoutId = R.layout.activity_random_integer_settings

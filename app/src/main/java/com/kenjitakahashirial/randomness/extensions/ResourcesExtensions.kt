@@ -1,4 +1,4 @@
-package com.kenjitakahashirial.randomness.utilities
+package com.kenjitakahashirial.randomness.extensions
 
 import android.content.res.Resources
 

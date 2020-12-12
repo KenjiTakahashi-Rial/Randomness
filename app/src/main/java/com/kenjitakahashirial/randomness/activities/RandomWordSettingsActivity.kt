@@ -5,8 +5,8 @@ import android.widget.EditText
 import android.widget.RadioGroup
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
+import com.kenjitakahashirial.randomness.extensions.deleteLast
 import com.kenjitakahashirial.randomness.utilities.RandomWordSettings
-import com.kenjitakahashirial.randomness.utilities.deleteLast
 
 class RandomWordSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsLayoutId = R.layout.activity_random_word_settings

@@ -4,6 +4,7 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import com.kenjitakahashirial.randomness.extensions.sq
 
 class ShakeDetector : SensorEventListener {
     interface OnShakeListener {

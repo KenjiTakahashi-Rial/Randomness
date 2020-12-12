@@ -8,6 +8,7 @@ import androidx.core.view.doOnLayout
 import androidx.core.widget.doBeforeTextChanged
 import androidx.core.widget.doOnTextChanged
 import com.kenjitakahashirial.randomness.R
+import com.kenjitakahashirial.randomness.extensions.measureWidth
 
 open class AutoSizeEditText(context: Context, attrs: AttributeSet) : AppCompatEditText(context, attrs) {
     private var widthBeforeTextChange = width
