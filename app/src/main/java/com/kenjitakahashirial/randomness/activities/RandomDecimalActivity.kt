@@ -5,7 +5,6 @@ import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.utilities.RandomDecimalSettings
-import com.kenjitakahashirial.randomness.utilities.copyToClipBoard
 import com.kenjitakahashirial.randomness.utilities.deleteLast
 import kotlin.random.Random
 
@@ -39,6 +38,4 @@ class RandomDecimalActivity : BaseRandomActivity() {
 
         return truncated.toString()
     }
-
-    override fun copyResult() = copyToClipBoard(getString(R.string.random_decimal_name), resultView.text)
 }
