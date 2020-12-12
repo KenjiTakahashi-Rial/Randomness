@@ -1,5 +1,6 @@
 package com.kenjitakahashirial.randomness.activities
 
+import android.view.View
 import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
@@ -28,5 +29,6 @@ class RandomIntegerActivity : BaseRandomActivity() {
         }
 
         resultView.text = (start..end).random().toString()
+        copyParent?.visibility = View.VISIBLE
     }
 }

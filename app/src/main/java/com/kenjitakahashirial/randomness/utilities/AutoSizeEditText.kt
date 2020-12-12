@@ -42,7 +42,10 @@ open class AutoSizeEditText(context: Context, attrs: AttributeSet) : AppCompatEd
             }
         }
 
-        doOnLayout { beforeTextChange(); autoSizeText() }
+        doOnLayout {
+            beforeTextChange()
+            autoSizeText()
+        }
         doBeforeTextChanged { _, _, _, _ -> beforeTextChange() }
         doOnTextChanged { _, _, _, _ -> autoSizeText() }
     }
