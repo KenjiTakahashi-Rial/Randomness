@@ -1,4 +1,4 @@
-package com.kenjitakahashirial.randomness.utilities
+package com.kenjitakahashirial.randomness.settings
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

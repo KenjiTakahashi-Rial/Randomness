@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
-import com.kenjitakahashirial.randomness.utilities.MagicEightBallSettings
+import com.kenjitakahashirial.randomness.settings.MagicEightBallSettings
 import com.kenjitakahashirial.randomness.utilities.ShakeDetector
 
 class MagicEightBallActivity : BaseRandomActivity() {

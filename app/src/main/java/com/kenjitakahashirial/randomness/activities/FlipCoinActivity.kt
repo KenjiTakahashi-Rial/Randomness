@@ -11,7 +11,7 @@ import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.extensions.hasVisibleChild
 import com.kenjitakahashirial.randomness.extensions.weight
-import com.kenjitakahashirial.randomness.utilities.FlipCoinSettings
+import com.kenjitakahashirial.randomness.settings.FlipCoinSettings
 import kotlin.random.Random
 
 class FlipCoinActivity : BaseRandomActivity() {

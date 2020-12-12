@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
-import com.kenjitakahashirial.randomness.utilities.RandomWordSettings
+import com.kenjitakahashirial.randomness.settings.RandomWordSettings
 import kotlin.random.Random
 
 class RandomWordActivity : BaseRandomActivity() {

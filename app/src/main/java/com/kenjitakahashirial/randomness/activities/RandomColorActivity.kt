@@ -7,7 +7,7 @@ import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.extensions.copyToClipBoard
 import com.kenjitakahashirial.randomness.extensions.toColorHexString
-import com.kenjitakahashirial.randomness.utilities.RandomColorSettings
+import com.kenjitakahashirial.randomness.settings.RandomColorSettings
 
 class RandomColorActivity : BaseRandomActivity() {
     override val titleId = R.string.random_color_name

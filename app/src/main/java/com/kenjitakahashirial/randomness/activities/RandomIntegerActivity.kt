@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
-import com.kenjitakahashirial.randomness.utilities.RandomIntegerSettings
+import com.kenjitakahashirial.randomness.settings.RandomIntegerSettings
 
 class RandomIntegerActivity : BaseRandomActivity() {
     override val titleId = R.string.random_integer_name

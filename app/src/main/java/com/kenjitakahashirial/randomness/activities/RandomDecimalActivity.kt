@@ -5,7 +5,7 @@ import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.extensions.deleteLast
-import com.kenjitakahashirial.randomness.utilities.RandomDecimalSettings
+import com.kenjitakahashirial.randomness.settings.RandomDecimalSettings
 import kotlin.random.Random
 
 class RandomDecimalActivity : BaseRandomActivity() {

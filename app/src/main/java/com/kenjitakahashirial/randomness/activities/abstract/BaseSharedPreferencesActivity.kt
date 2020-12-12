@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.kenjitakahashirial.randomness.utilities.baseRandomSettingsSerializerFormat
+import com.kenjitakahashirial.randomness.settings.baseRandomSettingsSerializerFormat
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 

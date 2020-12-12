@@ -5,7 +5,7 @@ import android.widget.CheckBox
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 import com.kenjitakahashirial.randomness.views.AutoSizeEditText
-import com.kenjitakahashirial.randomness.utilities.RandomDecimalSettings
+import com.kenjitakahashirial.randomness.settings.RandomDecimalSettings
 
 class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsLayoutId = R.layout.activity_random_decimal_settings

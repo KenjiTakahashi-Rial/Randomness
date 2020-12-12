@@ -1,4 +1,4 @@
-package com.kenjitakahashirial.randomness.utilities
+package com.kenjitakahashirial.randomness.settings
 
 import android.graphics.Color
 import kotlinx.serialization.SerialName

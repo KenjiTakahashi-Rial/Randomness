@@ -3,7 +3,7 @@ package com.kenjitakahashirial.randomness.activities
 import android.widget.CheckBox
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
-import com.kenjitakahashirial.randomness.utilities.MagicEightBallSettings
+import com.kenjitakahashirial.randomness.settings.MagicEightBallSettings
 
 class MagicEightBallSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsLayoutId = R.layout.activity_magic_eight_ball_settings

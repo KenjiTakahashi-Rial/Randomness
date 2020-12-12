@@ -3,7 +3,7 @@ package com.kenjitakahashirial.randomness.activities
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 import com.kenjitakahashirial.randomness.views.AutoSizeEditText
-import com.kenjitakahashirial.randomness.utilities.RollDiceSettings
+import com.kenjitakahashirial.randomness.settings.RollDiceSettings
 
 class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsLayoutId = R.layout.activity_roll_dice_settings

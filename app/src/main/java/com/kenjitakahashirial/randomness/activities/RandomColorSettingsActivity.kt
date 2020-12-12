@@ -7,8 +7,8 @@ import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
 import com.kenjitakahashirial.randomness.extensions.isValid
 import com.kenjitakahashirial.randomness.extensions.toColorHexString
-import com.kenjitakahashirial.randomness.utilities.BaseRandomSettings
-import com.kenjitakahashirial.randomness.utilities.RandomColorSettings
+import com.kenjitakahashirial.randomness.settings.BaseRandomSettings
+import com.kenjitakahashirial.randomness.settings.RandomColorSettings
 import com.kenjitakahashirial.randomness.views.AutoSizeEditText
 
 class RandomColorSettingsActivity : BaseRandomSettingsActivity() {
