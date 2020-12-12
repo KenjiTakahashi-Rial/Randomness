@@ -19,11 +19,8 @@
     <string name="flip_coin_name">Flip Coin</string>
     <string name="flip_coin_num_coins_label">Number of coins</string>
     <string name="flip_coin_settings_key">com.kenjitakahashirial.randomness.FLIP_COIN_SETTINGS</string>
-    <string name="flip_coin_settings_title">Flip Coin Settings</string>
 
     <string name="generate_button">Go</string>
-
-    <string name="hash">#</string>
 
     <string name="invalid_string">!@#$%^&amp;*</string>
 
@@ -54,27 +51,23 @@
     </string-array>
     <string name="magic_eight_ball_settings_key">com.kenjitakahashirial.randomness.MAGIC_EIGHT_BALL</string>
     <string name="magic_eight_ball_settings_shake">Shake to generate</string>
-    <string name="magic_eight_ball_settings_title">Magic Eight Ball Settings</string>
 
     <string name="okay">Okay</string>
 
     <string name="random_color_from_label">Color From</string>
     <string name="random_color_name">Pick A Color</string>
     <string name="random_color_settings_key">com.kenjitakahashirial.randomness.RANDOM_COLOR_SETTINGS</string>
-    <string name="random_color_settings_title">Pick A Color Settings</string>
     <string name="random_color_to_label">Color To</string>
 
     <string name="random_decimal_name">Random Decimal</string>
     <string name="random_decimal_places_label">Decimal places</string>
     <string name="random_decimal_settings_key">com.kenjitakahashirial.randomness.RANDOM_DECIMAL_SETTINGS</string>
     <string name="random_decimal_settings_show_trailing_zeros">Show trailing zeros</string>
-    <string name="random_decimal_settings_title">Random Decimal Settings</string>
 
     <string name="random_integer_from_label">Number From</string>
     <string name="random_integer_name">Random Number</string>
     <string name="random_integer_settings_from_hint">Start value</string>
     <string name="random_integer_settings_key">com.kenjitakahashirial.randomness.RANDOM_INTEGER_SETTINGS</string>
-    <string name="random_integer_settings_title">Random Number Settings</string>
     <string name="random_integer_settings_to_hint">End value</string>
     <string name="random_integer_to_label">Number To</string>
 
@@ -88,7 +81,6 @@
     <string name="random_word_settings_key">com.kenjitakahashirial.randomness.RANDOM_WORD_SETTINGS</string>
     <string name="random_word_settings_replacement">Uses replacement</string>
     <string name="random_word_settings_separator_label">Separator</string>
-    <string name="random_word_settings_title">Word Chooser Settings</string>
     <string name="random_word_pool_label">Words to randomize</string>
 
     <string name="reset">Reset</string>
@@ -97,7 +89,6 @@
     <string name="roll_dice_num_dice_label">Number of dice</string>
     <string name="roll_dice_num_faces_label">Number of faces</string>
     <string name="roll_dice_settings_key">com.kenjitakahashirial.randomness.ROLL_DICE_SETTINGS</string>
-    <string name="roll_dice_settings_title">Roll Dice Settings</string>
 
     <string name="shared_preferences_key">com.kenjitakahashirial.randomness.SHARED_PREFERENCES</string>
 
