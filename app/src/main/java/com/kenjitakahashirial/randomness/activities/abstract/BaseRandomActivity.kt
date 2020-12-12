@@ -78,6 +78,9 @@ abstract class BaseRandomActivity : BaseSharedPreferencesActivity() {
         val generateButton = findViewById<Button>(R.id.baseRandomGenerateButton).apply {
             setOnClickListener { generateNext() }
         }
+        val backButton = findViewById<ImageButton>(R.id.baseRandomBackButton).apply {
+            setOnClickListener { finish() }
+        }
         val settingsButton = findViewById<ImageButton>(R.id.baseRandomSettingsButton).apply {
             setOnClickListener { openSettings() }
         }

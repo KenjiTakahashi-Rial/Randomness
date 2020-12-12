@@ -44,13 +44,11 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
         val rootLayout = findViewById<ConstraintLayout>(R.id.baseRandomSettingsLayout).apply {
             setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
         }
-
         val saveButton = findViewById<Button>(R.id.baseRandomSettingsSaveButton).apply {
             setOnClickListener { save() }
         }
-
         val cancelButton = findViewById<Button>(R.id.baseRandomSettingsCancelButton).apply {
-            setOnClickListener { cancel() }
+            setOnClickListener { finish() }
         }
     }
 
@@ -74,8 +72,6 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
             }
         }
     }
-
-    private fun cancel() = finish()
 
     private fun buildErrorAlertDialog() {
         errorAlertDialog = with(AlertDialog.Builder(this)) {
