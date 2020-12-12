@@ -12,7 +12,7 @@ import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.extensions.getIdArray
 import com.kenjitakahashirial.randomness.extensions.hasVisibleChild
 import com.kenjitakahashirial.randomness.extensions.weight
-import com.kenjitakahashirial.randomness.utilities.ImageTextView
+import com.kenjitakahashirial.randomness.views.ImageTextView
 import com.kenjitakahashirial.randomness.utilities.RollDiceSettings
 import kotlin.random.Random
 

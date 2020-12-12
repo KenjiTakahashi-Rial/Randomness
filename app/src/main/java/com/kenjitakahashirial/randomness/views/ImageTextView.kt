@@ -1,4 +1,4 @@
-package com.kenjitakahashirial.randomness.utilities
+package com.kenjitakahashirial.randomness.views
 
 import android.view.ViewGroup
 import android.widget.ImageView

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.CheckBox
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
-import com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
+import com.kenjitakahashirial.randomness.views.AutoSizeEditText
 import com.kenjitakahashirial.randomness.utilities.RandomDecimalSettings
 
 class RandomDecimalSettingsActivity : BaseRandomSettingsActivity() {

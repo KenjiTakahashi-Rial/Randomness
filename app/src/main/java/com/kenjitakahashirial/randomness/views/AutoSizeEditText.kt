@@ -1,4 +1,4 @@
-package com.kenjitakahashirial.randomness.utilities
+package com.kenjitakahashirial.randomness.views
 
 import android.content.Context
 import android.util.AttributeSet

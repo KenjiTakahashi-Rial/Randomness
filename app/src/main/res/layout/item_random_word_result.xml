@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.kenjitakahashirial.randomness.utilities.AutoSizeTextView
+    <com.kenjitakahashirial.randomness.views.AutoSizeTextView
         android:id="@+id/randomWordResultTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

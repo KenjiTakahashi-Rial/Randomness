@@ -35,7 +35,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomIntegerSettingsFromLabel" />
 
-    <com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
+    <com.kenjitakahashirial.randomness.views.AutoSizeEditText
         android:id="@+id/randomIntegerSettingsFrom"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomIntegerToLabel" />
 
-    <com.kenjitakahashirial.randomness.utilities.AutoSizeEditText
+    <com.kenjitakahashirial.randomness.views.AutoSizeEditText
         android:id="@+id/randomIntegerSettingsTo"
         android:layout_width="150dp"
         android:layout_height="wrap_content"

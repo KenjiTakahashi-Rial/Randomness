@@ -14,7 +14,7 @@
         android:padding="2dp"
         android:src="@mipmap/d6" />
 
-    <com.kenjitakahashirial.randomness.utilities.ScalingTextView
+    <com.kenjitakahashirial.randomness.views.ScalingTextView
         android:id="@+id/imageTextViewText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
