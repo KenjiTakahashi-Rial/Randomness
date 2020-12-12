@@ -26,26 +26,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomColorResultView" />
 
-    <Button
-        android:id="@+id/randomColorCopyButton"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
+    <FrameLayout
+        android:id="@+id/randomColorCopyParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/randomColorResultTextView"
-        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/randomColorResultTextView" />
+        app:layout_constraintTop_toTopOf="@+id/randomColorResultTextView">
 
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="0dp"
-        android:src="@mipmap/copy"
-        android:elevation="7dp"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintBottom_toBottomOf="@+id/randomColorCopyButton"
-        app:layout_constraintEnd_toEndOf="@+id/randomColorCopyButton"
-        app:layout_constraintStart_toStartOf="@+id/randomColorCopyButton"
-        app:layout_constraintTop_toTopOf="@+id/randomColorCopyButton"
-        android:contentDescription="@string/copy" />
+        <Button
+            android:id="@+id/randomColorCopyButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"/>
 
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/copy"
+            android:elevation="7dp"
+            android:contentDescription="@string/copy"
+            android:layout_gravity="center"/>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
