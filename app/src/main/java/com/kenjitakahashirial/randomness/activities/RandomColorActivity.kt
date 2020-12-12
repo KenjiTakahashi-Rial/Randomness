@@ -1,8 +1,5 @@
 package com.kenjitakahashirial.randomness.activities
 
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +8,7 @@ import android.widget.TextView
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.utilities.RandomColorSettings
+import com.kenjitakahashirial.randomness.utilities.copyToClipBoard
 import com.kenjitakahashirial.randomness.utilities.toColorHexString
 
 class RandomColorActivity : BaseRandomActivity() {
@@ -49,10 +47,5 @@ class RandomColorActivity : BaseRandomActivity() {
         copyParent.visibility = View.VISIBLE
     }
 
-    private fun copyHex() {
-        val clip = ClipData.newPlainText(getString(R.string.random_color_name), resultTextView.text)
-        val clipboard = (getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager).apply {
-            setPrimaryClip(clip)
-        }
-    }
+    private fun copyHex() = copyToClipBoard(getString(R.string.random_color_name), resultTextView.text)
 }
