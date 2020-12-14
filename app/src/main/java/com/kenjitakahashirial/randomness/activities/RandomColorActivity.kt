@@ -1,8 +1,10 @@
 package com.kenjitakahashirial.randomness.activities
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.extensions.copyToClipBoard
@@ -33,7 +35,8 @@ class RandomColorActivity : BaseRandomActivity() {
         val end = with(settings) { if (includeTo) to else to - 1 }
         val result = (start..end).random()
 
-        baseResultView.setBackgroundColor(result)
+        baseResultView.background = ContextCompat.getDrawable(this, R.drawable.circle_filled_small)
+        baseResultView.backgroundTintList = ColorStateList.valueOf(result)
         resultTextView.text = getString(R.string.format_hex, result.toColorHexString())
         copyParent?.visibility = View.VISIBLE
     }
