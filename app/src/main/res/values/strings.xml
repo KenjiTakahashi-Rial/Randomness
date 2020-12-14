@@ -26,7 +26,7 @@
 
     <string name="newline">Newline</string>
 
-    <string name="magic_eight_ball_name">Magic Eight Ball</string>
+    <string name="magic_eight_ball_name">Magic 8 Ball</string>
     <string-array name="magic_eight_ball_result">
         <item>Reply hazy, try again.</item>
         <item>Ask again later.</item>
