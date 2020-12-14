@@ -1,6 +1,5 @@
 package com.kenjitakahashirial.randomness.activities
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -43,11 +42,6 @@ class RollDiceActivity : BaseRandomActivity() {
         setDieImages()
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        setDieImages()
-    }
-
     override fun generateNext() {
         for ((index, result) in resultImageTextViews.withIndex()) {
             result.apply {
@@ -59,6 +53,8 @@ class RollDiceActivity : BaseRandomActivity() {
         for (row in resultRows) {
             row.weight = if (row.hasVisibleChild()) 1.0f else 0.0f
         }
+
+        setDieImages()
     }
 
     private fun inflateResultViews() {
