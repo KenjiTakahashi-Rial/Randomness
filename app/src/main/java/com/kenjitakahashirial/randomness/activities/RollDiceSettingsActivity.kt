@@ -2,15 +2,15 @@ package com.kenjitakahashirial.randomness.activities
 
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomSettingsActivity
-import com.kenjitakahashirial.randomness.views.AutoSizeEditText
 import com.kenjitakahashirial.randomness.settings.RollDiceSettings
+import com.kenjitakahashirial.randomness.views.AutoSizeEditText
 
 class RollDiceSettingsActivity : BaseRandomSettingsActivity() {
     override val settingsLayoutId = R.layout.activity_roll_dice_settings
     override val settingsId = R.string.roll_dice_settings_key
 
     private val numDiceRange = 1..15
-    private val numFacesArray = intArrayOf(4, 6, 8, 10, 12, 20)
+    private val numFacesArray = intArrayOf(4, 6, 8, 12, 20)
     private lateinit var numDiceText: AutoSizeEditText
     private lateinit var numFacesText: AutoSizeEditText
 
