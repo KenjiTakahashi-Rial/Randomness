@@ -12,8 +12,8 @@ import com.kenjitakahashirial.randomness.activities.abstract.BaseRandomActivity
 import com.kenjitakahashirial.randomness.extensions.getIdArray
 import com.kenjitakahashirial.randomness.extensions.hasVisibleChild
 import com.kenjitakahashirial.randomness.extensions.weight
-import com.kenjitakahashirial.randomness.views.ImageTextView
 import com.kenjitakahashirial.randomness.settings.RollDiceSettings
+import com.kenjitakahashirial.randomness.views.ImageTextView
 import kotlin.random.Random
 
 class RollDiceActivity : BaseRandomActivity() {
@@ -68,7 +68,7 @@ class RollDiceActivity : BaseRandomActivity() {
     }
 
     private fun getDieImageIds() {
-        val diceFaces = intArrayOf(4, 6, 8, 10, 12, 20)
+        val diceFaces = intArrayOf(4, 6, 8, 12, 20)
         val diceImageIds = resources.getIdArray(R.array.dice_image_ids)
         dieImageIdMap = diceFaces.withIndex().associate { (index, dieFaces) ->
             dieFaces to diceImageIds[index]
