@@ -65,8 +65,8 @@ class FlipCoinActivity : BaseRandomActivity() {
 
     private fun ImageView.generateNextCoinImage() {
         setImageResource(
-            if (Random.nextBoolean()) R.mipmap.american_silver_eagle_obverse
-            else R.mipmap.american_silver_eagle_reverse
+            if (Random.nextBoolean()) R.drawable.coin_obverse
+            else R.drawable.coin_reverse
         )
     }
 }
