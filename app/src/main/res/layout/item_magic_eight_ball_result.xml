@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="70dp"
+        android:layout_width="100dp"
         android:layout_height="0dp"
         android:textColor="@android:color/white"
         android:textSize="12sp"
@@ -28,6 +28,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/magic_eight_ball_result_image" />
-
+        app:srcCompat="@mipmap/magic_eight_ball" />
 </androidx.constraintlayout.widget.ConstraintLayout>
