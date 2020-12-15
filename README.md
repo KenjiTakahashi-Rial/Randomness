@@ -7,6 +7,6 @@ Enter Randomness. A simple app to just do random things for you.
 * Exercising? Generate a random number of sit-ups to do!
 * Bored and have hours to kill? Try to guess the next random number!
 
-All these exclusive features could be yours for the low, low price of [however many days it takes me to finish this]!
+All these exclusive features could be yours for the low, low price of $0.00!
 
 In all seriousness, this is just an app to help me learn Android development. Enjoy!
