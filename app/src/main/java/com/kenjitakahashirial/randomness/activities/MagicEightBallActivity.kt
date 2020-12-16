@@ -1,6 +1,7 @@
 package com.kenjitakahashirial.randomness.activities
 
 import android.content.Context
+import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorManager
 import android.os.Bundle
@@ -34,28 +35,34 @@ class MagicEightBallActivity : BaseRandomActivity() {
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
-        if (settings.shake) {
-            shakeDetector = ShakeDetector().apply {
-                setOnShakeListener { generateNext() }
-            }
+        shakeDetector = ShakeDetector().apply {
+            setOnShakeListener { if (settings.shake) generateNext() }
         }
+
+        if (settings.shake) registerShake()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (settings.shake) registerShake()
+        else unregisterShake()
     }
 
     override fun onResume() {
         super.onResume()
-        if (settings.shake) {
-            sensorManager.registerListener(shakeDetector, accelerometer, SensorManager.SENSOR_DELAY_UI)
-        }
+        if (settings.shake) registerShake()
     }
 
     override fun onPause() {
-        if (settings.shake) {
-            sensorManager.unregisterListener(shakeDetector)
-        }
+        if (settings.shake) unregisterShake()
         super.onPause()
     }
 
     override fun generateNext() {
         resultView.text = resources.getStringArray(settings.resultsId).random()
     }
+
+    private fun registerShake() = sensorManager.registerListener(shakeDetector, accelerometer, SensorManager.SENSOR_DELAY_UI)
+
+    private fun unregisterShake() = sensorManager.unregisterListener(shakeDetector)
 }
