@@ -2,12 +2,8 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/coin_faceless" />
     <item
-        android:width="50dp"
-        android:height="50dp"
-        android:gravity="center">
-
-        <bitmap
-            android:src="@mipmap/user"
-            android:gravity="center" />
-    </item>
+        android:width="250dp"
+        android:height="250dp"
+        android:gravity="center"
+        android:drawable="@mipmap/user" />
 </layer-list>
