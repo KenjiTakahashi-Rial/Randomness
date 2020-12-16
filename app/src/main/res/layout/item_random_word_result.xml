@@ -54,11 +54,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- TODO: The copy button is overlapping the word on smaller phones. Rethink the layout of this screen. -->
     <FrameLayout
         android:id="@+id/randomWordCopyParent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="2.5dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/randomWordRemainingLabel">
