@@ -1,10 +1,12 @@
 package com.kenjitakahashirial.randomness.activities.abstract
 
 import android.os.Bundle
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 import com.kenjitakahashirial.randomness.R
 import com.kenjitakahashirial.randomness.R.string
 import com.kenjitakahashirial.randomness.extensions.defaultLayoutParams
@@ -22,8 +24,10 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     protected abstract val settingsLayoutId: Int
     protected abstract val settingsId: Int
 
-    protected val settingsKey get() = getString(settingsId)
+    private lateinit var settingsLayout: View
     private lateinit var errorAlertDialog: AlertDialog
+
+    protected val settingsKey get() = getString(settingsId)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +39,7 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
 
     override fun setContentView(layoutResId: Int) {
         super.setContentView(layoutResId)
-        val settingsLayout = layoutInflater.inflate(settingsLayoutId, null).apply {
+        settingsLayout = layoutInflater.inflate(settingsLayoutId, null).apply {
             addContentView(this, (this as ViewGroup).defaultLayoutParams)
         }
     }
@@ -43,6 +47,17 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     protected open fun findViews() {
         val rootLayout = findViewById<ConstraintLayout>(R.id.baseRandomSettingsLayout).apply {
             setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
+
+            with(settingsLayout) {
+                if (parent != null) (parent as ViewGroup).removeView(this)
+                this@apply.addView(this)
+            }
+
+            with(ConstraintSet()) {
+                clone(this@apply)
+                connect(R.id.baseRandomSettingsSaveButton, ConstraintSet.TOP, settingsLayout.id, ConstraintSet.BOTTOM)
+                applyTo(this@apply)
+            }
         }
         val saveButton = findViewById<Button>(R.id.baseRandomSettingsSaveButton).apply {
             setOnClickListener { save() }
