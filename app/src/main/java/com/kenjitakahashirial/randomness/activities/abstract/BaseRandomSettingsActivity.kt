@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ScrollView
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
@@ -45,14 +46,20 @@ abstract class BaseRandomSettingsActivity : BaseSharedPreferencesActivity() {
     }
 
     protected open fun findViews() {
-        val rootLayout = findViewById<ConstraintLayout>(R.id.baseRandomSettingsLayout).apply {
+        val scrollView = findViewById<ScrollView>(R.id.baseRandomSettingsScrollView).apply {
+            setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
+        }
+
+        val constraintLayout = findViewById<ConstraintLayout>(R.id.baseRandomSettingsConstraintLayout).apply {
             setOnFocusChangeListener { _, hasFocus -> if (hasFocus) hideSoftKeyboard() }
 
+            // Reparent settings layout
             with(settingsLayout) {
                 if (parent != null) (parent as ViewGroup).removeView(this)
                 this@apply.addView(this)
             }
 
+            // Constrain buttons to settings layout bottom
             with(ConstraintSet()) {
                 clone(this@apply)
                 connect(R.id.baseRandomSettingsSaveButton, ConstraintSet.TOP, settingsLayout.id, ConstraintSet.BOTTOM)
